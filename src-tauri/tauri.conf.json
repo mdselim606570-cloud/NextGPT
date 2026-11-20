@@ -1,15 +1,15 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "yarn export",
-    "beforeDevCommand": "yarn export:dev",
+    "beforeBuildCommand": "pnpm export",
+    "beforeDevCommand": "pnpm export:dev",
     "devPath": "http://localhost:3000",
     "distDir": "../out",
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "NextGpt",
-    "version": "2.15.8"
+    "productName": "nextgpt",
+    "version": "2.16.1"
   },
   "tauri": {
     "allowlist": {
@@ -60,7 +60,7 @@
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
-      "copyright": "2024, KhulnaSoft Ltd All Rights Reserved.",
+      "copyright": "2023, Zhang Yifei All Rights Reserved.",
       "deb": {
         "depends": []
       },
@@ -72,8 +72,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.khulnasoft.nextgpt.web",
-      "longDescription": "NextGpt is a cross-platform ChatGPT client, including Web/Win/Linux/OSX/PWA.",
+      "identifier": "com.yida.chatgpt.next.web",
+      "longDescription": "nextgpt is a cross-platform AI assistant client, including Web/Win/Linux/OSX/PWA.",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -82,7 +82,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "NextGpt App",
+      "shortDescription": "nextgpt App",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -110,7 +110,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "NextGpt",
+        "title": "nextgpt",
         "width": 960,
         "hiddenTitle": true,
         "titleBarStyle": "Overlay"

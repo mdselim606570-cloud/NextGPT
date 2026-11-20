@@ -1,0 +1,45 @@
+#!/bin/bash
+set -euo pipefail
+
+# Bootstrap NextGPT for local development.
+# Installs dependencies, configures environment, and prepares git hooks.
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT_DIR"
+
+require_cmd() {
+  if ! command -v "$1" >/dev/null 2>&1; then
+    echo "❌ Required command not found: $1"
+    exit 1
+  fi
+}
+
+require_cmd node
+require_cmd pnpm
+
+echo "📦 Installing dependencies (pnpm)..."
+pnpm install --frozen-lockfile
+
+if [ ! -f .env.local ]; then
+  if [ -f .env.template ]; then
+    echo "🔧 Creating .env.local from .env.template..."
+    cp .env.template .env.local
+  else
+    echo "⚠️  .env.template not found; skipping .env.local creation"
+  fi
+else
+  echo "✓ .env.local already exists, leaving untouched"
+fi
+
+if [ -f package.json ] && pnpm run | grep -qE '^\s*mask\b'; then
+  echo "🎭 Building masks..."
+  pnpm mask
+fi
+
+if [ -d .husky ] || pnpm run | grep -qE '^\s*prepare\b'; then
+  echo "🪝 Installing git hooks (husky)..."
+  pnpm prepare
+fi
+
+echo "✅ Bootstrap complete."
+echo "   Next: review .env.local, then run 'pnpm dev'"
