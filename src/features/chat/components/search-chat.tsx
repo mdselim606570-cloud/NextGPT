@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { ErrorBoundary } from "./error";
-import styles from "../forms/mask.module.scss";
+import styles from "@/app/components/forms/mask.module.scss";
 import { useNavigate } from "react-router-dom";
 import { IconButton } from "@/components/ui/button";
-import CloseIcon from "../../icons/close.svg";
-import EyeIcon from "../../icons/eye.svg";
-import Locale from "../../locales";
+import CloseIcon from "@/app/icons/close.svg";
+import EyeIcon from "@/app/icons/eye.svg";
+import Locale from "@/app/locales";
 import { Path } from "@/constants";
 
-import { useChatStore } from "../../store";
+import { useChatStore } from "@/app/store";
 
 type Item = {
   id: number;

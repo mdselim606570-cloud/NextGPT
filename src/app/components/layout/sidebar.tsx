@@ -39,7 +39,7 @@ const DISCOVERY = [
   { name: Locale.SearchChat.Page.Title, path: Path.SearchChat },
 ];
 
-const ChatList = dynamic(async () => (await import("../chat/chat-list")).ChatList, {
+const ChatList = dynamic(async () => (await import("@/features/chat/components/chat-list")).ChatList, {
   loading: () => null,
 });
 

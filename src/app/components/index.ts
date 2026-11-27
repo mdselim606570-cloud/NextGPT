@@ -15,11 +15,11 @@ export {
 } from "@/components/ui/ui-lib";
 
 // Chat
-export { Chat } from "./chat/chat";
-export { ChatList, ChatItem } from "./chat/chat-list";
-export { MessageSelector, useMessageSelector } from "./chat/message-selector";
-export { SearchChatPage } from "./chat/search-chat";
-export { ErrorBoundary } from "./chat/error";
+export { Chat } from "@/features/chat/components/chat";
+export { ChatList, ChatItem } from "@/features/chat/components/chat-list";
+export { MessageSelector, useMessageSelector } from "@/features/chat/components/message-selector";
+export { SearchChatPage } from "@/features/chat/components/search-chat";
+export { ErrorBoundary } from "@/features/chat/components/error";
 
 // Settings
 export { Settings } from "@/features/settings/components/settings";

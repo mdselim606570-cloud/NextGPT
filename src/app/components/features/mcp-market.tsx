@@ -1,5 +1,5 @@
 import { IconButton } from "@/components/ui/button";
-import { ErrorBoundary } from "../chat/error";
+import { ErrorBoundary } from "@/features/chat/components/error";
 import styles from "./mcp-market.module.scss";
 import EditIcon from "../../icons/edit.svg";
 import AddIcon from "../../icons/add.svg";

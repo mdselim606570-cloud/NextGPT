@@ -12,7 +12,7 @@ import { getCSSVar, useMobileScreen } from "../../utils";
 
 import dynamic from "next/dynamic";
 import { Path, SlotID } from "@/constants";
-import { ErrorBoundary } from "../chat/error";
+import { ErrorBoundary } from "@/features/chat/components/error";
 
 import { getISOLang, getLang } from "../../locales";
 
@@ -48,7 +48,7 @@ const Settings = dynamic(async () => (await import("@/features/settings/componen
   loading: () => <Loading noLogo />,
 });
 
-const Chat = dynamic(async () => (await import("../chat/chat")).Chat, {
+const Chat = dynamic(async () => (await import("@/features/chat/components/chat")).Chat, {
   loading: () => <Loading noLogo />,
 });
 
@@ -65,7 +65,7 @@ const PluginPage = dynamic(async () => (await import("../forms/plugin")).PluginP
 });
 
 const SearchChat = dynamic(
-  async () => (await import("../chat/search-chat")).SearchChatPage,
+  async () => (await import("@/features/chat/components/search-chat")).SearchChatPage,
   {
     loading: () => <Loading noLogo />,
   },

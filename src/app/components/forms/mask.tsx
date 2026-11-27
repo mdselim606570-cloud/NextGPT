@@ -1,5 +1,5 @@
 import { IconButton } from "@/components/ui/button";
-import { ErrorBoundary } from "../chat/error";
+import { ErrorBoundary } from "@/features/chat/components/error";
 
 import styles from "./mask.module.scss";
 
@@ -36,7 +36,7 @@ import { Avatar, AvatarPicker } from "@/components/ui/emoji";
 import Locale, { AllLangs, ALL_LANG_OPTIONS, Lang } from "../../locales";
 import { useNavigate } from "react-router-dom";
 
-import chatStyle from "../chat/chat.module.scss";
+import chatStyle from "@/features/chat/components/chat.module.scss";
 import { useState } from "react";
 import {
   copyToClipboard,

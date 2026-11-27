@@ -2,13 +2,13 @@
 
 import React from "react";
 import { IconButton } from "@/components/ui/button";
-import GithubIcon from "../../icons/github.svg";
-import ResetIcon from "../../icons/reload.svg";
+import GithubIcon from "@/app/icons/github.svg";
+import ResetIcon from "@/app/icons/reload.svg";
 import { ISSUE_URL } from "@/constants";
-import Locale from "../../locales";
+import Locale from "@/app/locales";
 import { showConfirm } from "@/components/ui/ui-lib";
-import { useSyncStore } from "../../store/sync";
-import { useChatStore } from "../../store/chat";
+import { useSyncStore } from "@/app/store/sync";
+import { useChatStore } from "@/app/store/chat";
 
 interface IErrorBoundaryState {
   hasError: boolean;

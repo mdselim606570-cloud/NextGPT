@@ -1,4 +1,4 @@
-import chatStyles from "@/app/components/chat/chat.module.scss";
+import chatStyles from "@/features/chat/components/chat.module.scss";
 import styles from "@/app/components/sd/sd.module.scss";
 import homeStyles from "@/app/components/layout/home.module.scss";
 
@@ -17,7 +17,8 @@ import { useAppConfig } from "@/app/store";
 import MinIcon from "@/app/icons/min.svg";
 import MaxIcon from "@/app/icons/max.svg";
 import { getClientConfig } from "@/config/client";
-import { ChatAction } from "@/app/components/chat/chat";
+import { ChatAction } from "@/features/chat/components/chat";
+import chatStyle from "@/features/chat/components/chat.module.scss";
 import DeleteIcon from "@/app/icons/clear.svg";
 import CopyIcon from "@/app/icons/copy.svg";
 import PromptIcon from "@/app/icons/prompt.svg";

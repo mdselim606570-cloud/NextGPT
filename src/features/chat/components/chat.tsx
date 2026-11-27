@@ -9,45 +9,45 @@ import React, {
   useState,
 } from "react";
 
-import SendWhiteIcon from "../../icons/send-white.svg";
-import BrainIcon from "../../icons/brain.svg";
-import RenameIcon from "../../icons/rename.svg";
-import EditIcon from "../../icons/rename.svg";
-import ExportIcon from "../../icons/share.svg";
-import ReturnIcon from "../../icons/return.svg";
-import CopyIcon from "../../icons/copy.svg";
-import SpeakIcon from "../../icons/speak.svg";
-import SpeakStopIcon from "../../icons/speak-stop.svg";
-import LoadingIcon from "../../icons/three-dots.svg";
-import LoadingButtonIcon from "../../icons/loading.svg";
-import PromptIcon from "../../icons/prompt.svg";
-import MaskIcon from "../../icons/mask.svg";
-import MaxIcon from "../../icons/max.svg";
-import MinIcon from "../../icons/min.svg";
-import ResetIcon from "../../icons/reload.svg";
-import ReloadIcon from "../../icons/reload.svg";
-import BreakIcon from "../../icons/break.svg";
-import SettingsIcon from "../../icons/chat-settings.svg";
-import DeleteIcon from "../../icons/clear.svg";
-import PinIcon from "../../icons/pin.svg";
-import ConfirmIcon from "../../icons/confirm.svg";
-import CloseIcon from "../../icons/close.svg";
-import CancelIcon from "../../icons/cancel.svg";
-import ImageIcon from "../../icons/image.svg";
+import SendWhiteIcon from "@/app/icons/send-white.svg";
+import BrainIcon from "@/app/icons/brain.svg";
+import RenameIcon from "@/app/icons/rename.svg";
+import EditIcon from "@/app/icons/rename.svg";
+import ExportIcon from "@/app/icons/share.svg";
+import ReturnIcon from "@/app/icons/return.svg";
+import CopyIcon from "@/app/icons/copy.svg";
+import SpeakIcon from "@/app/icons/speak.svg";
+import SpeakStopIcon from "@/app/icons/speak-stop.svg";
+import LoadingIcon from "@/app/icons/three-dots.svg";
+import LoadingButtonIcon from "@/app/icons/loading.svg";
+import PromptIcon from "@/app/icons/prompt.svg";
+import MaskIcon from "@/app/icons/mask.svg";
+import MaxIcon from "@/app/icons/max.svg";
+import MinIcon from "@/app/icons/min.svg";
+import ResetIcon from "@/app/icons/reload.svg";
+import ReloadIcon from "@/app/icons/reload.svg";
+import BreakIcon from "@/app/icons/break.svg";
+import SettingsIcon from "@/app/icons/chat-settings.svg";
+import DeleteIcon from "@/app/icons/clear.svg";
+import PinIcon from "@/app/icons/pin.svg";
+import ConfirmIcon from "@/app/icons/confirm.svg";
+import CloseIcon from "@/app/icons/close.svg";
+import CancelIcon from "@/app/icons/cancel.svg";
+import ImageIcon from "@/app/icons/image.svg";
 
-import LightIcon from "../../icons/light.svg";
-import DarkIcon from "../../icons/dark.svg";
-import AutoIcon from "../../icons/auto.svg";
-import BottomIcon from "../../icons/bottom.svg";
-import StopIcon from "../../icons/pause.svg";
-import RobotIcon from "../../icons/robot.svg";
-import SizeIcon from "../../icons/size.svg";
-import QualityIcon from "../../icons/hd.svg";
-import StyleIcon from "../../icons/palette.svg";
-import PluginIcon from "../../icons/plugin.svg";
-import ShortcutkeyIcon from "../../icons/shortcutkey.svg";
-import McpToolIcon from "../../icons/tool.svg";
-import HeadphoneIcon from "../../icons/headphone.svg";
+import LightIcon from "@/app/icons/light.svg";
+import DarkIcon from "@/app/icons/dark.svg";
+import AutoIcon from "@/app/icons/auto.svg";
+import BottomIcon from "@/app/icons/bottom.svg";
+import StopIcon from "@/app/icons/pause.svg";
+import RobotIcon from "@/app/icons/robot.svg";
+import SizeIcon from "@/app/icons/size.svg";
+import QualityIcon from "@/app/icons/hd.svg";
+import StyleIcon from "@/app/icons/palette.svg";
+import PluginIcon from "@/app/icons/plugin.svg";
+import ShortcutkeyIcon from "@/app/icons/shortcutkey.svg";
+import McpToolIcon from "@/app/icons/tool.svg";
+import HeadphoneIcon from "@/app/icons/headphone.svg";
 import {
   BOT_HELLO,
   ChatMessage,
@@ -60,7 +60,7 @@ import {
   useAppConfig,
   useChatStore,
   usePluginStore,
-} from "../../store";
+} from "@/app/store";
 
 import {
   autoGrowTextArea,
@@ -74,17 +74,17 @@ import {
   useMobileScreen,
   selectOrCopy,
   showPlugins,
-} from "../../utils";
+} from "@/app/utils";
 import { safeLocalStorage } from "@/lib/storage/storage";
 
 import { uploadImage as uploadImageRemote } from "@/app/utils/chat";
 
 import dynamic from "next/dynamic";
 
-import { ChatControllerPool } from "../../client/controller";
-import { DalleQuality, DalleStyle, ModelSize } from "../../typing";
-import { Prompt, usePromptStore } from "../../store/prompt";
-import Locale from "../../locales";
+import { ChatControllerPool } from "@/app/client/controller";
+import { DalleQuality, DalleStyle, ModelSize } from "@/app/typing";
+import { Prompt, usePromptStore } from "@/app/store/prompt";
+import Locale from "@/app/locales";
 
 import { IconButton } from "@/components/ui/button";
 import styles from "./chat.module.scss";
@@ -109,19 +109,19 @@ import {
   UNFINISHED_INPUT,
 } from "@/constants";
 import { Avatar } from "@/components/ui/emoji";
-import { ContextPrompts, MaskAvatar, MaskConfig } from "../forms/mask";
-import { useMaskStore } from "../../store/mask";
-import { ChatCommandPrefix, useChatCommand, useCommand } from "../../command";
-import { prettyObject } from "../../utils/format";
-import { ExportMessageModal } from "../features/exporter";
+import { ContextPrompts, MaskAvatar, MaskConfig } from "@/app/components/forms/mask";
+import { useMaskStore } from "@/app/store/mask";
+import { ChatCommandPrefix, useChatCommand, useCommand } from "@/app/command";
+import { prettyObject } from "@/app/utils/format";
+import { ExportMessageModal } from "@/app/components/features/exporter";
 import { getClientConfig } from "@/config/client";
-import { useAllModels } from "../../utils/hooks";
-import { ClientApi, MultimodalContent } from "../../client/api";
+import { useAllModels } from "@/app/utils/hooks";
+import { ClientApi, MultimodalContent } from "@/app/client/api";
 import { createTTSPlayer } from "@/lib/audio/audio";
-import { MsEdgeTTS, OUTPUT_FORMAT } from "../../utils/ms_edge_tts";
+import { MsEdgeTTS, OUTPUT_FORMAT } from "@/app/utils/ms_edge_tts";
 
 import { isEmpty } from "lodash-es";
-import { getModelProvider } from "../../utils/model";
+import { getModelProvider } from "@/app/utils/model";
 import { RealtimeChat } from "@/features/realtime/components";
 import clsx from "clsx";
 import { getAvailableClientsCount, isMcpEnabled } from "@/features/mcp/actions";
@@ -136,7 +136,7 @@ function getLocalStorage() {
 
 const ttsPlayer = createTTSPlayer();
 
-const Markdown = dynamic(async () => (await import("../markdown/markdown")).Markdown, {
+const Markdown = dynamic(async () => (await import("@/app/components/markdown/markdown")).Markdown, {
   loading: () => <LoadingIcon />,
 });
 

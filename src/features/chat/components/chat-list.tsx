@@ -1,6 +1,6 @@
-import DeleteIcon from "../../icons/delete.svg";
+import DeleteIcon from "@/app/icons/delete.svg";
 
-import styles from "../layout/home.module.scss";
+import styles from "@/app/components/layout/home.module.scss";
 import {
   DragDropContext,
   Droppable,
@@ -8,16 +8,16 @@ import {
   OnDragEndResponder,
 } from "@hello-pangea/dnd";
 
-import { useChatStore } from "../../store";
+import { useChatStore } from "@/app/store";
 
-import Locale from "../../locales";
+import Locale from "@/app/locales";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Path } from "@/constants";
-import { MaskAvatar } from "../forms/mask";
-import { Mask } from "../../store/mask";
+import { MaskAvatar } from "@/app/components/forms/mask";
+import { Mask } from "@/app/store/mask";
 import { useRef, useEffect } from "react";
 import { showConfirm } from "@/components/ui/ui-lib";
-import { useMobileScreen } from "../../utils";
+import { useMobileScreen } from "@/app/utils";
 import clsx from "clsx";
 
 export function ChatItem(props: {

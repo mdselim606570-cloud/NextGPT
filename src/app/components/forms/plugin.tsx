@@ -3,7 +3,7 @@ import OpenAPIClientAxios from "openapi-client-axios";
 import yaml from "js-yaml";
 import { PLUGINS_REPO_URL } from "@/constants";
 import { IconButton } from "@/components/ui/button";
-import { ErrorBoundary } from "../chat/error";
+import { ErrorBoundary } from "@/features/chat/components/error";
 
 import styles from "./mask.module.scss";
 import pluginStyles from "./plugin.module.scss";

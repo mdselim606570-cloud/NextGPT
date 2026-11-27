@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from "react";
-import { ChatMessage, useAppConfig, useChatStore } from "../../store";
-import { Updater } from "../../typing";
+import { ChatMessage, useAppConfig, useChatStore } from "@/app/store";
+import { Updater } from "@/app/typing";
 import { IconButton } from "@/components/ui/button";
 import { Avatar } from "@/components/ui/emoji";
-import { MaskAvatar } from "../forms/mask";
-import Locale from "../../locales";
+import { MaskAvatar } from "@/app/components/forms/mask";
+import Locale from "@/app/locales";
 
 import styles from "./message-selector.module.scss";
-import { getMessageTextContent } from "../../utils";
+import { getMessageTextContent } from "@/app/utils";
 import clsx from "clsx";
 
 function useShiftRange() {
