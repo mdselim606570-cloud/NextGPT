@@ -91,5 +91,5 @@ export const internalAllowedWebDavEndpoints = [
 
 export const DEFAULT_GA_ID = "G-89WN60ZK2E";
 
-export const SAAS_CHAT_URL = "https://nextgpt.club";
-export const SAAS_CHAT_UTM_URL = "https://nextgpt.club?utm=github";
+export const SAAS_CHAT_URL = "https://nextgpt.khulnasoft.com";
+export const SAAS_CHAT_UTM_URL = "https://nextgpt.khulnasoft.com?utm=github";

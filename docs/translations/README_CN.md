@@ -8,7 +8,7 @@
 
 一键免费部署你的私人 AI 助手网页应用，支持 Claude, GPT4 & Gemini Pro 模型。
 
-[nextgptAI](https://nextgpt.club?utm_source=readme) / [企业版](#%E4%BC%81%E4%B8%9A%E7%89%88) / [演示 Demo](https://chat-gpt-next-web.vercel.app/) / [反馈 Issues](https://github.com/KhulnaSoft/NextGPT/issues) / [加入 Discord](https://discord.gg/zrhvHCr79N)
+[nextgptAI](https://nextgpt.khulnasoft.com?utm_source=readme) / [企业版](#%E4%BC%81%E4%B8%9A%E7%89%88) / [演示 Demo](https://chat-gpt-next-web.vercel.app/) / [反馈 Issues](https://github.com/KhulnaSoft/NextGPT/issues) / [加入 Discord](https://discord.gg/zrhvHCr79N)
 
 [<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkhulnasoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextgpt&repository-name=nextgpt) [<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/ZBUEFA) [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/#https://github.com/KhulnaSoft/NextGPT)
 

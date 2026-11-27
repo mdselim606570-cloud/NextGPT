@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href='https://nextgpt.club'>
+<a href='https://nextgpt.khulnasoft.com'>
   <img src="https://github.com/user-attachments/assets/83bdcc07-ae5e-4954-a53a-ac151ba6ccf3" width="1000" alt="icon"/>
 </a>
 
@@ -18,11 +18,11 @@ English / [简体中文](./docs/translations/README_CN.md)
 [![MacOS][MacOS-image]][download-url]
 [![Linux][Linux-image]][download-url]
 
-[nextgptAI](https://nextgpt.club?utm_source=readme) / [iOS APP](https://apps.apple.com/us/app/nextgpt-ai/id6743085599) / [Web App Demo](https://app.nextgpt.club) / [Desktop App](https://github.com/KhulnaSoft/NextGPT/releases) / [Enterprise Edition](#enterprise-edition)
+[nextgptAI](https://nextgpt.khulnasoft.com?utm_source=readme) / [iOS APP](https://apps.apple.com/us/app/nextgpt-ai/id6743085599) / [Web App Demo](https://app.nextgpt.khulnasoft.com) / [Desktop App](https://github.com/KhulnaSoft/NextGPT/releases) / [Enterprise Edition](#enterprise-edition)
 
-[saas-url]: https://nextgpt.club?utm_source=readme
+[saas-url]: https://nextgpt.khulnasoft.com?utm_source=readme
 [saas-image]: https://img.shields.io/badge/nextgpt-Saas-green?logo=microsoftedge
-[web-url]: https://app.nextgpt.club/
+[web-url]: https://app.nextgpt.khulnasoft.com/
 [download-url]: https://github.com/KhulnaSoft/NextGPT/releases
 [Web-image]: https://img.shields.io/badge/Web-PWA-orange?logo=microsoftedge
 [Windows-image]: https://img.shields.io/badge/-Windows-blue?logo=windows
@@ -69,7 +69,7 @@ Meeting Your Company's Privatization and Customization Deployment Requirements:
 - **Private Deployment**: Enterprise-level private deployment supporting various mainstream private cloud solutions, ensuring data security and privacy protection.
 - **Continuous Updates**: Ongoing updates and upgrades in cutting-edge capabilities like multimodal AI, ensuring consistent innovation and advancement.
 
-For enterprise inquiries, please contact: **business@nextgpt.club**
+For enterprise inquiries, please contact: **business@nextgpt.khulnasoft.com**
 
 ## Screenshots
 

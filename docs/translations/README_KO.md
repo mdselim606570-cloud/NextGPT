@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href='https://nextgpt.club'>
+<a href='https://nextgpt.khulnasoft.com'>
   <img src="https://github.com/user-attachments/assets/83bdcc07-ae5e-4954-a53a-ac151ba6ccf3" width="1000" alt="icon"/>
 </a>
 
@@ -20,11 +20,11 @@
 [![MacOS][MacOS-image]][download-url]
 [![Linux][Linux-image]][download-url]
 
-[nextgptAI 웹사이트](https://nextgpt.club?utm_source=readme) / [iOS 앱](https://apps.apple.com/us/app/nextgpt-ai/id6743085599) / [웹 데모](https://app.nextgpt.club) / [데스크톱 앱](https://github.com/KhulnaSoft/NextGPT/releases) / [엔터프라이즈 버전](#enterprise-edition)
+[nextgptAI 웹사이트](https://nextgpt.khulnasoft.com?utm_source=readme) / [iOS 앱](https://apps.apple.com/us/app/nextgpt-ai/id6743085599) / [웹 데모](https://app.nextgpt.khulnasoft.com) / [데스크톱 앱](https://github.com/KhulnaSoft/NextGPT/releases) / [엔터프라이즈 버전](#enterprise-edition)
 
-[saas-url]: https://nextgpt.club?utm_source=readme
+[saas-url]: https://nextgpt.khulnasoft.com?utm_source=readme
 [saas-image]: https://img.shields.io/badge/nextgpt-Saas-green?logo=microsoftedge
-[web-url]: https://app.nextgpt.club/
+[web-url]: https://app.nextgpt.khulnasoft.com/
 [download-url]: https://github.com/KhulnaSoft/NextGPT/releases
 [Web-image]: https://img.shields.io/badge/Web-PWA-orange?logo=microsoftedge
 [Windows-image]: https://img.shields.io/badge/-Windows-blue?logo=windows
