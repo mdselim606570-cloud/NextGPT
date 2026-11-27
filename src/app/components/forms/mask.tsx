@@ -45,7 +45,7 @@ import {
   readFromFile,
 } from "../../utils";
 import { Updater } from "../../typing";
-import { ModelConfigList } from "../settings/model-config";
+import { ModelConfigList } from "@/features/settings/components/model-config";
 import { FileName, Path } from "@/constants";
 import { BUILTIN_MASK_STORE } from "../../masks";
 import {

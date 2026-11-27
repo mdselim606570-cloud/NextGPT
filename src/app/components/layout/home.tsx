@@ -44,7 +44,7 @@ const Artifacts = dynamic(async () => (await import("../features/artifacts")).Ar
   loading: () => <Loading noLogo />,
 });
 
-const Settings = dynamic(async () => (await import("../settings/settings")).Settings, {
+const Settings = dynamic(async () => (await import("@/features/settings/components/settings")).Settings, {
   loading: () => <Loading noLogo />,
 });
 

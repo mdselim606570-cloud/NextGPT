@@ -1,13 +1,12 @@
 import { ServiceProvider } from "@/constants";
-import { ModalConfigValidator, ModelConfig } from "../../store";
-
-import Locale from "../../locales";
+import { ModalConfigValidator, ModelConfig } from "@/app/store";
+import Locale from "@/app/locales";
 import { InputRange } from "@/components/ui/input-range";
 import { ListItem, Select } from "@/components/ui/ui-lib";
-import { useAllModels } from "../../utils/hooks";
+import { useAllModels } from "@/app/utils/hooks";
 import { groupBy } from "lodash-es";
 import styles from "./model-config.module.scss";
-import { getModelProvider } from "../../utils/model";
+import { getModelProvider } from "@/app/utils/model";
 
 export function ModelConfigList(props: {
   modelConfig: ModelConfig;

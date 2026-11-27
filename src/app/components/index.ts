@@ -22,9 +22,9 @@ export { SearchChatPage } from "./chat/search-chat";
 export { ErrorBoundary } from "./chat/error";
 
 // Settings
-export { Settings } from "./settings/settings";
-export { ModelConfigList } from "./settings/model-config";
-export { TTSConfigList } from "./settings/tts-config";
+export { Settings } from "@/features/settings/components/settings";
+export { ModelConfigList } from "@/features/settings/components/model-config";
+export { TTSConfigList } from "@/features/settings/components/tts-config";
 
 // Layout
 export { Home, Loading, useSwitchTheme, WindowContent } from "./layout/home";

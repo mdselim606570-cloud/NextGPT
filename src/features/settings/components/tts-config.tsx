@@ -1,6 +1,6 @@
-import { TTSConfig, TTSConfigValidator } from "../../store";
+import { TTSConfig, TTSConfigValidator } from "@/app/store";
 
-import Locale from "../../locales";
+import Locale from "@/app/locales";
 import { ListItem, Select } from "@/components/ui/ui-lib";
 import {
   DEFAULT_TTS_ENGINE,

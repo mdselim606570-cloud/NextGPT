@@ -2,24 +2,24 @@ import { useState, useEffect, useMemo } from "react";
 
 import styles from "./settings.module.scss";
 
-import ResetIcon from "../../icons/reload.svg";
-import AddIcon from "../../icons/add.svg";
-import CloseIcon from "../../icons/close.svg";
-import CopyIcon from "../../icons/copy.svg";
-import ClearIcon from "../../icons/clear.svg";
-import LoadingIcon from "../../icons/three-dots.svg";
-import EditIcon from "../../icons/edit.svg";
-import FireIcon from "../../icons/fire.svg";
-import EyeIcon from "../../icons/eye.svg";
-import DownloadIcon from "../../icons/download.svg";
-import UploadIcon from "../../icons/upload.svg";
-import ConfigIcon from "../../icons/config.svg";
-import ConfirmIcon from "../../icons/confirm.svg";
+import ResetIcon from "@/app/icons/reload.svg";
+import AddIcon from "@/app/icons/add.svg";
+import CloseIcon from "@/app/icons/close.svg";
+import CopyIcon from "@/app/icons/copy.svg";
+import ClearIcon from "@/app/icons/clear.svg";
+import LoadingIcon from "@/app/icons/three-dots.svg";
+import EditIcon from "@/app/icons/edit.svg";
+import FireIcon from "@/app/icons/fire.svg";
+import EyeIcon from "@/app/icons/eye.svg";
+import DownloadIcon from "@/app/icons/download.svg";
+import UploadIcon from "@/app/icons/upload.svg";
+import ConfigIcon from "@/app/icons/config.svg";
+import ConfirmIcon from "@/app/icons/confirm.svg";
 
-import ConnectionIcon from "../../icons/connection.svg";
-import CloudSuccessIcon from "../../icons/cloud-success.svg";
-import CloudFailIcon from "../../icons/cloud-fail.svg";
-import { trackSettingsPageGuideToCPaymentClick } from "../../utils/auth-settings-events";
+import ConnectionIcon from "@/app/icons/connection.svg";
+import CloudSuccessIcon from "@/app/icons/cloud-success.svg";
+import CloudFailIcon from "@/app/icons/cloud-fail.svg";
+import { trackSettingsPageGuideToCPaymentClick } from "@/app/utils/auth-settings-events";
 import {
   Input,
   List,
@@ -41,15 +41,15 @@ import {
   useUpdateStore,
   useAccessStore,
   useAppConfig,
-} from "../../store";
+} from "@/app/store";
 
 import Locale, {
   AllLangs,
   ALL_LANG_OPTIONS,
   changeLang,
   getLang,
-} from "../../locales";
-import { copyToClipboard, clientUpdate, semverCompare } from "../../utils";
+} from "@/app/locales";
+import { copyToClipboard, clientUpdate, semverCompare } from "@/app/utils";
 import Link from "next/link";
 import {
   Anthropic,
@@ -77,16 +77,16 @@ import {
   SiliconFlow,
   AI302,
 } from "@/constants";
-import { Prompt, SearchService, usePromptStore } from "../../store/prompt";
-import { ErrorBoundary } from "../chat/error";
+import { Prompt, SearchService, usePromptStore } from "@/app/store/prompt";
+import { ErrorBoundary } from "@/app/components/chat/error";
 import { InputRange } from "@/components/ui/input-range";
 import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarPicker } from "@/components/ui/emoji";
 import { getClientConfig } from "@/config/client";
-import { useSyncStore } from "../../store/sync";
+import { useSyncStore } from "@/app/store/sync";
 import { nanoid } from "nanoid";
-import { useMaskStore } from "../../store/mask";
-import { ProviderType } from "../../utils/cloud";
+import { useMaskStore } from "@/app/store/mask";
+import { ProviderType } from "@/app/utils/cloud";
 import { TTSConfigList } from "./tts-config";
 import { RealtimeConfigList } from "@/features/realtime/components/realtime-config";
 
