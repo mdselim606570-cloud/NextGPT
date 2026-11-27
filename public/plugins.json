@@ -2,16 +2,51 @@
   {
     "id": "dalle3",
     "name": "Dalle3",
-    "schema": "https://ghp.ci/https://raw.githubusercontent.com/khulnasoft-lab/NextGPT-Plugin/main/plugins/dalle/openapi.json"
+    "schema": "/plugins/dalle/openapi.json"
   },
   {
     "id": "arxivsearch",
     "name": "ArxivSearch",
-    "schema": "https://ghp.ci/https://raw.githubusercontent.com/khulnasoft-lab/NextGPT-Plugin/main/plugins/arxivsearch/openapi.json"
+    "schema": "/plugins/arxivsearch/openapi.json"
   },
   {
     "id": "duckduckgolite",
     "name": "DuckDuckGoLiteSearch",
-    "schema": "https://ghp.ci/https://raw.githubusercontent.com/khulnasoft-lab/NextGPT-Plugin/main/plugins/duckduckgolite/openapi.json"
+    "schema": "/plugins/duckduckgolite/openapi.json"
+  },
+  {
+    "id": "flux",
+    "name": "FluxPro",
+    "schema": "/plugins/flux/openapi.json"
+  },
+  {
+    "id": "wolframalpha",
+    "name": "WolframAlpha",
+    "schema": "/plugins/wolframalpha/openapi.json"
+  },
+  {
+    "id": "fastgpt",
+    "name": "FastGPT",
+    "schema": "/plugins/fastgpt/openapi.json"
+  },
+  {
+    "id": "npmsearch",
+    "name": "NPM Registry Search API",
+    "schema": "/plugins/npmsearch/openapi.json"
+  },
+  {
+    "id": "codeinterpreterapi",
+    "name": "CodeInterpreter",
+    "schema": "/plugins/codeinterpreterapi/openapi.json"
+  },
+  {
+    "id": "chatpdf",
+    "name": "Chat PDF",
+    "schema": "/plugins/chatpdf/openapi.json"
+  },
+  {
+    "id": "searxng",
+    "name": "SearXNG Search",
+    "schema": "/plugins/searxng/openapi.json"
   }
 ]

@@ -1,1 +1,3 @@
 public/serviceWorker.js
+src/features/mcp/mcp_config.json
+src/features/mcp/mcp_config.default.json

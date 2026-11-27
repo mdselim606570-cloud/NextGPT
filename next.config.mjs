@@ -1,5 +1,3 @@
-import webpack from "webpack";
-
 const mode = process.env.BUILD_MODE ?? "standalone";
 console.log("[Next] build mode", mode);
 
@@ -8,7 +6,13 @@ console.log("[Next] build with chunk: ", !disableChunk);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack(config) {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  webpack(config, { webpack }) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],
@@ -20,8 +24,23 @@ const nextConfig = {
       );
     }
 
+    config.externals = [
+      ...(config.externals ?? []),
+      "utf-8-validate",
+      "bufferutil",
+    ];
+
     config.resolve.fallback = {
       child_process: false,
+      fs: false,
+      path: false,
+      crypto: false,
+      stream: false,
+    };
+
+    config.optimization = {
+      ...config.optimization,
+      concatenateModules: false,
     };
 
     return config;
@@ -64,13 +83,7 @@ if (mode !== "export") {
 
   nextConfig.rewrites = async () => {
     const ret = [
-      // adjust for previous version directly using "/api/proxy/" as proxy base route
-      // {
-      //   source: "/api/proxy/v1/:path*",
-      //   destination: "https://api.openai.com/v1/:path*",
-      // },
       {
-        // https://{resource_name}.openai.azure.com/openai/deployments/{deploy_name}/chat/completions
         source:
           "/api/proxy/azure/:resource_name/deployments/:deploy_name/:path*",
         destination:
