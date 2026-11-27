@@ -1,0 +1,21 @@
+name: '🌠 ফিচার রিকোয়েস্ট'
+description: 'একটি পরামর্শ দিন'
+title: '[Feature Request] '
+labels: ['enhancement']
+body:
+  - type: textarea
+    attributes:
+      label: '🥰 ফিচার বிவরণ'
+      description: দয়া করে আপনি এই ফিচার রিকোয়েস্টের মাধ্যমে কোন সমস্যা সমাধান করতে চান তা সম্পর্কে একটি স্বচ্ছ এবং সুনির্ধারিত বvivরণ যোগ করুন।
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: '🧐 প্রস্তাবিত সমাধান'
+      description: আপনি চাইए সমাধানের বিষয়ে একটি স্বচ্ছ এবং সুনির্ধারিত বিবরণ লিখুন।
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: '📝 অতিরিক্ত তথ্য'
+      description: সমস্যা সম্পর্কে অন্য কোন প্রসঙ্গ এখানে যোগ করুন।

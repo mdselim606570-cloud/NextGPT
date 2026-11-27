@@ -6,7 +6,7 @@
 
 <h1 align="center">nextgpt</h1>
 
-English / [简体中文](./docs/translations/README_CN.md)
+English / [বাংলা](./docs/translations/README_BN.md) / [简体中文](./docs/translations/README_CN.md)
 
 <a href="https://trendshift.io/repositories/5973" target="_blank"><img src="https://trendshift.io/api/badge/repositories/5973" alt="khulnasoft%2FNextGPT | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
