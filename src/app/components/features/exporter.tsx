@@ -10,8 +10,8 @@ import {
   showImageModal,
   showModal,
   showToast,
-} from "@/shared/ui/ui-lib";
-import { IconButton } from "@/shared/ui/button";
+} from "@/components/ui/ui-lib";
+import { IconButton } from "@/components/ui/button";
 import {
   copyToClipboard,
   downloadAs,
@@ -27,7 +27,7 @@ import ShareIcon from "../../icons/share.svg";
 import DownloadIcon from "../../icons/download.svg";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MessageSelector, useMessageSelector } from "../chat/message-selector";
-import { Avatar } from "@/shared/ui/emoji";
+import { Avatar } from "@/components/ui/emoji";
 import dynamic from "next/dynamic";
 import NextImage from "next/image";
 

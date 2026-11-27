@@ -1,14 +1,14 @@
 import { TTSConfig, TTSConfigValidator } from "../../store";
 
 import Locale from "../../locales";
-import { ListItem, Select } from "@/shared/ui/ui-lib";
+import { ListItem, Select } from "@/components/ui/ui-lib";
 import {
   DEFAULT_TTS_ENGINE,
   DEFAULT_TTS_ENGINES,
   DEFAULT_TTS_MODELS,
   DEFAULT_TTS_VOICES,
 } from "@/constants";
-import { InputRange } from "@/shared/ui/input-range";
+import { InputRange } from "@/components/ui/input-range";
 
 export function TTSConfigList(props: {
   ttsConfig: TTSConfig;

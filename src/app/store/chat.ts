@@ -14,7 +14,7 @@ import type {
 } from "../client/api";
 import { getClientApi } from "../client/api";
 import { ChatControllerPool } from "../client/controller";
-import { showToast } from "@/shared/ui/ui-lib";
+import { showToast } from "@/components/ui/ui-lib";
 import {
   DEFAULT_INPUT_TEMPLATE,
   DEFAULT_MODELS,

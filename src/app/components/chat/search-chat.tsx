@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { ErrorBoundary } from "./error";
 import styles from "../forms/mask.module.scss";
 import { useNavigate } from "react-router-dom";
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 import CloseIcon from "../../icons/close.svg";
 import EyeIcon from "../../icons/eye.svg";
 import Locale from "../../locales";

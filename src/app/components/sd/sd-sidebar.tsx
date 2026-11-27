@@ -1,4 +1,4 @@
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 import GithubIcon from "@/app/icons/github.svg";
 import SDIcon from "@/app/icons/sd.svg";
 import ReturnIcon from "@/app/icons/return.svg";
@@ -20,7 +20,7 @@ import {
 
 import { getParams, getModelParamBasicData } from "./sd-panel";
 import { useSdStore } from "@/app/store/sd";
-import { showToast } from "@/shared/ui/ui-lib";
+import { showToast } from "@/components/ui/ui-lib";
 import { useMobileScreen } from "@/app/utils";
 
 const SdPanel = dynamic(

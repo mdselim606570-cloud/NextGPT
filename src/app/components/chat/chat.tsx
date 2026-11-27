@@ -86,7 +86,7 @@ import { DalleQuality, DalleStyle, ModelSize } from "../../typing";
 import { Prompt, usePromptStore } from "../../store/prompt";
 import Locale from "../../locales";
 
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 import styles from "./chat.module.scss";
 
 import {
@@ -97,7 +97,7 @@ import {
   showConfirm,
   showPrompt,
   showToast,
-} from "@/shared/ui/ui-lib";
+} from "@/components/ui/ui-lib";
 import { useNavigate } from "react-router-dom";
 import {
   CHAT_PAGE_SIZE,
@@ -108,7 +108,7 @@ import {
   ServiceProvider,
   UNFINISHED_INPUT,
 } from "@/constants";
-import { Avatar } from "@/shared/ui/emoji";
+import { Avatar } from "@/components/ui/emoji";
 import { ContextPrompts, MaskAvatar, MaskConfig } from "../forms/mask";
 import { useMaskStore } from "../../store/mask";
 import { ChatCommandPrefix, useChatCommand, useCommand } from "../../command";

@@ -1,9 +1,9 @@
 import { RealtimeConfig } from "@/app/store";
 
 import Locale from "@/app/locales";
-import { ListItem, Select, PasswordInput } from "@/shared/ui/ui-lib";
+import { ListItem, Select, PasswordInput } from "@/components/ui/ui-lib";
 
-import { InputRange } from "@/shared/ui/input-range";
+import { InputRange } from "@/components/ui/input-range";
 import { Voice } from "rt-client";
 import { ServiceProvider } from "@/constants";
 

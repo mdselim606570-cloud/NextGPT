@@ -13,14 +13,14 @@ import LoadingIcon from "../../icons/three-dots.svg";
 import ReloadButtonIcon from "../../icons/reload.svg";
 import React from "react";
 import { useDebouncedCallback } from "use-debounce";
-import { showImageModal, FullScreen } from "@/shared/ui/ui-lib";
+import { showImageModal, FullScreen } from "@/components/ui/ui-lib";
 import {
   ArtifactsShareButton,
   HTMLPreview,
   HTMLPreviewHandler,
 } from "../features/artifacts";
 import { useChatStore } from "../../store";
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 
 import { useAppConfig } from "../../store/config";
 import clsx from "clsx";

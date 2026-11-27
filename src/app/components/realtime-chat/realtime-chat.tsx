@@ -9,7 +9,7 @@ import { useState, useRef, useEffect } from "react";
 
 import { useChatStore, createMessage, useAppConfig } from "@/app/store";
 
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 
 import {
   Modality,

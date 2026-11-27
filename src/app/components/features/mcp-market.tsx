@@ -1,4 +1,4 @@
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 import { ErrorBoundary } from "../chat/error";
 import styles from "./mcp-market.module.scss";
 import EditIcon from "../../icons/edit.svg";
@@ -8,7 +8,7 @@ import DeleteIcon from "../../icons/delete.svg";
 import RestartIcon from "../../icons/reload.svg";
 import EyeIcon from "../../icons/eye.svg";
 import GithubIcon from "../../icons/github.svg";
-import { List, ListItem, Modal, showToast } from "@/shared/ui/ui-lib";
+import { List, ListItem, Modal, showToast } from "@/components/ui/ui-lib";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {

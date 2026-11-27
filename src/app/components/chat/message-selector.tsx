@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChatMessage, useAppConfig, useChatStore } from "../../store";
 import { Updater } from "../../typing";
-import { IconButton } from "@/shared/ui/button";
-import { Avatar } from "@/shared/ui/emoji";
+import { IconButton } from "@/components/ui/button";
+import { Avatar } from "@/components/ui/emoji";
 import { MaskAvatar } from "../forms/mask";
 import Locale from "../../locales";
 

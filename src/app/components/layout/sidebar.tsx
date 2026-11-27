@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useMemo, useRef, useState } from "react";
 
 import styles from "./home.module.scss";
 
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 import SettingsIcon from "../../icons/settings.svg";
 import GithubIcon from "../../icons/github.svg";
 import nextgptIcon from "../../icons/logo.svg";
@@ -29,7 +29,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { isIOS, useMobileScreen } from "../../utils";
 import dynamic from "next/dynamic";
-import { Selector, showConfirm } from "@/shared/ui/ui-lib";
+import { Selector, showConfirm } from "@/components/ui/ui-lib";
 import clsx from "clsx";
 import { isMcpEnabled } from "@/features/mcp/actions";
 

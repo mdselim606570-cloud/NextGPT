@@ -1,4 +1,4 @@
-import { showToast } from "@/shared/ui/ui-lib";
+import { showToast } from "@/components/ui/ui-lib";
 import Locale from "@/app/locales";
 
 export function clientUpdate() {
