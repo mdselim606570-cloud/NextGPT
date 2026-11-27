@@ -14,17 +14,45 @@ import {
   ServerStatusResponse,
 } from "./types";
 import fs from "fs/promises";
+import { existsSync } from "fs";
+import os from "os";
 import path from "path";
 import md5 from "spark-md5";
 
 const logger = new MCPClientLogger("MCP Actions");
-const CONFIG_PATH = (() => {
-  try {
-    return path.join(process.cwd(), "app/mcp/mcp_config.json");
-  } catch {
-    return "";
+
+// MCP config is user-editable runtime state, so it must not depend on the
+// process working directory (which differs between `next dev`, `next start`,
+// standalone servers and Tauri). Resolution order:
+//   1. MCP_CONFIG_PATH env var (absolute path recommended)
+//   2. Legacy location `<cwd>/app/mcp/mcp_config.json`, but only when the file
+//      already exists, so configs created by earlier versions keep working
+//   3. Per-user config dir: %APPDATA%/nextgpt on Windows, otherwise
+//      $XDG_CONFIG_HOME/nextgpt (default ~/.config/nextgpt)
+export function resolveMcpConfigPath(): string {
+  const override = process.env.MCP_CONFIG_PATH;
+  if (override) {
+    return path.isAbsolute(override)
+      ? override
+      : path.join(process.cwd(), override);
   }
-})();
+
+  const legacyPath = path.join(process.cwd(), "app", "mcp", "mcp_config.json");
+  try {
+    if (existsSync(legacyPath)) {
+      return legacyPath;
+    }
+  } catch {
+    // Fall through to the default location.
+  }
+
+  const configHome =
+    process.platform === "win32"
+      ? process.env.APPDATA || path.join(os.homedir(), "AppData", "Roaming")
+      : process.env.XDG_CONFIG_HOME || path.join(os.homedir(), ".config");
+
+  return path.join(configHome, "nextgpt", "mcp_config.json");
+}
 
 const clientsMap = new Map<string, McpClientData>();
 
@@ -406,7 +434,7 @@ export async function getMcpConfigFromFile(
 ): Promise<McpConfigData> {
   await assertMcpAuthorized(accessCode);
   try {
-    const configStr = await fs.readFile(CONFIG_PATH, "utf-8");
+    const configStr = await fs.readFile(resolveMcpConfigPath(), "utf-8");
     return JSON.parse(configStr);
   } catch (error) {
     logger.error(`Failed to load MCP config, using default config: ${error}`);
@@ -417,9 +445,10 @@ export async function getMcpConfigFromFile(
 // 更新 MCP 配置文件
 async function updateMcpConfig(config: McpConfigData): Promise<void> {
   try {
+    const configPath = resolveMcpConfigPath();
     // 确保目录存在
-    await fs.mkdir(path.dirname(CONFIG_PATH), { recursive: true });
-    await fs.writeFile(CONFIG_PATH, JSON.stringify(config, null, 2));
+    await fs.mkdir(path.dirname(configPath), { recursive: true });
+    await fs.writeFile(configPath, JSON.stringify(config, null, 2));
   } catch (error) {
     throw error;
   }

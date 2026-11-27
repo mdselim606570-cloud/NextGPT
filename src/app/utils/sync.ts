@@ -30,12 +30,25 @@ export type GetStoreState<T> = T extends { getState: () => infer U }
   ? NonFunctionFields<U>
   : never;
 
+// Getters defer store access until the entries are read at runtime. Eager
+// `useXStore.setState` references here create a module-eval-time circular
+// dependency (store -> utils -> store) that breaks under ESM evaluation.
 const LocalStateSetters = {
-  [StoreKey.Chat]: useChatStore.setState,
-  [StoreKey.Access]: useAccessStore.setState,
-  [StoreKey.Config]: useAppConfig.setState,
-  [StoreKey.Mask]: useMaskStore.setState,
-  [StoreKey.Prompt]: usePromptStore.setState,
+  get [StoreKey.Chat]() {
+    return useChatStore.setState;
+  },
+  get [StoreKey.Access]() {
+    return useAccessStore.setState;
+  },
+  get [StoreKey.Config]() {
+    return useAppConfig.setState;
+  },
+  get [StoreKey.Mask]() {
+    return useMaskStore.setState;
+  },
+  get [StoreKey.Prompt]() {
+    return usePromptStore.setState;
+  },
 } as const;
 
 const LocalStateGetters = {

@@ -33,7 +33,7 @@ Docker 버전은 사실상 안정된 버전과 같습니다. latest Docker는 �
 이것은 당신이 사용자 정의한 접근 비밀번호입니다. 다음 중 하나를 선택할 수 있습니다:
 
 1. 설정하지 않습니다. 해당 환경 변수를 삭제합니다. 주의: 이 경우 누구나 프로젝트에 접근할 수 있습니다.
-2. 프로젝트를 배포할 때 환경 변수 CODE를 설정합니다(여러 비밀번호는 쉼표로 구분). 접근 비밀번호를 설정하면 사용자는 설정 페이지에서 접근 비밀번호를 입력해야만 사용할 수 있습니다. [관련 설명 참조](https://github.com/KhulnaSoft/NextGPT/blob/main/README_CN.md#%E9%85%8D%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81)
+2. 프로젝트를 배포할 때 환경 변수 CODE를 설정합니다(여러 비밀번호는 쉼표로 구분). 접근 비밀번호를 설정하면 사용자는 설정 페이지에서 접근 비밀번호를 입력해야만 사용할 수 있습니다. [관련 설명 참조](https://github.com/KhulnaSoft/NextGPT/blob/main/docs/translations/README_CN.md#%E9%85%8D%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81)
 
 ## 왜 내 배포 버전에 스트리밍 응답이 없나요?
 

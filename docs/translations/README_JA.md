@@ -43,7 +43,7 @@
 
 <div align="center">
    
-![メインインターフェース](./docs/images/cover.png)
+![メインインターフェース](../assets/cover.png)
 
 </div>
 
@@ -55,7 +55,7 @@
 
 - 元のリポジトリを削除する
 - ページ右上の fork ボタンを使って、本プロジェクトを fork する
-- Vercel で再度選択してデプロイする、[詳細な手順はこちらを参照してください](./docs/vercel-ja.md)。
+- Vercel で再度選択してデプロイする、[詳細な手順はこちらを参照してください](../deployment/vercel-ja.md)。
 
 ### 自動更新を開く
 
@@ -63,9 +63,9 @@
 
 プロジェクトを fork した後、GitHub の制限により、fork 後のプロジェクトの Actions ページで Workflows を手動で有効にし、Upstream Sync Action を有効にする必要があります。有効化後、毎時の定期自動更新が可能になります：
 
-![自動更新](./docs/images/enable-actions.jpg)
+![自動更新](../assets/enable-actions.jpg)
 
-![自動更新を有効にする](./docs/images/enable-actions-sync.jpg)
+![自動更新を有効にする](../assets/enable-actions-sync.jpg)
 
 ### 手動でコードを更新する
 
@@ -89,7 +89,7 @@ code1,code2,code3
 
 ## 環境変数
 
-> 本プロジェクトのほとんどの設定は環境変数で行います。チュートリアル：[Vercel の環境変数を変更する方法](./docs/vercel-ja.md)。
+> 本プロジェクトのほとんどの設定は環境変数で行います。チュートリアル：[Vercel の環境変数を変更する方法](../deployment/vercel-ja.md)。
 
 ### `OPENAI_API_KEY` （必須）
 

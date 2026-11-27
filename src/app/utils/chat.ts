@@ -2,7 +2,7 @@ import {
   CACHE_URL_PREFIX,
   UPLOAD_URL,
   REQUEST_TIMEOUT_MS,
-} from "@/app/constant";
+} from "@/constants";
 import { MultimodalContent, RequestMessage } from "@/app/client/api";
 import Locale from "@/app/locales";
 import {

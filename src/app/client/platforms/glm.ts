@@ -1,5 +1,5 @@
 "use client";
-import { ApiPath, CHATGLM_BASE_URL, ChatGLM } from "@/app/constant";
+import { ApiPath, CHATGLM_BASE_URL, ChatGLM } from "@/constants";
 import {
   useAccessStore,
   useAppConfig,
@@ -15,7 +15,7 @@ import {
   LLMModel,
   SpeechOptions,
 } from "../api";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import {
   getMessageTextContent,
   isVisionModel,

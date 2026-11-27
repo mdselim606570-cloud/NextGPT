@@ -25,11 +25,11 @@ import {
 import { SideBar } from "./sidebar";
 import { useAppConfig } from "../../store/config";
 import { AuthPage } from "../auth/auth";
-import { getClientConfig } from "../../config/client";
+import { getClientConfig } from "@/config/client";
 import { type ClientApi, getClientApi } from "../../client/api";
 import { useAccessStore } from "../../store";
 import clsx from "clsx";
-import { initializeMcpSystem, isMcpEnabled } from "../../mcp/actions";
+import { initializeMcpSystem, isMcpEnabled } from "@/features/mcp/actions";
 
 export function Loading(props: { noLogo?: boolean }) {
   return (

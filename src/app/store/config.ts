@@ -1,6 +1,6 @@
 import { LLMModel } from "../client/api";
 import { DalleQuality, DalleStyle, ModelSize } from "../typing";
-import { getClientConfig } from "../config/client";
+import { getClientConfig } from "@/config/client";
 import {
   DEFAULT_INPUT_TEMPLATE,
   DEFAULT_MODELS,

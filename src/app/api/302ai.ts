@@ -1,10 +1,10 @@
-import { getServerSideConfig } from "@/app/config/server";
+import { getServerSideConfig } from "@/config/server";
 import {
   AI302_BASE_URL,
   ApiPath,
   ModelProvider,
   ServiceProvider,
-} from "@/app/constant";
+} from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/app/api/auth";
@@ -22,7 +22,7 @@ export async function handle(
     return NextResponse.json({ body: "OK" }, { status: 200 });
   }
 
-  const authResult = auth(req, ModelProvider["302.AI"]);
+  const authResult = auth(req, ModelProvider.Ai302);
   if (authResult.error) {
     return NextResponse.json(authResult, {
       status: 401,
@@ -42,7 +42,7 @@ async function request(req: NextRequest) {
   const controller = new AbortController();
 
   // alibaba use base url or just remove the path
-  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath["302.AI"], "");
+  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.Ai302, "");
 
   let baseUrl = serverConfig.ai302Url || AI302_BASE_URL;
 
@@ -91,7 +91,7 @@ async function request(req: NextRequest) {
         isModelNotavailableInServer(
           serverConfig.customModels,
           jsonBody?.model as string,
-          ServiceProvider["302.AI"] as string,
+          ServiceProvider.Ai302 as string,
         )
       ) {
         return NextResponse.json(

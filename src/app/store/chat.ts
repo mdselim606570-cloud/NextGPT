@@ -36,8 +36,8 @@ import { ModelConfig, ModelType, useAppConfig } from "./config";
 import { useAccessStore } from "./access";
 import { collectModelsWithDefaultModel } from "../utils/model";
 import { createEmptyMask, Mask } from "./mask";
-import { executeMcpAction, getAllTools, isMcpEnabled } from "../mcp/actions";
-import { extractMcpJson, isMcpJson } from "../mcp/utils";
+import { executeMcpAction, getAllTools, isMcpEnabled } from "@/features/mcp/actions";
+import { extractMcpJson, isMcpJson } from "@/features/mcp/utils";
 
 let _localStorage: ReturnType<typeof safeLocalStorage> | null = null;
 function getLocalStorage() {

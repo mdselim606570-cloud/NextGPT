@@ -5,7 +5,7 @@ import {
   AI302_BASE_URL,
   DEFAULT_MODELS,
   AI302,
-} from "@/app/constant";
+} from "@/constants";
 import {
   useAccessStore,
   useAppConfig,
@@ -21,7 +21,7 @@ import {
   LLMModel,
   SpeechOptions,
 } from "../api";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import {
   getMessageTextContent,
   getMessageTextContentWithoutThinking,
@@ -54,7 +54,7 @@ export class Ai302Api implements LLMApi {
 
     if (baseUrl.length === 0) {
       const isApp = !!getClientConfig()?.isApp;
-      const apiPath = ApiPath["302.AI"];
+      const apiPath = ApiPath.Ai302;
       baseUrl = isApp ? AI302_BASE_URL : apiPath;
     }
 
@@ -63,7 +63,7 @@ export class Ai302Api implements LLMApi {
     }
     if (
       !baseUrl.startsWith("http") &&
-      !baseUrl.startsWith(ApiPath["302.AI"])
+      !baseUrl.startsWith(ApiPath.Ai302)
     ) {
       baseUrl = "https://" + baseUrl;
     }

@@ -1,11 +1,11 @@
-import { getServerSideConfig } from "@/app/config/server";
+import { getServerSideConfig } from "@/config/server";
 import {
   ANTHROPIC_BASE_URL,
   Anthropic,
   ApiPath,
   ServiceProvider,
   ModelProvider,
-} from "@/app/constant";
+} from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "./auth";

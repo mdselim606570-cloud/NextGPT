@@ -5,7 +5,7 @@ import homeStyles from "@/app/components/layout/home.module.scss";
 import { IconButton } from "@/app/components/ui/button";
 import ReturnIcon from "@/app/icons/return.svg";
 import Locale from "@/app/locales";
-import { Path } from "@/app/constant";
+import { Path } from "@/constants";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   copyToClipboard,
@@ -16,7 +16,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useAppConfig } from "@/app/store";
 import MinIcon from "@/app/icons/min.svg";
 import MaxIcon from "@/app/icons/max.svg";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import { ChatAction } from "@/app/components/chat/chat";
 import DeleteIcon from "@/app/icons/clear.svg";
 import CopyIcon from "@/app/icons/copy.svg";

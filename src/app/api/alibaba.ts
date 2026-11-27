@@ -1,10 +1,10 @@
-import { getServerSideConfig } from "@/app/config/server";
+import { getServerSideConfig } from "@/config/server";
 import {
   ALIBABA_BASE_URL,
   ApiPath,
   ModelProvider,
   ServiceProvider,
-} from "@/app/constant";
+} from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/app/api/auth";

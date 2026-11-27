@@ -75,8 +75,8 @@
 
 ## 🖼️ 스크린샷
 
-![설정](./docs/images/settings.png)
-![기타](./docs/images/more.png)
+![설정](../assets/settings.png)
+![기타](../assets/more.png)
 
 ## 주요 기능 소개
 
@@ -95,7 +95,7 @@
 
 <div align="center">
    
-![主界面](./docs/images/cover.png)
+![主界面](../assets/cover.png)
 
 </div>
 
@@ -134,7 +134,7 @@
 
 ## FAQ
 
-[FAQ](./docs/faq-ko.md)
+[FAQ](../faq/faq-ko.md)
 
 ## 최신 상태 유지 (Keep Updated)
 
@@ -145,7 +145,7 @@ Vercel로 배포한 경우, "Updates Available" 메시지가 계속 나타날 �
 1. 기존 레포 삭제
 2. 우측 상단 "Fork" 버튼 클릭 → 포크 생성
 3. 포크된 프로젝트를 다시 Vercel에 배포  
-   → [자세한 튜토리얼 보기](./docs/vercel-ko.md)
+   → [자세한 튜토리얼 보기](../deployment/vercel-ko.md)
 
 ### 자동 업데이트 활성화 (Enable Automatic Updates)
 
@@ -158,8 +158,8 @@ Vercel로 배포한 경우, "Updates Available" 메시지가 계속 나타날 �
 
 이후 매 시간 자동으로 업데이트됩니다:
 
-![자동 업데이트 활성화](./docs/images/enable-actions.jpg)  
-![업스트림 동기화 활성화](./docs/images/enable-actions-sync.jpg)
+![자동 업데이트 활성화](../assets/enable-actions.jpg)  
+![업스트림 동기화 활성화](../assets/enable-actions-sync.jpg)
 
 ### 수동 업데이트 방법 (Manually Updating Code)
 
@@ -460,21 +460,21 @@ bash <(curl -s https://raw.githubusercontent.com/KhulnaSoft/NextGPT/main/scripts
 
 ## 채팅 기록 동기화 (UpStash)
 
-| [简体中文](./docs/synchronise-chat-logs-cn.md) | [English](./docs/synchronise-chat-logs-en.md) | [Italiano](./docs/synchronise-chat-logs-es.md) | [日本語](./docs/synchronise-chat-logs-ja.md) | [한국어](./docs/synchronise-chat-logs-ko.md)
+| [简体中文](../deployment/synchronise-chat-logs-cn.md) | [English](../deployment/synchronise-chat-logs-en.md) | [Italiano](../deployment/synchronise-chat-logs-es.md) | [日本語](../deployment/synchronise-chat-logs-ja.md) | [한국어](../deployment/synchronise-chat-logs-ko.md)
 
 ## 문서 (Documentation)
 
-> 더 많은 문서는 [docs](./docs) 디렉토리를 참고하세요.
+> 더 많은 문서는 [docs](..) 디렉토리를 참고하세요.
 
-- [Cloudflare 배포 가이드 (폐기됨)](./docs/cloudflare-pages-ko.md)
-- [자주 묻는 질문](./docs/faq-ko.md)
-- [새 번역 추가 방법](./docs/translation.md)
-- [Vercel 사용법 (중문)](./docs/vercel-cn.md)
-- [사용자 매뉴얼 (중문, 작성 중)](./docs/user-manual-cn.md)
+- [Cloudflare 배포 가이드 (폐기됨)](../deployment/cloudflare-pages-ko.md)
+- [자주 묻는 질문](../faq/faq-ko.md)
+- [새 번역 추가 방법](../guides/translation.md)
+- [Vercel 사용법 (중문)](../deployment/vercel-cn.md)
+- [사용자 매뉴얼 (중문, 작성 중)](../guides/user-manual-cn.md)
 
 ## 번역 (Translation)
 
-새로운 번역을 추가하고 싶다면, [이 문서](./docs/translation.md)를 읽어보세요.
+새로운 번역을 추가하고 싶다면, [이 문서](../guides/translation.md)를 읽어보세요.
 
 ## 후원 (Donation)
 

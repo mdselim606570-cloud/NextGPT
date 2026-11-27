@@ -20,14 +20,14 @@ import {
   pauseMcpServer,
   restartAllClients,
   resumeMcpServer,
-} from "../../mcp/actions";
+} from "@/features/mcp/actions";
 import {
   ListToolsResponse,
   McpConfigData,
   PresetServer,
   ServerConfig,
   ServerStatusResponse,
-} from "../../mcp/types";
+} from "@/features/mcp/types";
 import clsx from "clsx";
 import PlayIcon from "../../icons/play.svg";
 import StopIcon from "../../icons/pause.svg";

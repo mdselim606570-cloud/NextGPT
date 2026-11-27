@@ -48,7 +48,7 @@
 
 <div align="center">
    
-![主界面](./docs/images/cover.png)
+![主界面](../assets/cover.png)
 
 </div>
 
@@ -59,7 +59,7 @@
 
 - 删除掉原先的仓库；
 - 使用页面右上角的 fork 按钮，fork 本项目；
-- 在 Vercel 重新选择并部署，[请查看详细教程](./docs/vercel-cn.md#如何新建项目)。
+- 在 Vercel 重新选择并部署，[请查看详细教程](../deployment/vercel-cn.md#如何新建项目)。
 
 ### 打开自动更新
 
@@ -67,9 +67,9 @@
 
 当你 fork 项目之后，由于 Github 的限制，需要手动去你 fork 后的项目的 Actions 页面启用 Workflows，并启用 Upstream Sync Action，启用之后即可开启每小时定时自动更新：
 
-![自动更新](./docs/images/enable-actions.jpg)
+![自动更新](../assets/enable-actions.jpg)
 
-![启用自动更新](./docs/images/enable-actions-sync.jpg)
+![启用自动更新](../assets/enable-actions-sync.jpg)
 
 ### 手动更新代码
 
@@ -93,7 +93,7 @@ code1,code2,code3
 
 ## 环境变量
 
-> 本项目大多数配置项都通过环境变量来设置，教程：[如何修改 Vercel 环境变量](./docs/vercel-cn.md)。
+> 本项目大多数配置项都通过环境变量来设置，教程：[如何修改 Vercel 环境变量](../deployment/vercel-cn.md)。
 
 ### `OPENAI_API_KEY` （必填项）
 
@@ -318,7 +318,7 @@ BASE_URL=https://b.nextweb.fun/api/proxy
 
 ### 宝塔面板部署
 
-> [简体中文 > 如何通过宝塔一键部署](./docs/bt-cn.md)
+> [简体中文 > 如何通过宝塔一键部署](../deployment/bt-cn.md)
 
 ### 容器部署 （推荐）
 

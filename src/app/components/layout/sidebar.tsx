@@ -31,7 +31,7 @@ import { isIOS, useMobileScreen } from "../../utils";
 import dynamic from "next/dynamic";
 import { Selector, showConfirm } from "../ui/ui-lib";
 import clsx from "clsx";
-import { isMcpEnabled } from "../../mcp/actions";
+import { isMcpEnabled } from "@/features/mcp/actions";
 
 const DISCOVERY = [
   { name: Locale.Plugin.Name, path: Path.Plugins },

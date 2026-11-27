@@ -4,7 +4,7 @@ import {
   ModelProvider,
   StoreKey,
 } from "@/constants";
-import { getClientConfig } from "../config/client";
+import { getClientConfig } from "@/config/client";
 import { createPersistStore } from "../utils/store";
 import { clientUpdate } from "../utils";
 import nextgptIcon from "../icons/nextgpt-bot.png";

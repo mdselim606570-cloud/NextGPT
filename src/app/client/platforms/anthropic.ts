@@ -1,4 +1,4 @@
-import { Anthropic, ApiPath } from "@/app/constant";
+import { Anthropic, ApiPath } from "@/constants";
 import { ChatOptions, getHeaders, LLMApi, SpeechOptions } from "../api";
 import {
   useAccessStore,
@@ -7,8 +7,8 @@ import {
   usePluginStore,
   ChatMessageTool,
 } from "@/app/store";
-import { getClientConfig } from "@/app/config/client";
-import { ANTHROPIC_BASE_URL } from "@/app/constant";
+import { getClientConfig } from "@/config/client";
+import { ANTHROPIC_BASE_URL } from "@/constants";
 import { getMessageTextContent, isVisionModel } from "@/app/utils";
 import { preProcessImageContent, stream } from "@/app/utils/chat";
 import { cloudflareAIGatewayUrl } from "@/app/utils/cloudflare";

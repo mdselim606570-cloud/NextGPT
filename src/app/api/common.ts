@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSideConfig } from "../config/server";
+import { getServerSideConfig } from "@/config/server";
 import { OPENAI_BASE_URL, ServiceProvider } from "@/constants";
 import { cloudflareAIGatewayUrl } from "../utils/cloudflare";
 import { getModelProvider, isModelNotavailableInServer } from "../utils/model";

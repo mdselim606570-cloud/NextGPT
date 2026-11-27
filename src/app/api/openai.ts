@@ -1,6 +1,6 @@
 import { type OpenAIListModelResponse } from "@/app/client/platforms/openai";
-import { getServerSideConfig } from "@/app/config/server";
-import { ModelProvider, OpenaiPath } from "@/app/constant";
+import { getServerSideConfig } from "@/config/server";
+import { ModelProvider, OpenaiPath } from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "./auth";

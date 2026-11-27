@@ -1,5 +1,5 @@
 "use client";
-import { ApiPath, ByteDance, BYTEDANCE_BASE_URL } from "@/app/constant";
+import { ApiPath, ByteDance, BYTEDANCE_BASE_URL } from "@/constants";
 import {
   useAccessStore,
   useAppConfig,
@@ -18,7 +18,7 @@ import {
 } from "../api";
 
 import { streamWithThink } from "@/app/utils/chat";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import { preProcessImageContent } from "@/app/utils/chat";
 import {
   getMessageTextContentWithoutThinking,

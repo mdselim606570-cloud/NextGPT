@@ -1,4 +1,4 @@
-import { ApiPath } from "@/app/constant";
+import { ApiPath } from "@/constants";
 import { NextRequest } from "next/server";
 import { handle as openaiHandler } from "../../openai";
 import { handle as azureHandler } from "../../azure";
@@ -53,7 +53,7 @@ async function handle(
       return siliconflowHandler(req, { params });
     case ApiPath.OpenAI:
       return openaiHandler(req, { params });
-    case ApiPath["302.AI"]:
+    case ApiPath.Ai302:
       return ai302Handler(req, { params });
     default:
       return proxyHandler(req, { params });

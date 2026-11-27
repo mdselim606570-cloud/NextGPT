@@ -1,4 +1,4 @@
-import { extractMcpJson } from "../../src/app/mcp/utils";
+import { extractMcpJson } from "../../src/features/mcp/utils";
 
 describe("extractMcpJson", () => {
   test("extracts the client id and parsed mcp payload", () => {

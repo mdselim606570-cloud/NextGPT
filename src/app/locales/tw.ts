@@ -1,6 +1,6 @@
-import { getClientConfig } from "../config/client";
+import { getClientConfig } from "@/config/client";
 import { SubmitKey } from "../store/config";
-import { SAAS_CHAT_UTM_URL } from "@/app/constant";
+import { SAAS_CHAT_UTM_URL } from "@/constants";
 const isApp = !!getClientConfig()?.isApp;
 
 const tw = {

@@ -18,7 +18,7 @@ import ReloadButtonIcon from "../../icons/reload.svg";
 import Locale from "../../locales";
 import { Modal, showToast } from "../ui/ui-lib";
 import { copyToClipboard, downloadAs } from "../../utils";
-import { Path, ApiPath, REPO_URL } from "@/app/constant";
+import { Path, ApiPath, REPO_URL } from "@/constants";
 import { Loading } from "../layout/home";
 import styles from "./artifacts.module.scss";
 

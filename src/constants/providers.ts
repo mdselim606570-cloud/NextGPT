@@ -14,7 +14,7 @@ export enum ServiceProvider {
   ChatGLM = "ChatGLM",
   DeepSeek = "DeepSeek",
   SiliconFlow = "SiliconFlow",
-  "302.AI" = "302.AI",
+  Ai302 = "302.AI",
 }
 
 // Google API safety settings, see https://ai.google.dev/gemini-api/docs/safety-settings
@@ -41,5 +41,5 @@ export enum ModelProvider {
   ChatGLM = "ChatGLM",
   DeepSeek = "DeepSeek",
   SiliconFlow = "SiliconFlow",
-  "302.AI" = "302.AI",
+  Ai302 = "302.AI",
 }

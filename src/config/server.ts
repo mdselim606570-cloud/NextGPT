@@ -1,6 +1,6 @@
 import md5 from "spark-md5";
 import { DEFAULT_MODELS, DEFAULT_GA_ID } from "@/constants";
-import { isGPT4Model } from "../utils/model";
+import { isGPT4Model } from "@/app/utils/model";
 
 declare global {
   namespace NodeJS {

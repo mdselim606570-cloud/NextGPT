@@ -1,4 +1,4 @@
-import { isMcpJson } from "../../src/app/mcp/utils";
+import { isMcpJson } from "../../src/features/mcp/utils";
 
 describe("isMcpJson", () => {
   test("matches a ```json:mcp fenced block and returns the match", () => {

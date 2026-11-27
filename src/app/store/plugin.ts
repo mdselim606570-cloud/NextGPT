@@ -2,7 +2,7 @@ import OpenAPIClientAxios from "openapi-client-axios";
 import { StoreKey } from "@/constants";
 import { nanoid } from "nanoid";
 import { createPersistStore } from "../utils/store";
-import { getClientConfig } from "../config/client";
+import { getClientConfig } from "@/config/client";
 import yaml from "js-yaml";
 import { adapter, getOperationId } from "../utils";
 import { useAccessStore } from "./access";

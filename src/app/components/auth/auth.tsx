@@ -10,7 +10,7 @@ import Arrow from "../../icons/arrow.svg";
 import Logo from "../../icons/logo.svg";
 import { useMobileScreen } from "@/app/utils";
 import BotIcon from "../../icons/nextgpt-bot.svg";
-import { getClientConfig } from "../../config/client";
+import { getClientConfig } from "@/config/client";
 import { PasswordInput } from "../ui/ui-lib";
 import LeftIcon from "@/app/icons/left.svg";
 import { safeLocalStorage } from "@/app/utils/storage";

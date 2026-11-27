@@ -35,7 +35,7 @@ import { toBlob, toPng } from "html-to-image";
 
 import { prettyObject } from "../../utils/format";
 import { EXPORT_MESSAGE_CLASS_NAME } from "@/constants";
-import { getClientConfig } from "../../config/client";
+import { getClientConfig } from "@/config/client";
 import { type ClientApi, getClientApi } from "../../client/api";
 import { getMessageTextContent } from "../../utils";
 import { MaskAvatar } from "../forms/mask";

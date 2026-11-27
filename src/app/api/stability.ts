@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSideConfig } from "@/app/config/server";
-import { ModelProvider, STABILITY_BASE_URL } from "@/app/constant";
+import { getServerSideConfig } from "@/config/server";
+import { ModelProvider, STABILITY_BASE_URL } from "@/constants";
 import { auth } from "@/app/api/auth";
 
 export async function handle(

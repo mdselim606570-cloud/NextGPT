@@ -114,7 +114,7 @@ import { useMaskStore } from "../../store/mask";
 import { ChatCommandPrefix, useChatCommand, useCommand } from "../../command";
 import { prettyObject } from "../../utils/format";
 import { ExportMessageModal } from "../features/exporter";
-import { getClientConfig } from "../../config/client";
+import { getClientConfig } from "@/config/client";
 import { useAllModels } from "../../utils/hooks";
 import { ClientApi, MultimodalContent } from "../../client/api";
 import { createTTSPlayer } from "../../utils/audio";
@@ -124,7 +124,7 @@ import { isEmpty } from "lodash-es";
 import { getModelProvider } from "../../utils/model";
 import { RealtimeChat } from "@/app/components/realtime-chat";
 import clsx from "clsx";
-import { getAvailableClientsCount, isMcpEnabled } from "../../mcp/actions";
+import { getAvailableClientsCount, isMcpEnabled } from "@/features/mcp/actions";
 
 let _localStorage: ReturnType<typeof safeLocalStorage> | null = null;
 function getLocalStorage() {
@@ -993,7 +993,7 @@ export function ShortcutKeyModal(props: { onClose: () => void }) {
   );
 }
 
-function _Chat() {
+function ChatView() {
   type RenderMessage = ChatMessage & { preview?: boolean };
 
   const chatStore = useChatStore();
@@ -2174,5 +2174,5 @@ function _Chat() {
 export function Chat() {
   const chatStore = useChatStore();
   const session = chatStore.currentSession();
-  return <_Chat key={session.id}></_Chat>;
+  return <ChatView key={session.id}></ChatView>;
 }

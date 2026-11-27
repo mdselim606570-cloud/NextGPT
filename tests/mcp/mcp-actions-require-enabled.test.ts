@@ -12,7 +12,7 @@ import {
   restartAllClients,
   executeMcpAction,
   getMcpConfigFromFile,
-} from "../../src/app/mcp/actions";
+} from "../../src/features/mcp/actions";
 
 // Regression coverage for the unauthenticated MCP server actions: every one of
 // these functions is a Next.js Server Action, callable directly over HTTP with

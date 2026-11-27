@@ -82,7 +82,7 @@ import { ErrorBoundary } from "../chat/error";
 import { InputRange } from "../ui/input-range";
 import { useNavigate } from "react-router-dom";
 import { Avatar, AvatarPicker } from "../ui/emoji";
-import { getClientConfig } from "../../config/client";
+import { getClientConfig } from "@/config/client";
 import { useSyncStore } from "../../store/sync";
 import { nanoid } from "nanoid";
 import { useMaskStore } from "../../store/mask";
@@ -1459,7 +1459,7 @@ export function Settings() {
     </>
   );
 
-  const ai302ConfigComponent = accessStore.provider === ServiceProvider["302.AI"] && (
+  const ai302ConfigComponent = accessStore.provider === ServiceProvider.Ai302 && (
     <>
       <ListItem
           title={Locale.Settings.Access.AI302.Endpoint.Title}

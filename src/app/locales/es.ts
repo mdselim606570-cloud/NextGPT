@@ -1,7 +1,7 @@
 import { SubmitKey } from "../store/config";
 import type { PartialLocaleType } from "./index";
-import { getClientConfig } from "../config/client";
-import { SAAS_CHAT_UTM_URL } from "@/app/constant";
+import { getClientConfig } from "@/config/client";
+import { SAAS_CHAT_UTM_URL } from "@/constants";
 const isApp = !!getClientConfig()?.isApp;
 
 const es: PartialLocaleType = {

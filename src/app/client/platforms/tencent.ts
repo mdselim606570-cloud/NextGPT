@@ -1,5 +1,5 @@
 "use client";
-import { ApiPath, TENCENT_BASE_URL } from "@/app/constant";
+import { ApiPath, TENCENT_BASE_URL } from "@/constants";
 import { useAccessStore, useAppConfig, useChatStore } from "@/app/store";
 
 import {
@@ -16,7 +16,7 @@ import {
   fetchEventSource,
 } from "@fortaine/fetch-event-source";
 import { prettyObject } from "@/app/utils/format";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import {
   getMessageTextContent,
   isVisionModel,

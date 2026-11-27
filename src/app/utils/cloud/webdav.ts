@@ -1,4 +1,4 @@
-import { STORAGE_KEY } from "@/app/constant";
+import { STORAGE_KEY } from "@/constants";
 import { SyncStore } from "@/app/store/sync";
 
 export type WebDAVConfig = SyncStore["webdav"];

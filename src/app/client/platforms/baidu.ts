@@ -1,5 +1,5 @@
 "use client";
-import { ApiPath, Baidu, BAIDU_BASE_URL } from "@/app/constant";
+import { ApiPath, Baidu, BAIDU_BASE_URL } from "@/constants";
 import { useAccessStore, useAppConfig, useChatStore } from "@/app/store";
 import { getAccessToken } from "@/app/utils/baidu";
 
@@ -17,7 +17,7 @@ import {
   fetchEventSource,
 } from "@fortaine/fetch-event-source";
 import { prettyObject } from "@/app/utils/format";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import { getMessageTextContent, getTimeoutMSByModel } from "@/app/utils";
 import { fetch } from "@/app/utils/stream";
 

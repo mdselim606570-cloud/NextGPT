@@ -31,7 +31,7 @@ export enum ApiPath {
   ChatGLM = "/api/chatglm",
   DeepSeek = "/api/deepseek",
   SiliconFlow = "/api/siliconflow",
-  "302.AI" = "/api/302ai",
+  Ai302 = "/api/302ai",
 }
 
 export enum SlotID {

@@ -5,7 +5,7 @@ import ReturnIcon from "@/app/icons/return.svg";
 import HistoryIcon from "@/app/icons/history.svg";
 import Locale from "@/app/locales";
 
-import { Path, REPO_URL } from "@/app/constant";
+import { Path, REPO_URL } from "@/constants";
 
 import { useNavigate } from "react-router-dom";
 import dynamic from "next/dynamic";

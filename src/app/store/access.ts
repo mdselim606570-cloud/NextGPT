@@ -20,7 +20,7 @@ import {
   AI302_BASE_URL,
 } from "@/constants";
 import { getHeaders } from "../client/api";
-import { getClientConfig } from "../config/client";
+import { getClientConfig } from "@/config/client";
 import { createPersistStore } from "../utils/store";
 import { ensure } from "../utils/clone";
 import { DEFAULT_CONFIG } from "./config";
@@ -60,7 +60,7 @@ const DEFAULT_SILICONFLOW_URL = isApp
   ? SILICONFLOW_BASE_URL
   : ApiPath.SiliconFlow;
 
-const DEFAULT_AI302_URL = isApp ? AI302_BASE_URL : ApiPath["302.AI"];
+const DEFAULT_AI302_URL = isApp ? AI302_BASE_URL : ApiPath.Ai302;
 
 const DEFAULT_ACCESS_STATE = {
   accessCode: "",

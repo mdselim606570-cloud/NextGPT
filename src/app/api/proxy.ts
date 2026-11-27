@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSideConfig } from "@/app/config/server";
+import { getServerSideConfig } from "@/config/server";
 
 export async function handle(
   req: NextRequest,

@@ -1,6 +1,6 @@
 import md5 from "spark-md5";
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSideConfig } from "@/app/config/server";
+import { getServerSideConfig } from "@/config/server";
 
 async function handle(req: NextRequest, res: NextResponse) {
   const serverConfig = getServerSideConfig();

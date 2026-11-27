@@ -5,7 +5,7 @@ import {
   MOONSHOT_BASE_URL,
   Moonshot,
   REQUEST_TIMEOUT_MS,
-} from "@/app/constant";
+} from "@/constants";
 import {
   useAccessStore,
   useAppConfig,
@@ -21,7 +21,7 @@ import {
   LLMModel,
   SpeechOptions,
 } from "../api";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import { getMessageTextContent } from "@/app/utils";
 import { RequestPayload } from "./openai";
 import { fetch } from "@/app/utils/stream";

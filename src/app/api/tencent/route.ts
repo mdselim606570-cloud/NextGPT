@@ -1,5 +1,5 @@
-import { getServerSideConfig } from "@/app/config/server";
-import { TENCENT_BASE_URL, ModelProvider } from "@/app/constant";
+import { getServerSideConfig } from "@/config/server";
+import { TENCENT_BASE_URL, ModelProvider } from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/app/api/auth";

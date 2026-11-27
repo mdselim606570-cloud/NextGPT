@@ -5,7 +5,7 @@ import { ListItem, Select, PasswordInput } from "@/app/components/ui/ui-lib";
 
 import { InputRange } from "@/app/components/ui/input-range";
 import { Voice } from "rt-client";
-import { ServiceProvider } from "@/app/constant";
+import { ServiceProvider } from "@/constants";
 
 const providers = [ServiceProvider.OpenAI, ServiceProvider.Azure];
 

@@ -1,4 +1,4 @@
-import { getClientConfig } from "../config/client";
+import { getClientConfig } from "@/config/client";
 import { ApiPath, STORAGE_KEY, StoreKey } from "@/constants";
 import { createPersistStore } from "../utils/store";
 import {

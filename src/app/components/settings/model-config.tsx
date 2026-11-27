@@ -1,4 +1,4 @@
-import { ServiceProvider } from "@/app/constant";
+import { ServiceProvider } from "@/constants";
 import { ModalConfigValidator, ModelConfig } from "../../store";
 
 import Locale from "../../locales";

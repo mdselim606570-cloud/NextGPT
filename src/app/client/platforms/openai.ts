@@ -8,7 +8,7 @@ import {
   Azure,
   REQUEST_TIMEOUT_MS,
   ServiceProvider,
-} from "@/app/constant";
+} from "@/constants";
 import {
   ChatMessageTool,
   useAccessStore,
@@ -36,7 +36,7 @@ import {
   SpeechOptions,
 } from "../api";
 import Locale from "../../locales";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import {
   getMessageTextContent,
   isVisionModel,

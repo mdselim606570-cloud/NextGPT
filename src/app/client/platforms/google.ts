@@ -1,4 +1,4 @@
-import { ApiPath, Google } from "@/app/constant";
+import { ApiPath, Google } from "@/constants";
 import {
   ChatOptions,
   getHeaders,
@@ -15,8 +15,8 @@ import {
   ChatMessageTool,
 } from "@/app/store";
 import { stream } from "@/app/utils/chat";
-import { getClientConfig } from "@/app/config/client";
-import { GEMINI_BASE_URL } from "@/app/constant";
+import { getClientConfig } from "@/config/client";
+import { GEMINI_BASE_URL } from "@/constants";
 
 import {
   getMessageTextContent,

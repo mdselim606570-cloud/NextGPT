@@ -1,4 +1,4 @@
-import { getClientConfig } from "../../src/app/config/client";
+import { getClientConfig } from "../../src/config/client";
 
 describe("getClientConfig", () => {
   afterEach(() => {

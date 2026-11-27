@@ -2,11 +2,11 @@
 import "./styles/globals.scss";
 import "./styles/markdown.scss";
 import "./styles/highlight.scss";
-import { getClientConfig } from "./config/client";
+import { getClientConfig } from "@/config/client";
 import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleTagManager, GoogleAnalytics } from "@next/third-parties/google";
-import { getServerSideConfig } from "./config/server";
+import { getServerSideConfig } from "@/config/server";
 
 export const metadata: Metadata = {
   title: "nextgpt",

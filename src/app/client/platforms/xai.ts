@@ -1,6 +1,6 @@
 "use client";
 // azure and openai, using same models. so using same LLMApi.
-import { ApiPath, XAI_BASE_URL, XAI } from "@/app/constant";
+import { ApiPath, XAI_BASE_URL, XAI } from "@/constants";
 import {
   useAccessStore,
   useAppConfig,
@@ -16,7 +16,7 @@ import {
   LLMModel,
   SpeechOptions,
 } from "../api";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import { getTimeoutMSByModel } from "@/app/utils";
 import { preProcessImageContent } from "@/app/utils/chat";
 import { RequestPayload } from "./openai";

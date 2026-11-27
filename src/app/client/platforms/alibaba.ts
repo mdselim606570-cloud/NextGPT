@@ -1,5 +1,5 @@
 "use client";
-import { ApiPath, Alibaba, ALIBABA_BASE_URL } from "@/app/constant";
+import { ApiPath, Alibaba, ALIBABA_BASE_URL } from "@/constants";
 import {
   useAccessStore,
   useAppConfig,
@@ -20,7 +20,7 @@ import {
   MultimodalContent,
   MultimodalContentForAlibaba,
 } from "../api";
-import { getClientConfig } from "@/app/config/client";
+import { getClientConfig } from "@/config/client";
 import {
   getMessageTextContent,
   getMessageTextContentWithoutThinking,

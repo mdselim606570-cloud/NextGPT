@@ -1,4 +1,4 @@
-import tauriConfig from "../../../src-tauri/tauri.conf.json";
+import tauriConfig from "../../src-tauri/tauri.conf.json";
 import { DEFAULT_INPUT_TEMPLATE } from "@/constants";
 
 export const getBuildConfig = () => {
