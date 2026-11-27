@@ -1,6 +1,6 @@
-import { getMessageTextContent } from "../utils/message";
-import { trimTopic } from "../utils/dom";
-import { isDalle3 } from "../utils/model-detect";
+import { getMessageTextContent } from "@/app/utils/message";
+import { trimTopic } from "@/app/utils/dom";
+import { isDalle3 } from "@/app/utils/model-detect";
 import { safeLocalStorage } from "@/lib/storage/storage";
 
 import { indexedDBStorage } from "@/app/utils/indexedDB-storage";
@@ -9,9 +9,9 @@ import type {
   ClientApi,
   MultimodalContent,
   RequestMessage,
-} from "../client/api";
-import { getClientApi } from "../client/api";
-import { ChatControllerPool } from "../client/controller";
+} from "@/app/client/api";
+import { getClientApi } from "@/app/client/api";
+import { ChatControllerPool } from "@/app/client/controller";
 import { showToast } from "@/components/ui/ui-lib";
 import {
   DEFAULT_INPUT_TEMPLATE,
@@ -26,14 +26,15 @@ import {
   StoreKey,
   SUMMARIZE_MODEL,
 } from "@/constants";
-import Locale, { getLang } from "../locales";
-import { prettyObject } from "../utils/format";
-import { createPersistStore } from "../utils/store";
-import { estimateTokenLength } from "../utils/token";
-import { ModelConfig, ModelType, useAppConfig } from "./config";
-import { useAccessStore } from "./access";
-import { collectModelsWithDefaultModel } from "../utils/model";
-import { createEmptyMask, Mask } from "./mask";
+import Locale, { getLang } from "@/app/locales";
+import { prettyObject } from "@/app/utils/format";
+import { createPersistStore } from "@/app/utils/store";
+import { estimateTokenLength } from "@/app/utils/token";
+import { ModelConfig, ModelType, useAppConfig } from "@/app/store/config";
+import { useAccessStore } from "@/app/store/access";
+import { collectModelsWithDefaultModel } from "@/app/utils/model";
+import { createEmptyMask, Mask, DEFAULT_TOPIC } from "@/app/store/mask";
+export { DEFAULT_TOPIC };
 import { executeMcpAction, getAllTools, isMcpEnabled } from "@/features/mcp/actions";
 import { extractMcpJson, isMcpJson } from "@/features/mcp/utils";
 
@@ -99,7 +100,6 @@ export interface ChatSession {
   mask: Mask;
 }
 
-export const DEFAULT_TOPIC = Locale.Store.DefaultTopic;
 export const BOT_HELLO: ChatMessage = createMessage({
   role: "assistant",
   content: Locale.Store.BotHello,

@@ -8,7 +8,7 @@ import { ISSUE_URL } from "@/constants";
 import Locale from "@/app/locales";
 import { showConfirm } from "@/components/ui/ui-lib";
 import { useSyncStore } from "@/app/store/sync";
-import { useChatStore } from "@/app/store/chat";
+import { useChatStore } from "@/features/chat/store/chat";
 
 interface IErrorBoundaryState {
   hasError: boolean;

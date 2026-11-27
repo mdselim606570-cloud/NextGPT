@@ -1,4 +1,3 @@
-export * from "./chat";
 export * from "./update";
 export * from "./access";
 export * from "./config";
@@ -9,3 +8,5 @@ export type { Plugin } from "@/features/plugins/store/plugin";
 export type { Prompt } from "@/features/prompts/store/prompt";
 export { usePluginStore, FunctionToolService } from "@/features/plugins/store/plugin";
 export { SearchService, usePromptStore } from "@/features/prompts/store/prompt";
+export type { ChatMessage, ChatMessageTool } from "@/features/chat/store/chat";
+export { useChatStore, createMessage, BOT_HELLO, DEFAULT_TOPIC } from "@/features/chat/store/chat";

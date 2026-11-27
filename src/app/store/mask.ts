@@ -1,10 +1,12 @@
 import { BUILTIN_MASKS } from "../masks";
-import { getLang, Lang } from "../locales";
-import { DEFAULT_TOPIC, ChatMessage } from "./chat";
+import Locale, { getLang, Lang } from "../locales";
+import type { ChatMessage } from "@/features/chat/store/chat";
 import { ModelConfig, useAppConfig } from "./config";
 import { StoreKey } from "@/constants";
 import { nanoid } from "nanoid";
 import { createPersistStore } from "../utils/store";
+
+export const DEFAULT_TOPIC = Locale.Store.DefaultTopic;
 
 export type Mask = {
   id: string;

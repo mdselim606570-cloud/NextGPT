@@ -1,7 +1,7 @@
 import {
   ChatSession,
   useChatStore,
-} from "@/app/store/chat";
+} from "@/features/chat/store/chat";
 import { useAccessStore } from "@/app/store/access";
 import { useAppConfig } from "@/app/store/config";
 import { useMaskStore } from "@/app/store/mask";
