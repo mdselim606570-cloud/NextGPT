@@ -1,0 +1,80 @@
+name: '🐛 বাগ রিপোর্ট'
+description: 'একটি বাগ রিপোর্ট করুন'
+title: '[Bug] '
+labels: ['bug']
+body:
+  - type: dropdown
+    attributes:
+      label: '📦 ডিপ্লয়মেন্ট পদ্ধতি'
+      multiple: true
+      options:
+        - 'অফিশিয়াল ইনস্টলেশন প্যাকেজ'
+        - 'Vercel'
+        - 'Zeabur'
+        - 'Sealos'
+        - 'Netlify'
+        - 'Docker'
+        - 'অন্যান্য'
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: '📌 সংস্করণ'
+    validations:
+      required: true
+  
+  - type: dropdown
+    attributes:
+      label: '💻 অপারেটিং সিস্টেম'
+      multiple: true
+      options:
+        - 'Windows'
+        - 'macOS'
+        - 'Ubuntu'
+        - 'অন্যান্য লিনাক্স'
+        - 'iOS'
+        - 'iPad OS'
+        - 'Android'
+        - 'অন্যান্য'
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: '📌 সিস্টেম সংস্করণ'
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: '🌐 ব্রাউজার'
+      multiple: true
+      options:
+        - 'Chrome'
+        - 'Edge'
+        - 'Safari'
+        - 'Firefox'
+        - 'অন্যান্য'
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: '📌 ব্রাউজার সংস্করণ'
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: '🐛 বাগ বിവরণ'
+      description: বাগের একটি স্বच्छ এবং সুনির্ধারিত বিবরণ, যদি উপরের অপশনটি `অন্যান্য` হয়, তাহলে দয়া করে বিস্তারিত ব্যাখ্যা করুন।
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: '📷 পুনরাবৃত্তি ধাপসমূহ'
+      description: কীভাবে বাগটি পুনরাবৃত্তি করবেন তার একটি স্বচ্ছ এবং সুনির্ধারিত বিবরণ।
+  - type: textarea
+    attributes:
+      label: '🚦 প্রত্যাশিত আচরণ'
+      description: আপনি কী ঘটার প্রত্যাশা করছেন তার একটি স্বচ্ছ এবং সুনির্ধারিত বিবরণ।
+  - type: textarea
+    attributes:
+      label: '📝 অতিরিক্ত তথ্য'
+      description: আপনার সমস্যাকে আরও ব্যাখ্যার প্রয়োজন হলে, অথবা আপনি যে সমস্যাটি দেখছেন সেটি একটি গিস্টে পুনরাবৃত্তি করা যায় না, তাহলে এখানে আরও তথ্য যোগ করুন।
