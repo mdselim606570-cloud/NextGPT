@@ -5,7 +5,7 @@ import {
 import { useAccessStore } from "@/app/store/access";
 import { useAppConfig } from "@/app/store/config";
 import { useMaskStore } from "@/app/store/mask";
-import { usePromptStore } from "@/app/store/prompt";
+import { usePromptStore } from "@/features/prompts/store/prompt";
 import { StoreKey } from "@/constants";
 import { merge } from "./merge";
 

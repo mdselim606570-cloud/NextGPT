@@ -16,7 +16,7 @@ import ConfirmIcon from "../../icons/confirm.svg";
 import ReloadIcon from "../../icons/reload.svg";
 import GithubIcon from "../../icons/github.svg";
 
-import { Plugin, usePluginStore, FunctionToolService } from "../../store/plugin";
+import { Plugin, usePluginStore, FunctionToolService } from "@/features/plugins/store/plugin";
 import {
   PasswordInput,
   List,

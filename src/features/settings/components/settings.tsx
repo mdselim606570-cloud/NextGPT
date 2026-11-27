@@ -77,7 +77,7 @@ import {
   SiliconFlow,
   AI302,
 } from "@/constants";
-import { Prompt, SearchService, usePromptStore } from "@/app/store/prompt";
+import { Prompt, SearchService, usePromptStore } from "@/features/prompts/store/prompt";
 import { ErrorBoundary } from "@/features/chat/components/error";
 import { InputRange } from "@/components/ui/input-range";
 import { useNavigate } from "react-router-dom";

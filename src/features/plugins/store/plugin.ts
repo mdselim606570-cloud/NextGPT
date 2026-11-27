@@ -1,12 +1,12 @@
 import OpenAPIClientAxios from "openapi-client-axios";
 import { StoreKey } from "@/constants";
 import { nanoid } from "nanoid";
-import { createPersistStore } from "../utils/store";
+import { createPersistStore } from "@/app/utils/store";
 import { getClientConfig } from "@/config/client";
 import yaml from "js-yaml";
-import { adapter } from "../utils/network";
-import { getOperationId } from "../utils/api";
-import { useAccessStore } from "./access";
+import { adapter } from "@/app/utils/network";
+import { getOperationId } from "@/app/utils/api";
+import { useAccessStore } from "@/app/store/access";
 
 const isApp = getClientConfig()?.isApp !== false;
 

@@ -83,7 +83,7 @@ import dynamic from "next/dynamic";
 
 import { ChatControllerPool } from "@/app/client/controller";
 import { DalleQuality, DalleStyle, ModelSize } from "@/app/typing";
-import { Prompt, usePromptStore } from "@/app/store/prompt";
+import { Prompt, usePromptStore } from "@/features/prompts/store/prompt";
 import Locale from "@/app/locales";
 
 import { IconButton } from "@/components/ui/button";
