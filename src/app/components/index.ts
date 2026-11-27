@@ -31,8 +31,8 @@ export { Home, Loading, useSwitchTheme, WindowContent } from "./layout/home";
 export { SideBarContainer, useHotKey, useDragSideBar } from "./layout/sidebar";
 
 // Auth
-export { AuthPage } from "./auth/auth";
-export { NewChat } from "./auth/new-chat";
+export { AuthPage } from "@/features/authentication/components/auth";
+export { NewChat } from "@/features/authentication/components/new-chat";
 
 // Forms
 export { MaskPage, MaskAvatar, MaskConfig, ContextPrompts } from "./forms/mask";

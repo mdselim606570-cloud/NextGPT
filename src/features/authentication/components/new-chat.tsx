@@ -4,18 +4,18 @@ import { IconButton } from "@/components/ui/button";
 import { EmojiAvatar } from "@/components/ui/emoji";
 import styles from "./new-chat.module.scss";
 
-import LeftIcon from "../../icons/left.svg";
-import LightningIcon from "../../icons/lightning.svg";
-import EyeIcon from "../../icons/eye.svg";
+import LeftIcon from "@/app/icons/left.svg";
+import LightningIcon from "@/app/icons/lightning.svg";
+import EyeIcon from "@/app/icons/eye.svg";
 
 import { useLocation, useNavigate } from "react-router-dom";
-import { Mask, useMaskStore } from "../../store/mask";
-import Locale from "../../locales";
-import { useAppConfig, useChatStore } from "../../store";
-import { MaskAvatar } from "../forms/mask";
-import { useCommand } from "../../command";
+import { Mask, useMaskStore } from "@/app/store/mask";
+import Locale from "@/app/locales";
+import { useAppConfig, useChatStore } from "@/app/store";
+import { MaskAvatar } from "@/app/components/forms/mask";
+import { useCommand } from "@/app/command";
 import { showConfirm } from "@/components/ui/ui-lib";
-import { BUILTIN_MASK_STORE } from "../../masks";
+import { BUILTIN_MASK_STORE } from "@/app/masks";
 import clsx from "clsx";
 
 function MaskItem(props: { mask: Mask; onClick?: () => void }) {

@@ -24,7 +24,7 @@ import {
 } from "react-router-dom";
 import { SideBar } from "./sidebar";
 import { useAppConfig } from "../../store/config";
-import { AuthPage } from "../auth/auth";
+import { AuthPage } from "@/features/authentication/components/auth";
 import { getClientConfig } from "@/config/client";
 import { type ClientApi, getClientApi } from "../../client/api";
 import { useAccessStore } from "../../store";
@@ -52,7 +52,7 @@ const Chat = dynamic(async () => (await import("../chat/chat")).Chat, {
   loading: () => <Loading noLogo />,
 });
 
-const NewChat = dynamic(async () => (await import("../auth/new-chat")).NewChat, {
+const NewChat = dynamic(async () => (await import("@/features/authentication/components/new-chat")).NewChat, {
   loading: () => <Loading noLogo />,
 });
 

@@ -3,13 +3,13 @@ import { IconButton } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Path, SAAS_CHAT_URL } from "@/constants";
-import { useAccessStore } from "../../store";
-import Locale from "../../locales";
-import Delete from "../../icons/close.svg";
-import Arrow from "../../icons/arrow.svg";
-import Logo from "../../icons/logo.svg";
+import { useAccessStore } from "@/app/store";
+import Locale from "@/app/locales";
+import Delete from "@/app/icons/close.svg";
+import Arrow from "@/app/icons/arrow.svg";
+import Logo from "@/app/icons/logo.svg";
 import { useMobileScreen } from "@/app/utils";
-import BotIcon from "../../icons/nextgpt-bot.svg";
+import BotIcon from "@/app/icons/nextgpt-bot.svg";
 import { getClientConfig } from "@/config/client";
 import { PasswordInput } from "@/components/ui/ui-lib";
 import LeftIcon from "@/app/icons/left.svg";
@@ -17,7 +17,7 @@ import { safeLocalStorage } from "@/lib/storage/storage";
 import {
   trackSettingsPageGuideToCPaymentClick,
   trackAuthorizationPageButtonToCPaymentClick,
-} from "../../utils/auth-settings-events";
+} from "@/app/utils/auth-settings-events";
 import clsx from "clsx";
 
 let _storage: ReturnType<typeof safeLocalStorage> | null = null;
