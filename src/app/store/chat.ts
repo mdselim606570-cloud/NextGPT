@@ -1,8 +1,6 @@
-import {
-  getMessageTextContent,
-  isDalle3,
-  trimTopic,
-} from "../utils";
+import { getMessageTextContent } from "../utils/message";
+import { trimTopic } from "../utils/dom";
+import { isDalle3 } from "../utils/model-detect";
 import { safeLocalStorage } from "@/lib/storage/storage";
 
 import { indexedDBStorage } from "@/app/utils/indexedDB-storage";

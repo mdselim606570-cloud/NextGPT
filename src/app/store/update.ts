@@ -6,7 +6,7 @@ import {
 } from "@/constants";
 import { getClientConfig } from "@/config/client";
 import { createPersistStore } from "../utils/store";
-import { clientUpdate } from "../utils";
+import { clientUpdate } from "@/lib/platform/desktop/tauri";
 import nextgptIcon from "../icons/nextgpt-bot.png";
 import Locale from "../locales";
 import { ClientApi } from "../client/api";

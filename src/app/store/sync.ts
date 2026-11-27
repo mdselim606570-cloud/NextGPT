@@ -8,7 +8,7 @@ import {
   mergeAppState,
   setLocalAppState,
 } from "../utils/sync";
-import { downloadAs, readFromFile } from "../utils";
+import { downloadAs, readFromFile } from "../utils/dom";
 import { showToast } from "@/components/ui/ui-lib";
 import Locale from "../locales";
 import { createSyncClient, ProviderType } from "../utils/cloud";

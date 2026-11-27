@@ -4,7 +4,7 @@ import {
   ServiceProvider,
 } from "@/constants";
 import { VISION_MODEL_REGEXES, EXCLUDE_VISION_MODEL_REGEXES } from "@/constants";
-import { useAccessStore } from "../store";
+import { useAccessStore } from "@/app/store/access";
 import { ModelSize } from "../typing";
 
 export function isVisionModel(model: string) {

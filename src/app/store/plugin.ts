@@ -4,7 +4,8 @@ import { nanoid } from "nanoid";
 import { createPersistStore } from "../utils/store";
 import { getClientConfig } from "@/config/client";
 import yaml from "js-yaml";
-import { adapter, getOperationId } from "../utils";
+import { adapter } from "../utils/network";
+import { getOperationId } from "../utils/api";
 import { useAccessStore } from "./access";
 
 const isApp = getClientConfig()?.isApp !== false;
