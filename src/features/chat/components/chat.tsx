@@ -110,7 +110,7 @@ import {
 } from "@/constants";
 import { Avatar } from "@/components/ui/emoji";
 import { ContextPrompts, MaskAvatar, MaskConfig } from "@/app/components/forms/mask";
-import { useMaskStore } from "@/app/store/mask";
+import { useMaskStore } from "@/features/prompts/store/mask";
 import { ChatCommandPrefix, useChatCommand, useCommand } from "@/app/command";
 import { prettyObject } from "@/app/utils/format";
 import { ExportMessageModal } from "@/app/components/features/exporter";

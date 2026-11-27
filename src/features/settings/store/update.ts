@@ -5,11 +5,11 @@ import {
   StoreKey,
 } from "@/constants";
 import { getClientConfig } from "@/config/client";
-import { createPersistStore } from "../utils/store";
+import { createPersistStore } from "@/app/utils/store";
 import { clientUpdate } from "@/lib/platform/desktop/tauri";
-import nextgptIcon from "../icons/nextgpt-bot.png";
-import Locale from "../locales";
-import { ClientApi } from "../client/api";
+import nextgptIcon from "@/app/icons/nextgpt-bot.png";
+import Locale from "@/app/locales";
+import { ClientApi } from "@/app/client/api";
 
 const ONE_MINUTE = 60 * 1000;
 const isApp = !!getClientConfig()?.isApp;

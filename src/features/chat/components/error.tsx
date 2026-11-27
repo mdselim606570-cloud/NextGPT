@@ -7,7 +7,7 @@ import ResetIcon from "@/app/icons/reload.svg";
 import { ISSUE_URL } from "@/constants";
 import Locale from "@/app/locales";
 import { showConfirm } from "@/components/ui/ui-lib";
-import { useSyncStore } from "@/app/store/sync";
+import { useSyncStore } from "@/features/synchronization/store/sync";
 import { useChatStore } from "@/features/chat/store/chat";
 
 interface IErrorBoundaryState {

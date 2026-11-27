@@ -14,7 +14,7 @@ import Locale from "@/app/locales";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Path } from "@/constants";
 import { MaskAvatar } from "@/app/components/forms/mask";
-import { Mask } from "@/app/store/mask";
+import { Mask } from "@/features/prompts/store/mask";
 import { useRef, useEffect } from "react";
 import { showConfirm } from "@/components/ui/ui-lib";
 import { useMobileScreen } from "@/app/utils";

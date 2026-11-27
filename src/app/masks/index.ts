@@ -1,4 +1,4 @@
-import { Mask } from "../store/mask";
+import { Mask } from "@/features/prompts/store/mask";
 
 import { type BuiltinMask } from "./typing";
 export { type BuiltinMask } from "./typing";

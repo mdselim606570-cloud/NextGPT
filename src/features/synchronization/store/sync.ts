@@ -1,17 +1,17 @@
 import { getClientConfig } from "@/config/client";
 import { ApiPath, STORAGE_KEY, StoreKey } from "@/constants";
-import { createPersistStore } from "../utils/store";
+import { createPersistStore } from "@/app/utils/store";
 import {
   AppState,
   getLocalAppState,
   GetStoreState,
   mergeAppState,
   setLocalAppState,
-} from "../utils/sync";
-import { downloadAs, readFromFile } from "../utils/dom";
+} from "@/app/utils/sync";
+import { downloadAs, readFromFile } from "@/app/utils/dom";
 import { showToast } from "@/components/ui/ui-lib";
-import Locale from "../locales";
-import { createSyncClient, ProviderType } from "../utils/cloud";
+import Locale from "@/app/locales";
+import { createSyncClient, ProviderType } from "@/app/utils/cloud";
 
 export interface WebDavConfig {
   server: string;

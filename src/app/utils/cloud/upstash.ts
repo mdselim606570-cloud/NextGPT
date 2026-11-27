@@ -1,5 +1,5 @@
 import { STORAGE_KEY } from "@/constants";
-import { SyncStore } from "@/app/store/sync";
+import { SyncStore } from "@/features/synchronization/store/sync";
 import { chunks } from "../format";
 
 export type UpstashConfig = SyncStore["upstash"];

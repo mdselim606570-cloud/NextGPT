@@ -19,12 +19,12 @@ import {
   SILICONFLOW_BASE_URL,
   AI302_BASE_URL,
 } from "@/constants";
-import { getHeaders } from "../client/api";
+import { getHeaders } from "@/app/client/api";
 import { getClientConfig } from "@/config/client";
-import { createPersistStore } from "../utils/store";
-import { ensure } from "../utils/clone";
+import { createPersistStore } from "@/app/utils/store";
+import { ensure } from "@/app/utils/clone";
 import { DEFAULT_CONFIG } from "@/features/settings/store/config";
-import { getModelProvider } from "../utils/model";
+import { getModelProvider } from "@/app/utils/model";
 
 let fetchState = 0; // 0 not fetch, 1 fetching, 2 done
 

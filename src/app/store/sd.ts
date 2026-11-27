@@ -9,7 +9,7 @@ import { createPersistStore } from "@/app/utils/store";
 import { nanoid } from "nanoid";
 import { uploadImage, base64Image2Blob } from "@/app/utils/chat";
 import { models, getModelParamBasicData } from "@/app/components/sd/sd-panel";
-import { useAccessStore } from "./access";
+import { useAccessStore } from "@/features/authentication/store/access";
 
 const defaultModel = {
   name: models[0].name,

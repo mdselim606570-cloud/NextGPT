@@ -6,7 +6,7 @@ import { getClientConfig } from "@/config/client";
 import yaml from "js-yaml";
 import { adapter } from "@/app/utils/network";
 import { getOperationId } from "@/app/utils/api";
-import { useAccessStore } from "@/app/store/access";
+import { useAccessStore } from "@/features/authentication/store/access";
 
 const isApp = getClientConfig()?.isApp !== false;
 

@@ -9,7 +9,7 @@ import LightningIcon from "@/app/icons/lightning.svg";
 import EyeIcon from "@/app/icons/eye.svg";
 
 import { useLocation, useNavigate } from "react-router-dom";
-import { Mask, useMaskStore } from "@/app/store/mask";
+import { Mask, useMaskStore } from "@/features/prompts/store/mask";
 import Locale from "@/app/locales";
 import { useAppConfig, useChatStore } from "@/app/store";
 import { MaskAvatar } from "@/app/components/forms/mask";

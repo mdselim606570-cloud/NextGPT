@@ -13,7 +13,7 @@ import EyeIcon from "../../icons/eye.svg";
 import CopyIcon from "../../icons/copy.svg";
 import DragIcon from "../../icons/drag.svg";
 
-import { DEFAULT_MASK_AVATAR, Mask, useMaskStore } from "../../store/mask";
+import { DEFAULT_MASK_AVATAR, Mask, useMaskStore } from "@/features/prompts/store/mask";
 import {
   ChatMessage,
   createMessage,

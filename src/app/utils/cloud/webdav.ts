@@ -1,5 +1,5 @@
 import { STORAGE_KEY } from "@/constants";
-import { SyncStore } from "@/app/store/sync";
+import { SyncStore } from "@/features/synchronization/store/sync";
 
 export type WebDAVConfig = SyncStore["webdav"];
 export type WebDavClient = ReturnType<typeof createWebDavClient>;
