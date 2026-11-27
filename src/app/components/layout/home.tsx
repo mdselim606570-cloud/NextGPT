@@ -23,7 +23,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { SideBar } from "./sidebar";
-import { useAppConfig } from "../../store/config";
+import { useAppConfig } from "@/features/settings/store/config";
 import { AuthPage } from "@/features/authentication/components/auth";
 import { getClientConfig } from "@/config/client";
 import { type ClientApi, getClientApi } from "../../client/api";

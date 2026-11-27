@@ -1,4 +1,4 @@
-import { SubmitKey } from "../store/config";
+import { SubmitKey } from "@/features/settings/store/config";
 import type { PartialLocaleType } from "./index";
 import { getClientConfig } from "@/config/client";
 import { SAAS_CHAT_UTM_URL } from "@/constants";

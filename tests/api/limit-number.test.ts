@@ -5,7 +5,7 @@ let limitNumber: (x: number, min: number, max: number, def: number) => number;
 beforeAll(async () => {
   // Warm up the import cycle in a working order before loading the target.
   await import("../../src/app/client/api");
-  ({ limitNumber } = await import("../../src/app/store/config"));
+  ({ limitNumber } = await import("../../src/features/settings/store/config"));
 });
 
 describe("limitNumber", () => {

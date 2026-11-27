@@ -1,5 +1,5 @@
-import { LLMModel } from "../client/api";
-import { DalleQuality, DalleStyle, ModelSize } from "../typing";
+import { LLMModel } from "@/app/client/api";
+import { DalleQuality, DalleStyle, ModelSize } from "@/app/typing";
 import { getClientConfig } from "@/config/client";
 import {
   DEFAULT_INPUT_TEMPLATE,
@@ -14,7 +14,7 @@ import {
   StoreKey,
   ServiceProvider,
 } from "@/constants";
-import { createPersistStore } from "../utils/store";
+import { createPersistStore } from "@/app/utils/store";
 import type { Voice } from "rt-client";
 
 export type ModelType = (typeof DEFAULT_MODELS)[number]["name"];

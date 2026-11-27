@@ -1,7 +1,8 @@
 import { BUILTIN_MASKS } from "../masks";
 import Locale, { getLang, Lang } from "../locales";
 import type { ChatMessage } from "@/features/chat/store/chat";
-import { ModelConfig, useAppConfig } from "./config";
+import type { ModelConfig } from "@/features/settings/store/config";
+import { useAppConfig } from "@/features/settings/store/config";
 import { StoreKey } from "@/constants";
 import { nanoid } from "nanoid";
 import { createPersistStore } from "../utils/store";

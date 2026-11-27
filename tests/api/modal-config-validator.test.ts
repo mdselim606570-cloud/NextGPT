@@ -12,7 +12,7 @@ let ModalConfigValidator: {
 beforeAll(async () => {
   // Warm up the import cycle in a working order before loading the target.
   await import("../../src/app/client/api");
-  ({ ModalConfigValidator } = await import("../../src/app/store/config"));
+  ({ ModalConfigValidator } = await import("../../src/features/settings/store/config"));
 });
 
 describe("ModalConfigValidator", () => {

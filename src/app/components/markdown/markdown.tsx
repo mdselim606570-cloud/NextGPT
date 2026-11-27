@@ -22,7 +22,7 @@ import {
 import { useChatStore } from "../../store";
 import { IconButton } from "@/components/ui/button";
 
-import { useAppConfig } from "../../store/config";
+import { useAppConfig } from "@/features/settings/store/config";
 import clsx from "clsx";
 
 export function Mermaid(props: { code: string }) {

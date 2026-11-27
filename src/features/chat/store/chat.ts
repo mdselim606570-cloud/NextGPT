@@ -30,7 +30,7 @@ import Locale, { getLang } from "@/app/locales";
 import { prettyObject } from "@/app/utils/format";
 import { createPersistStore } from "@/app/utils/store";
 import { estimateTokenLength } from "@/app/utils/token";
-import { ModelConfig, ModelType, useAppConfig } from "@/app/store/config";
+import { ModelConfig, ModelType, useAppConfig } from "@/features/settings/store/config";
 import { useAccessStore } from "@/app/store/access";
 import { collectModelsWithDefaultModel } from "@/app/utils/model";
 import { createEmptyMask, Mask, DEFAULT_TOPIC } from "@/app/store/mask";
