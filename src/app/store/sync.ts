@@ -9,7 +9,7 @@ import {
   setLocalAppState,
 } from "../utils/sync";
 import { downloadAs, readFromFile } from "../utils";
-import { showToast } from "../components/ui/ui-lib";
+import { showToast } from "@/shared/ui/ui-lib";
 import Locale from "../locales";
 import { createSyncClient, ProviderType } from "../utils/cloud";
 

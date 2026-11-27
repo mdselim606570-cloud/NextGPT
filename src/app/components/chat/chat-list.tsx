@@ -16,7 +16,7 @@ import { Path } from "@/constants";
 import { MaskAvatar } from "../forms/mask";
 import { Mask } from "../../store/mask";
 import { useRef, useEffect } from "react";
-import { showConfirm } from "../ui/ui-lib";
+import { showConfirm } from "@/shared/ui/ui-lib";
 import { useMobileScreen } from "../../utils";
 import clsx from "clsx";
 

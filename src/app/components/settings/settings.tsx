@@ -30,10 +30,10 @@ import {
   Select,
   showConfirm,
   showToast,
-} from "../ui/ui-lib";
+} from "@/shared/ui/ui-lib";
 import { ModelConfigList } from "./model-config";
 
-import { IconButton } from "../ui/button";
+import { IconButton } from "@/shared/ui/button";
 import {
   SubmitKey,
   useChatStore,
@@ -79,9 +79,9 @@ import {
 } from "@/constants";
 import { Prompt, SearchService, usePromptStore } from "../../store/prompt";
 import { ErrorBoundary } from "../chat/error";
-import { InputRange } from "../ui/input-range";
+import { InputRange } from "@/shared/ui/input-range";
 import { useNavigate } from "react-router-dom";
-import { Avatar, AvatarPicker } from "../ui/emoji";
+import { Avatar, AvatarPicker } from "@/shared/ui/emoji";
 import { getClientConfig } from "@/config/client";
 import { useSyncStore } from "../../store/sync";
 import { nanoid } from "nanoid";

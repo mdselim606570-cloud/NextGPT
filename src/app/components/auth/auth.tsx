@@ -1,5 +1,5 @@
 import styles from "./auth.module.scss";
-import { IconButton } from "../ui/button";
+import { IconButton } from "@/shared/ui/button";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Path, SAAS_CHAT_URL } from "@/constants";
@@ -11,7 +11,7 @@ import Logo from "../../icons/logo.svg";
 import { useMobileScreen } from "@/app/utils";
 import BotIcon from "../../icons/nextgpt-bot.svg";
 import { getClientConfig } from "@/config/client";
-import { PasswordInput } from "../ui/ui-lib";
+import { PasswordInput } from "@/shared/ui/ui-lib";
 import LeftIcon from "@/app/icons/left.svg";
 import { safeLocalStorage } from "@/app/utils/storage";
 import {

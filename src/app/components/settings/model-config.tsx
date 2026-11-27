@@ -2,8 +2,8 @@ import { ServiceProvider } from "@/constants";
 import { ModalConfigValidator, ModelConfig } from "../../store";
 
 import Locale from "../../locales";
-import { InputRange } from "../ui/input-range";
-import { ListItem, Select } from "../ui/ui-lib";
+import { InputRange } from "@/shared/ui/input-range";
+import { ListItem, Select } from "@/shared/ui/ui-lib";
 import { useAllModels } from "../../utils/hooks";
 import { groupBy } from "lodash-es";
 import styles from "./model-config.module.scss";

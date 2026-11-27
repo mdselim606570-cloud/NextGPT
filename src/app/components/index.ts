@@ -1,7 +1,7 @@
 // UI primitives
-export { IconButton, type ButtonType } from "./ui/button";
-export { InputRange } from "./ui/input-range";
-export { Avatar, AvatarPicker, getEmojiUrl } from "./ui/emoji";
+export { IconButton, type ButtonType } from "@/shared/ui/button";
+export { InputRange } from "@/shared/ui/input-range";
+export { Avatar, AvatarPicker, getEmojiUrl } from "@/shared/ui/emoji";
 export {
   Popover,
   Card,
@@ -12,7 +12,7 @@ export {
   showConfirm,
   PasswordInput,
   Selector,
-} from "./ui/ui-lib";
+} from "@/shared/ui/ui-lib";
 
 // Chat
 export { Chat } from "./chat/chat";

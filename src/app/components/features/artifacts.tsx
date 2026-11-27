@@ -7,7 +7,7 @@ import {
   useImperativeHandle,
 } from "react";
 import { useParams } from "react-router";
-import { IconButton } from "../ui/button";
+import { IconButton } from "@/shared/ui/button";
 import { nanoid } from "nanoid";
 import ExportIcon from "../../icons/share.svg";
 import CopyIcon from "../../icons/copy.svg";
@@ -16,7 +16,7 @@ import GithubIcon from "../../icons/github.svg";
 import LoadingButtonIcon from "../../icons/loading.svg";
 import ReloadButtonIcon from "../../icons/reload.svg";
 import Locale from "../../locales";
-import { Modal, showToast } from "../ui/ui-lib";
+import { Modal, showToast } from "@/shared/ui/ui-lib";
 import { copyToClipboard, downloadAs } from "../../utils";
 import { Path, ApiPath, REPO_URL } from "@/constants";
 import { Loading } from "../layout/home";

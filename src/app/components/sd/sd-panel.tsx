@@ -1,7 +1,7 @@
 import styles from "./sd-panel.module.scss";
 import React from "react";
-import { Select } from "@/app/components/ui/ui-lib";
-import { IconButton } from "@/app/components/ui/button";
+import { Select } from "@/shared/ui/ui-lib";
+import { IconButton } from "@/shared/ui/button";
 import Locale from "@/app/locales";
 import { useSdStore } from "@/app/store/sd";
 import clsx from "clsx";

@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { IconButton } from "../ui/button";
+import { IconButton } from "@/shared/ui/button";
 import GithubIcon from "../../icons/github.svg";
 import ResetIcon from "../../icons/reload.svg";
 import { ISSUE_URL } from "@/constants";
 import Locale from "../../locales";
-import { showConfirm } from "../ui/ui-lib";
+import { showConfirm } from "@/shared/ui/ui-lib";
 import { useSyncStore } from "../../store/sync";
 import { useChatStore } from "../../store/chat";
 

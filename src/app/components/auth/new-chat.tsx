@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Path, SlotID } from "@/constants";
-import { IconButton } from "../ui/button";
-import { EmojiAvatar } from "../ui/emoji";
+import { IconButton } from "@/shared/ui/button";
+import { EmojiAvatar } from "@/shared/ui/emoji";
 import styles from "./new-chat.module.scss";
 
 import LeftIcon from "../../icons/left.svg";
@@ -14,7 +14,7 @@ import Locale from "../../locales";
 import { useAppConfig, useChatStore } from "../../store";
 import { MaskAvatar } from "../forms/mask";
 import { useCommand } from "../../command";
-import { showConfirm } from "../ui/ui-lib";
+import { showConfirm } from "@/shared/ui/ui-lib";
 import { BUILTIN_MASK_STORE } from "../../masks";
 import clsx from "clsx";
 

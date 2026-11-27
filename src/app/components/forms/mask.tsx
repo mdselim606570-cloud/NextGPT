@@ -1,4 +1,4 @@
-import { IconButton } from "../ui/button";
+import { IconButton } from "@/shared/ui/button";
 import { ErrorBoundary } from "../chat/error";
 
 import styles from "./mask.module.scss";
@@ -31,8 +31,8 @@ import {
   Popover,
   Select,
   showConfirm,
-} from "../ui/ui-lib";
-import { Avatar, AvatarPicker } from "../ui/emoji";
+} from "@/shared/ui/ui-lib";
+import { Avatar, AvatarPicker } from "@/shared/ui/emoji";
 import Locale, { AllLangs, ALL_LANG_OPTIONS, Lang } from "../../locales";
 import { useNavigate } from "react-router-dom";
 

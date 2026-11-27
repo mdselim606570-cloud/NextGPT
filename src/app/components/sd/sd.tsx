@@ -2,7 +2,7 @@ import chatStyles from "@/app/components/chat/chat.module.scss";
 import styles from "@/app/components/sd/sd.module.scss";
 import homeStyles from "@/app/components/layout/home.module.scss";
 
-import { IconButton } from "@/app/components/ui/button";
+import { IconButton } from "@/shared/ui/button";
 import ReturnIcon from "@/app/icons/return.svg";
 import Locale from "@/app/locales";
 import { Path } from "@/constants";
@@ -31,7 +31,7 @@ import {
   showConfirm,
   showImageModal,
   showModal,
-} from "@/app/components/ui/ui-lib";
+} from "@/shared/ui/ui-lib";
 import { removeImage } from "@/app/utils/chat";
 import { SideBar } from "./sd-sidebar";
 import { WindowContent } from "@/app/components/layout/home";

@@ -2,7 +2,7 @@ import { useDebouncedCallback } from "use-debounce";
 import OpenAPIClientAxios from "openapi-client-axios";
 import yaml from "js-yaml";
 import { PLUGINS_REPO_URL } from "@/constants";
-import { IconButton } from "../ui/button";
+import { IconButton } from "@/shared/ui/button";
 import { ErrorBoundary } from "../chat/error";
 
 import styles from "./mask.module.scss";
@@ -24,7 +24,7 @@ import {
   Modal,
   showConfirm,
   showToast,
-} from "../ui/ui-lib";
+} from "@/shared/ui/ui-lib";
 import Locale from "../../locales";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
