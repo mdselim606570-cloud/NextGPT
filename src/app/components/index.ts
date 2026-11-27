@@ -49,4 +49,4 @@ export { MarkdownContent, Mermaid, PreCode } from "./markdown/markdown";
 // Subdirectories with their own index
 export * from "./sd";
 export * from "./realtime-chat";
-export * from "./voice-print";
+export * from "@/features/voice/components";
