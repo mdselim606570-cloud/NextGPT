@@ -84,7 +84,7 @@ import dynamic from "next/dynamic";
 import { ChatControllerPool } from "@/app/client/controller";
 import { DalleQuality, DalleStyle, ModelSize } from "@/app/typing";
 import { Prompt, usePromptStore } from "@/features/prompts/store/prompt";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 
 import { IconButton } from "@/components/ui/button";
 import styles from "./chat.module.scss";

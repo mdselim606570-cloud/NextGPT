@@ -1,6 +1,6 @@
 import { RealtimeConfig } from "@/app/store";
 
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { ListItem, Select, PasswordInput } from "@/components/ui/ui-lib";
 
 import { InputRange } from "@/components/ui/input-range";

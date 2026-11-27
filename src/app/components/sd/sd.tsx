@@ -4,7 +4,7 @@ import homeStyles from "@/app/components/layout/home.module.scss";
 
 import { IconButton } from "@/components/ui/button";
 import ReturnIcon from "@/app/icons/return.svg";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { Path } from "@/constants";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { IconButton } from "@/components/ui/button";
 import CloseIcon from "@/app/icons/close.svg";
 import EyeIcon from "@/app/icons/eye.svg";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { Path } from "@/constants";
 
 import { useChatStore } from "@/app/store";

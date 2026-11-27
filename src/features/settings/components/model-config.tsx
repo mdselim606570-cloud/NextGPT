@@ -1,6 +1,6 @@
 import { ServiceProvider } from "@/constants";
 import { ModalConfigValidator, ModelConfig } from "@/app/store";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { InputRange } from "@/components/ui/input-range";
 import { ListItem, Select } from "@/components/ui/ui-lib";
 import { useAllModels } from "@/app/utils/hooks";

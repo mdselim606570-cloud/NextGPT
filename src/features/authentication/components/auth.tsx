@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Path, SAAS_CHAT_URL } from "@/constants";
 import { useAccessStore } from "@/app/store";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import Delete from "@/app/icons/close.svg";
 import Arrow from "@/app/icons/arrow.svg";
 import Logo from "@/app/icons/logo.svg";

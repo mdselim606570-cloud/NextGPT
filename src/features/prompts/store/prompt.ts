@@ -1,7 +1,7 @@
 import Fuse from "fuse.js";
 import { nanoid } from "nanoid";
 import { StoreKey } from "@/constants";
-import { getLang } from "@/app/locales";
+import { getLang } from "@/i18n/locales";
 import { createPersistStore } from "@/app/utils/store";
 
 export interface Prompt {

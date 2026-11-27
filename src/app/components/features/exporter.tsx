@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ChatMessage, useAppConfig, useChatStore } from "../../store";
-import Locale from "../../locales";
+import Locale from "@/i18n/locales";
 import styles from "./exporter.module.scss";
 import {
   List,

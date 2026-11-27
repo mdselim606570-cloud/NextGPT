@@ -13,7 +13,7 @@ import McpIcon from "../../icons/mcp.svg";
 import DragIcon from "../../icons/drag.svg";
 import DiscoveryIcon from "../../icons/discovery.svg";
 
-import Locale from "../../locales";
+import Locale from "@/i18n/locales";
 
 import { useAppConfig, useChatStore } from "../../store";
 

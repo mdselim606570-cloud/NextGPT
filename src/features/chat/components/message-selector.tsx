@@ -4,7 +4,7 @@ import { Updater } from "@/app/typing";
 import { IconButton } from "@/components/ui/button";
 import { Avatar } from "@/components/ui/emoji";
 import { MaskAvatar } from "@/app/components/forms/mask";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 
 import styles from "./message-selector.module.scss";
 import { getMessageTextContent } from "@/app/utils";

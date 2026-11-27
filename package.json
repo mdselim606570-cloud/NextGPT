@@ -3,7 +3,7 @@
   "private": false,
   "license": "mit",
   "scripts": {
-    "mask": "npx tsx src/app/masks/build.ts",
+    "mask": "npx tsx src/i18n/masks/build.ts",
     "mask:watch": "npx watch \"pnpm mask\" src/app/masks",
     "dev": "concurrently -r \"pnpm run mask:watch\" \"next dev\"",
     "build": "pnpm mask && cross-env BUILD_MODE=standalone next build",

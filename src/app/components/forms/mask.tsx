@@ -33,7 +33,7 @@ import {
   showConfirm,
 } from "@/components/ui/ui-lib";
 import { Avatar, AvatarPicker } from "@/components/ui/emoji";
-import Locale, { AllLangs, ALL_LANG_OPTIONS, Lang } from "../../locales";
+import Locale, { AllLangs, ALL_LANG_OPTIONS, Lang } from "@/i18n/locales";
 import { useNavigate } from "react-router-dom";
 
 import chatStyle from "@/features/chat/components/chat.module.scss";
@@ -47,7 +47,7 @@ import {
 import { Updater } from "../../typing";
 import { ModelConfigList } from "@/features/settings/components/model-config";
 import { FileName, Path } from "@/constants";
-import { BUILTIN_MASK_STORE } from "../../masks";
+import { BUILTIN_MASK_STORE } from "@/i18n/masks";
 import {
   DragDropContext,
   Droppable,

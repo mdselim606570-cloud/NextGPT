@@ -48,7 +48,7 @@ import Locale, {
   ALL_LANG_OPTIONS,
   changeLang,
   getLang,
-} from "@/app/locales";
+} from "@/i18n/locales";
 import { copyToClipboard, clientUpdate, semverCompare } from "@/app/utils";
 import Link from "next/link";
 import {

@@ -8,7 +8,7 @@ import { getClientConfig } from "@/config/client";
 import { createPersistStore } from "@/app/utils/store";
 import { clientUpdate } from "@/lib/platform/desktop/tauri";
 import nextgptIcon from "@/app/icons/nextgpt-bot.png";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { ClientApi } from "@/app/client/api";
 
 const ONE_MINUTE = 60 * 1000;

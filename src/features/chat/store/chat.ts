@@ -26,7 +26,7 @@ import {
   StoreKey,
   SUMMARIZE_MODEL,
 } from "@/constants";
-import Locale, { getLang } from "@/app/locales";
+import Locale, { getLang } from "@/i18n/locales";
 import { prettyObject } from "@/app/utils/format";
 import { createPersistStore } from "@/app/utils/store";
 import { estimateTokenLength } from "@/app/utils/token";

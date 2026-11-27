@@ -25,7 +25,7 @@ import {
   showConfirm,
   showToast,
 } from "@/components/ui/ui-lib";
-import Locale from "../../locales";
+import Locale from "@/i18n/locales";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import clsx from "clsx";

@@ -10,7 +10,7 @@ import CancelIcon from "../../app/icons/cancel.svg";
 import MaxIcon from "../../app/icons/max.svg";
 import MinIcon from "../../app/icons/min.svg";
 
-import Locale from "../../app/locales";
+import Locale from "@/i18n/locales";
 
 import { createRoot } from "react-dom/client";
 import React, {

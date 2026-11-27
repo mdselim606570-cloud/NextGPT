@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 import { Path, SlotID } from "@/constants";
 import { ErrorBoundary } from "@/features/chat/components/error";
 
-import { getISOLang, getLang } from "../../locales";
+import { getISOLang, getLang } from "@/i18n/locales";
 
 import {
   HashRouter as Router,

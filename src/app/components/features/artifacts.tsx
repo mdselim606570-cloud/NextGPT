@@ -15,7 +15,7 @@ import DownloadIcon from "../../icons/download.svg";
 import GithubIcon from "../../icons/github.svg";
 import LoadingButtonIcon from "../../icons/loading.svg";
 import ReloadButtonIcon from "../../icons/reload.svg";
-import Locale from "../../locales";
+import Locale from "@/i18n/locales";
 import { Modal, showToast } from "@/components/ui/ui-lib";
 import { copyToClipboard, downloadAs } from "../../utils";
 import { Path, ApiPath, REPO_URL } from "@/constants";

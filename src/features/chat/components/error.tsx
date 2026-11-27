@@ -5,7 +5,7 @@ import { IconButton } from "@/components/ui/button";
 import GithubIcon from "@/app/icons/github.svg";
 import ResetIcon from "@/app/icons/reload.svg";
 import { ISSUE_URL } from "@/constants";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { showConfirm } from "@/components/ui/ui-lib";
 import { useSyncStore } from "@/features/synchronization/store/sync";
 import { useChatStore } from "@/features/chat/store/chat";

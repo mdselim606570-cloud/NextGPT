@@ -10,12 +10,12 @@ import EyeIcon from "@/app/icons/eye.svg";
 
 import { useLocation, useNavigate } from "react-router-dom";
 import { Mask, useMaskStore } from "@/features/prompts/store/mask";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { useAppConfig, useChatStore } from "@/app/store";
 import { MaskAvatar } from "@/app/components/forms/mask";
 import { useCommand } from "@/app/command";
 import { showConfirm } from "@/components/ui/ui-lib";
-import { BUILTIN_MASK_STORE } from "@/app/masks";
+import { BUILTIN_MASK_STORE } from "@/i18n/masks";
 import clsx from "clsx";
 
 function MaskItem(props: { mask: Mask; onClick?: () => void }) {

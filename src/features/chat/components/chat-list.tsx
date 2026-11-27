@@ -10,7 +10,7 @@ import {
 
 import { useChatStore } from "@/app/store";
 
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Path } from "@/constants";
 import { MaskAvatar } from "@/app/components/forms/mask";

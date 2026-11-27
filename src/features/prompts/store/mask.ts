@@ -1,5 +1,5 @@
-import { BUILTIN_MASKS } from "@/app/masks";
-import Locale, { getLang, Lang } from "@/app/locales";
+import { BUILTIN_MASKS } from "@/i18n/masks";
+import Locale, { getLang, Lang } from "@/i18n/locales";
 import type { ChatMessage } from "@/features/chat/store/chat";
 import type { ModelConfig } from "@/features/settings/store/config";
 import { useAppConfig } from "@/features/settings/store/config";

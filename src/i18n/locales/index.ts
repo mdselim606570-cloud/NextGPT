@@ -18,7 +18,7 @@ import ko from "./ko";
 import ar from "./ar";
 import bn from "./bn";
 import sk from "./sk";
-import { merge } from "../utils/merge";
+import { merge } from "@/app/utils/merge";
 import { safeLocalStorage } from "@/lib/storage/storage";
 
 import type { LocaleType } from "./cn";

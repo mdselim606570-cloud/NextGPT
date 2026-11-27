@@ -10,7 +10,7 @@ import {
 } from "@/app/utils/sync";
 import { downloadAs, readFromFile } from "@/app/utils/dom";
 import { showToast } from "@/components/ui/ui-lib";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { createSyncClient, ProviderType } from "@/app/utils/cloud";
 
 export interface WebDavConfig {
