@@ -5,6 +5,7 @@ export { type BuiltinMask } from "./typing";
 export { CN_MASKS } from "./cn";
 export { EN_MASKS } from "./en";
 export { TW_MASKS } from "./tw";
+export { BN_MASKS } from "./bn";
 
 export const BUILTIN_MASK_ID = 100000;
 
@@ -33,8 +34,8 @@ if (typeof window != "undefined") {
       return { cn: [], tw: [], en: [] };
     })
     .then((masks) => {
-      const { cn = [], tw = [], en = [] } = masks;
-      return [...cn, ...tw, ...en].map((m) => {
+      const { cn = [], tw = [], en = [], bn = [] } = masks;
+      return [...cn, ...tw, ...en, ...bn].map((m) => {
         BUILTIN_MASKS.push(BUILTIN_MASK_STORE.add(m));
       });
     });
