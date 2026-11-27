@@ -89,7 +89,7 @@ English / [বাংলা](./docs/translations/README_BN.md) / [简体中文](.
 - নতুন v2: প্রম্পট টেমপ্লেটের সাহায্যে চ্যাট টুল তৈরি, শেয়ার এবং ডিবাগ করুন (মাস্ক)
 - [awesome-chatgpt-prompts-zh](https://github.com/PlexPt/awesome-chatgpt-prompts-zh) এবং [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) দ্বারা পরিচালিত meilleures প্রম্পট
 - টোকেন ব্যবহার বাঁচাতে দীর্ঘ কথোপকথন সমর্থনের জন্য চ্যাট historiadores স্বয়ংক্রিয়ভাবে কনপ্রেস করে
-- I18n: ইংরেজি,简体中文,繁体中文,日本語,Français,Español,Italiano,Türkçe,Deutsch,Tiếng Việt,Русский,Čeština,한국어,Indonesia
+- I18n: বাংলা, ইংরেজি,简体中文,繁体中文,日本語,Français,Español,Italiano,Türkçe,Deutsch,Tiếng Việt,Русский,Čeština,한국어,Indonesia
 
 <div align="center">
     

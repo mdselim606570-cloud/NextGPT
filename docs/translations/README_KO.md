@@ -91,7 +91,7 @@
 - v2: 프롬프트 템플릿 기반 도구 생성, 공유, 디버깅 가능
 - 고급 프롬프트 내장 [awesome-chatgpt-prompts-zh](https://github.com/PlexPt/awesome-chatgpt-prompts-zh) and [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts)
 - 긴 대화 내용 자동 압축 저장으로 토큰 절약
-- I18n: English, 简体中文, 繁体中文, 日本語, Français, Español, Italiano, Türkçe, Deutsch, Tiếng Việt, Русский, Čeština, 한국어, Indonesia
+- I18n: English, বাংলা, 简体中文, 繁体中文, 日本語, Français, Español, Italiano, Türkçe, Deutsch, Tiếng Việt, Русский, Čeština, 한국어, Indonesia
 
 <div align="center">
    
