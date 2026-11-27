@@ -75,7 +75,7 @@ import {
   selectOrCopy,
   showPlugins,
 } from "../../utils";
-import { safeLocalStorage } from "../../utils/storage";
+import { safeLocalStorage } from "@/lib/storage/storage";
 
 import { uploadImage as uploadImageRemote } from "@/app/utils/chat";
 
@@ -117,7 +117,7 @@ import { ExportMessageModal } from "../features/exporter";
 import { getClientConfig } from "@/config/client";
 import { useAllModels } from "../../utils/hooks";
 import { ClientApi, MultimodalContent } from "../../client/api";
-import { createTTSPlayer } from "../../utils/audio";
+import { createTTSPlayer } from "@/lib/audio/audio";
 import { MsEdgeTTS, OUTPUT_FORMAT } from "../../utils/ms_edge_tts";
 
 import { isEmpty } from "lodash-es";

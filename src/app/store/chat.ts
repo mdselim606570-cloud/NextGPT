@@ -3,7 +3,7 @@ import {
   isDalle3,
   trimTopic,
 } from "../utils";
-import { safeLocalStorage } from "@/app/utils/storage";
+import { safeLocalStorage } from "@/lib/storage/storage";
 
 import { indexedDBStorage } from "@/app/utils/indexedDB-storage";
 import { nanoid } from "nanoid";

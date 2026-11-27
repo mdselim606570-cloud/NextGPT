@@ -1,4 +1,4 @@
-import { sign, hash as getHash, hex } from "./hmac";
+import { sign, hash as getHash, hex } from "@/lib/crypto/hmac";
 
 // 使用 SHA-256 和 secret 进行 HMAC 加密
 function sha256(message: any, secret: any, encoding?: string) {

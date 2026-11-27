@@ -17,7 +17,7 @@ let hash: (str: string) => string;
 let hashWithSecret: (str: string, secret: string) => string;
 
 beforeAll(async () => {
-  ({ hash, hashWithSecret } = await import("../../src/app/utils/hmac"));
+  ({ hash, hashWithSecret } = await import("@/lib/crypto/hmac"));
 });
 
 describe("hash (SHA-256)", () => {

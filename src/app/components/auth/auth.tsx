@@ -13,7 +13,7 @@ import BotIcon from "../../icons/nextgpt-bot.svg";
 import { getClientConfig } from "@/config/client";
 import { PasswordInput } from "@/shared/ui/ui-lib";
 import LeftIcon from "@/app/icons/left.svg";
-import { safeLocalStorage } from "@/app/utils/storage";
+import { safeLocalStorage } from "@/lib/storage/storage";
 import {
   trackSettingsPageGuideToCPaymentClick,
   trackAuthorizationPageButtonToCPaymentClick,

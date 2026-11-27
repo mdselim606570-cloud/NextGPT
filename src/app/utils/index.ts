@@ -4,20 +4,20 @@ export * from "./dom";
 export * from "./message";
 export * from "./model-detect";
 export * from "./network";
-export * from "./storage";
+export * from "@/lib/storage/storage";
 export * from "./api";
-export * from "./tauri";
+export * from "@/lib/platform/desktop/tauri";
 export * from "./semver";
 
 // Existing submodules
-export * from "./audio";
+export * from "@/lib/audio/audio";
 export * from "./auth-settings-events";
 export * from "./baidu";
 export * from "./chat";
 export * from "./clone";
 export * from "./cloudflare";
 export * from "./format";
-export * from "./hmac";
+export * from "@/lib/crypto/hmac";
 export * from "./hooks";
 export * from "./indexedDB-storage";
 export * from "./merge";

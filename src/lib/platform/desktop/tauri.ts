@@ -1,5 +1,5 @@
 import { showToast } from "@/shared/ui/ui-lib";
-import Locale from "../locales";
+import Locale from "@/app/locales";
 
 export function clientUpdate() {
   // this a wild for updating client app
