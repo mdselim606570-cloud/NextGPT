@@ -83,7 +83,7 @@ export const ALL_LANG_OPTIONS: Record<Lang, string> = {
 };
 
 const LANG_KEY = "lang";
-const DEFAULT_LANG = "en";
+const DEFAULT_LANG = "bn";
 
 const fallbackLang = en;
 if (typeof window !== "undefined") {
