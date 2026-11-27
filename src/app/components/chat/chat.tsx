@@ -122,7 +122,7 @@ import { MsEdgeTTS, OUTPUT_FORMAT } from "../../utils/ms_edge_tts";
 
 import { isEmpty } from "lodash-es";
 import { getModelProvider } from "../../utils/model";
-import { RealtimeChat } from "@/app/components/realtime-chat";
+import { RealtimeChat } from "@/features/realtime/components";
 import clsx from "clsx";
 import { getAvailableClientsCount, isMcpEnabled } from "@/features/mcp/actions";
 

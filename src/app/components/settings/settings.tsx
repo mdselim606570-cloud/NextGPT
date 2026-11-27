@@ -88,7 +88,7 @@ import { nanoid } from "nanoid";
 import { useMaskStore } from "../../store/mask";
 import { ProviderType } from "../../utils/cloud";
 import { TTSConfigList } from "./tts-config";
-import { RealtimeConfigList } from "@/app/components/realtime-chat/realtime-config";
+import { RealtimeConfigList } from "@/features/realtime/components/realtime-config";
 
 function EditPromptModal(props: { id: string; onClose: () => void }) {
   const promptStore = usePromptStore();
