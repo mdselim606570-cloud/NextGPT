@@ -8,7 +8,7 @@ import { getBearerToken } from "@/app/client/api";
 import { createPersistStore } from "@/app/utils/store";
 import { nanoid } from "nanoid";
 import { uploadImage, base64Image2Blob } from "@/app/utils/chat";
-import { models, getModelParamBasicData } from "@/app/components/sd/sd-panel";
+import { models, getModelParamBasicData } from "@/app/utils/sd-model";
 import { useAccessStore } from "@/features/authentication/store/access";
 
 const defaultModel = {

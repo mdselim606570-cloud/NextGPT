@@ -19,7 +19,7 @@ import {
 } from "@/app/components/layout/sidebar";
 
 import { getParams, getModelParamBasicData } from "./sd-panel";
-import { useSdStore } from "@/app/store/sd";
+import { useSdStore } from "@/features/image-generation/store/sd";
 import { showToast } from "@/components/ui/ui-lib";
 import { useMobileScreen } from "@/app/utils";
 
