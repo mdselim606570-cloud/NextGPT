@@ -9,6 +9,7 @@
     "build": "pnpm mask && cross-env BUILD_MODE=standalone next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "export": "pnpm mask && cross-env BUILD_MODE=export BUILD_APP=1 next build",
     "export:dev": "concurrently -r \"pnpm mask:watch\"  \"cross-env BUILD_MODE=export BUILD_APP=1 next dev\"",
     "app:dev": "concurrently -r \"pnpm mask:watch\" \"pnpm tauri dev\"",
