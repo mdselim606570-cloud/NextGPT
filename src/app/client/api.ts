@@ -216,6 +216,39 @@ export function validString(x: string): boolean {
   return x?.length > 0;
 }
 
+type AccessStoreState = ReturnType<typeof useAccessStore.getState>;
+
+const PROVIDER_API_KEY_GETTERS: Partial<
+  Record<ServiceProvider, (s: AccessStoreState) => string>
+> = {
+  [ServiceProvider.Google]: (s) => s.googleApiKey,
+  [ServiceProvider.Azure]: (s) => s.azureApiKey,
+  [ServiceProvider.Anthropic]: (s) => s.anthropicApiKey,
+  [ServiceProvider.ByteDance]: (s) => s.bytedanceApiKey,
+  [ServiceProvider.Alibaba]: (s) => s.alibabaApiKey,
+  [ServiceProvider.Moonshot]: (s) => s.moonshotApiKey,
+  [ServiceProvider.XAI]: (s) => s.xaiApiKey,
+  [ServiceProvider.DeepSeek]: (s) => s.deepseekApiKey,
+  [ServiceProvider.ChatGLM]: (s) => s.chatglmApiKey,
+  [ServiceProvider.SiliconFlow]: (s) => s.siliconflowApiKey,
+  [ServiceProvider.Iflytek]: (s) =>
+    s.iflytekApiKey && s.iflytekApiSecret
+      ? s.iflytekApiKey + ":" + s.iflytekApiSecret
+      : "",
+  [ServiceProvider.Ai302]: (s) => s.ai302ApiKey,
+};
+
+function getProviderApiKey(
+  providerName: string | undefined,
+  accessStore: AccessStoreState,
+): string {
+  const getter =
+    providerName != null
+      ? PROVIDER_API_KEY_GETTERS[providerName as ServiceProvider]
+      : undefined;
+  return getter ? getter(accessStore) : accessStore.openaiApiKey;
+}
+
 export function getHeaders(ignoreHeaders: boolean = false) {
   const accessStore = useAccessStore.getState();
   const chatStore = useChatStore.getState();
@@ -246,33 +279,7 @@ export function getHeaders(ignoreHeaders: boolean = false) {
       modelConfig.providerName === ServiceProvider.SiliconFlow;
     const isAI302 = modelConfig.providerName === ServiceProvider.Ai302;
     const isEnabledAccessControl = accessStore.enabledAccessControl();
-    const apiKey = isGoogle
-      ? accessStore.googleApiKey
-      : isAzure
-      ? accessStore.azureApiKey
-      : isAnthropic
-      ? accessStore.anthropicApiKey
-      : isByteDance
-      ? accessStore.bytedanceApiKey
-      : isAlibaba
-      ? accessStore.alibabaApiKey
-      : isMoonshot
-      ? accessStore.moonshotApiKey
-      : isXAI
-      ? accessStore.xaiApiKey
-      : isDeepSeek
-      ? accessStore.deepseekApiKey
-      : isChatGLM
-      ? accessStore.chatglmApiKey
-      : isSiliconFlow
-      ? accessStore.siliconflowApiKey
-      : isIflytek
-      ? accessStore.iflytekApiKey && accessStore.iflytekApiSecret
-        ? accessStore.iflytekApiKey + ":" + accessStore.iflytekApiSecret
-        : ""
-      : isAI302
-      ? accessStore.ai302ApiKey
-      : accessStore.openaiApiKey;
+    const apiKey = getProviderApiKey(modelConfig.providerName, accessStore);
     return {
       isGoogle,
       isAzure,
