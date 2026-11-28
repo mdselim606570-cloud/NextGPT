@@ -4,7 +4,7 @@ set -euo pipefail
 # Bootstrap NextGPT for local development.
 # Installs dependencies, configures environment, and prepares git hooks.
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$ROOT_DIR"
 
 require_cmd() {
@@ -16,6 +16,121 @@ require_cmd() {
 
 require_cmd node
 require_cmd pnpm
+
+ensure_system_deps() {
+  case "$(uname -s)" in
+    Linux)
+      if [ -f /etc/os-release ]; then
+        # shellcheck disable=SC1091
+        . /etc/os-release
+      else
+        echo "⚠️  Cannot determine Linux distribution; skipping system package install."
+        return
+      fi
+      case "$ID" in
+        ubuntu|debian)
+          echo "📦 Installing Tauri system dependencies (apt)..."
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgtk-3-dev \
+            libappindicator3-dev \
+            librsvg2-dev \
+            patchelf \
+            curl \
+            build-essential
+          if sudo apt-get install -y libwebkit2gtk-4.0-dev 2>/dev/null; then
+            :
+          elif sudo apt-get install -y libwebkit2gtk-4.1-dev 2>/dev/null; then
+            :
+            PC_DIR="$(pkg-config --variable=pcfiledir webkit2gtk-4.1)"
+            LIB_DIR="/usr/lib/$(uname -m)-linux-gnu"
+            # Tauri/wry hardcode webkit2gtk-4.0 / javascriptcoregtk-4.0 link names;
+            # on distros shipping only 4.1, add compat shims so the linker resolves them.
+            if [ ! -f "$PC_DIR/javascriptcoregtk-4.0.pc" ]; then
+              sudo tee "$PC_DIR/javascriptcoregtk-4.0.pc" >/dev/null <<'EOF'
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: JavaScriptCoreGTK+
+Description: JavaScriptCoreGTK+ compatibility shim (4.0 -> 4.1)
+Version: 2.52.6
+Requires: glib-2.0 gobject-2.0
+Libs: -L${libdir} -ljavascriptcoregtk-4.1
+Cflags: -I${includedir}/webkitgtk-4.1
+EOF
+            fi
+            if [ ! -f "$PC_DIR/webkit2gtk-4.0.pc" ]; then
+              sudo tee "$PC_DIR/webkit2gtk-4.0.pc" >/dev/null <<'EOF'
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: WebKitGTK
+Description: WebKitGTK compatibility shim (4.0 -> 4.1)
+URL: https://webkitgtk.org
+Version: 2.52.6
+Requires: glib-2.0 gtk+-3.0 libsoup-3.0 javascriptcoregtk-4.1
+Libs: -L${libdir} -lwebkit2gtk-4.1
+Cflags: -I${includedir}/webkitgtk-4.1
+EOF
+            fi
+            sudo ln -sf libjavascriptcoregtk-4.1.so "$LIB_DIR/libjavascriptcoregtk-4.0.so" 2>/dev/null || true
+            sudo ln -sf libwebkit2gtk-4.1.so "$LIB_DIR/libwebkit2gtk-4.0.so" 2>/dev/null || true
+          else
+            echo "⚠️  Could not install a WebKitGTK dev package; install manually."
+          fi
+          ;;
+        centos|rhel|fedora|amzn)
+          echo "📦 Installing Tauri system dependencies (yum/dnf)..."
+          if command -v dnf >/dev/null 2>&1; then
+            sudo dnf install -y \
+              gtk3-devel \
+              webkit2gtk4.0-devel \
+              libappindicator3-devel \
+              librsvg2-devel \
+              patchelf \
+              curl \
+              gcc gcc-c++ make
+          else
+            sudo yum install -y \
+              gtk3-devel \
+              webkit2gtk4.0-devel \
+              libappindicator3-devel \
+              librsvg2-devel \
+              patchelf \
+              curl \
+              gcc gcc-c++ make
+          fi
+          ;;
+        arch)
+          echo "📦 Installing Tauri system dependencies (pacman)..."
+          sudo pacman -Syu --needed --noconfirm \
+            gtk3 \
+            webkit2gtk \
+            libappindicator3 \
+            librsvg \
+            patchelf \
+            curl \
+            base-devel
+          ;;
+        *)
+          echo "⚠️  Unsupported Linux distribution: $ID. Install Tauri deps manually."
+          ;;
+      esac
+      ;;
+    Darwin)
+      if ! xcode-select -p >/dev/null 2>&1; then
+        echo "🍎 Installing Xcode command line tools..."
+        xcode-select --install
+      fi
+      ;;
+  esac
+}
+
+ensure_system_deps
 
 echo "📦 Installing dependencies (pnpm)..."
 pnpm install --frozen-lockfile

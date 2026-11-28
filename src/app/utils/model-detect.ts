@@ -4,7 +4,7 @@ import {
   ServiceProvider,
 } from "@/constants";
 import { VISION_MODEL_REGEXES, EXCLUDE_VISION_MODEL_REGEXES } from "@/constants";
-import { useAccessStore } from "../store";
+import { useAccessStore } from "@/features/authentication/store/access";
 import { ModelSize } from "../typing";
 
 export function isVisionModel(model: string) {
@@ -59,13 +59,15 @@ export function supportsCustomSize(model: string): boolean {
   return getModelSizes(model).length > 0;
 }
 
+const ALWAYS_PLUGIN_PROVIDERS = new Set<ServiceProvider>([
+  ServiceProvider.OpenAI,
+  ServiceProvider.Azure,
+  ServiceProvider.Moonshot,
+  ServiceProvider.ChatGLM,
+]);
+
 export function showPlugins(provider: ServiceProvider, model: string) {
-  if (
-    provider == ServiceProvider.OpenAI ||
-    provider == ServiceProvider.Azure ||
-    provider == ServiceProvider.Moonshot ||
-    provider == ServiceProvider.ChatGLM
-  ) {
+  if (ALWAYS_PLUGIN_PROVIDERS.has(provider)) {
     return true;
   }
   if (provider == ServiceProvider.Anthropic && !model.includes("claude-2")) {

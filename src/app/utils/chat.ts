@@ -4,7 +4,7 @@ import {
   REQUEST_TIMEOUT_MS,
 } from "@/constants";
 import { MultimodalContent, RequestMessage } from "@/app/client/api";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import {
   EventStreamContentType,
   fetchEventSource,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { showToast } from "@/shared/ui/ui-lib";
-import Locale from "../locales";
+import { showToast } from "@/components/ui/ui-lib";
+import Locale from "@/i18n/locales";
 
 export function trimTopic(topic: string) {
   // Fix an issue where double quotes still show in the Indonesian language

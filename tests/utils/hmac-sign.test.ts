@@ -17,7 +17,7 @@ let sign: (key: string | Uint8Array, data: string | Uint8Array) => Uint8Array;
 let hex: (bin: Uint8Array) => string;
 
 beforeAll(async () => {
-  ({ sign, hex } = await import("../../src/app/utils/hmac"));
+  ({ sign, hex } = await import("@/lib/crypto/hmac"));
 });
 
 describe("sign (HMAC-SHA256 raw bytes)", () => {

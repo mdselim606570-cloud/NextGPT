@@ -12,9 +12,9 @@ import { getCSSVar, useMobileScreen } from "../../utils";
 
 import dynamic from "next/dynamic";
 import { Path, SlotID } from "@/constants";
-import { ErrorBoundary } from "../chat/error";
+import { ErrorBoundary } from "@/features/chat/components/error";
 
-import { getISOLang, getLang } from "../../locales";
+import { getISOLang, getLang } from "@/i18n/locales";
 
 import {
   HashRouter as Router,
@@ -23,8 +23,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import { SideBar } from "./sidebar";
-import { useAppConfig } from "../../store/config";
-import { AuthPage } from "../auth/auth";
+import { useAppConfig } from "@/features/settings/store/config";
+import { AuthPage } from "@/features/authentication/components/auth";
 import { getClientConfig } from "@/config/client";
 import { type ClientApi, getClientApi } from "../../client/api";
 import { useAccessStore } from "../../store";
@@ -44,15 +44,15 @@ const Artifacts = dynamic(async () => (await import("../features/artifacts")).Ar
   loading: () => <Loading noLogo />,
 });
 
-const Settings = dynamic(async () => (await import("../settings/settings")).Settings, {
+const Settings = dynamic(async () => (await import("@/features/settings/components/settings")).Settings, {
   loading: () => <Loading noLogo />,
 });
 
-const Chat = dynamic(async () => (await import("../chat/chat")).Chat, {
+const Chat = dynamic(async () => (await import("@/features/chat/components/chat")).Chat, {
   loading: () => <Loading noLogo />,
 });
 
-const NewChat = dynamic(async () => (await import("../auth/new-chat")).NewChat, {
+const NewChat = dynamic(async () => (await import("@/features/authentication/components/new-chat")).NewChat, {
   loading: () => <Loading noLogo />,
 });
 
@@ -65,7 +65,7 @@ const PluginPage = dynamic(async () => (await import("../forms/plugin")).PluginP
 });
 
 const SearchChat = dynamic(
-  async () => (await import("../chat/search-chat")).SearchChatPage,
+  async () => (await import("@/features/chat/components/search-chat")).SearchChatPage,
   {
     loading: () => <Loading noLogo />,
   },

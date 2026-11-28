@@ -1,4 +1,4 @@
-import { createMessage } from "../../src/app/store/chat";
+import { createMessage } from "../../src/features/chat/store/chat";
 
 describe("createMessage", () => {
   test("fills sensible defaults", () => {

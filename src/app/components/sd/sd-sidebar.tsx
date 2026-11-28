@@ -1,9 +1,9 @@
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 import GithubIcon from "@/app/icons/github.svg";
 import SDIcon from "@/app/icons/sd.svg";
 import ReturnIcon from "@/app/icons/return.svg";
 import HistoryIcon from "@/app/icons/history.svg";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 
 import { Path, REPO_URL } from "@/constants";
 
@@ -19,8 +19,8 @@ import {
 } from "@/app/components/layout/sidebar";
 
 import { getParams, getModelParamBasicData } from "./sd-panel";
-import { useSdStore } from "@/app/store/sd";
-import { showToast } from "@/shared/ui/ui-lib";
+import { useSdStore } from "@/features/image-generation/store/sd";
+import { showToast } from "@/components/ui/ui-lib";
 import { useMobileScreen } from "@/app/utils";
 
 const SdPanel = dynamic(

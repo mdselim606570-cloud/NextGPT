@@ -1,21 +1,21 @@
 import { ApiPath } from "@/constants";
 import { NextRequest } from "next/server";
-import { handle as openaiHandler } from "../../openai";
-import { handle as azureHandler } from "../../azure";
-import { handle as googleHandler } from "../../google";
-import { handle as anthropicHandler } from "../../anthropic";
-import { handle as baiduHandler } from "../../baidu";
-import { handle as bytedanceHandler } from "../../bytedance";
-import { handle as alibabaHandler } from "../../alibaba";
-import { handle as moonshotHandler } from "../../moonshot";
-import { handle as stabilityHandler } from "../../stability";
-import { handle as iflytekHandler } from "../../iflytek";
-import { handle as deepseekHandler } from "../../deepseek";
-import { handle as siliconflowHandler } from "../../siliconflow";
-import { handle as xaiHandler } from "../../xai";
-import { handle as chatglmHandler } from "../../glm";
-import { handle as proxyHandler } from "../../proxy";
-import { handle as ai302Handler } from "../../302ai";
+import { handle as openaiHandler } from "@/providers/adapters/openai";
+import { handle as azureHandler } from "@/providers/adapters/azure";
+import { handle as googleHandler } from "@/providers/adapters/google";
+import { handle as anthropicHandler } from "@/providers/adapters/anthropic";
+import { handle as baiduHandler } from "@/providers/adapters/baidu";
+import { handle as bytedanceHandler } from "@/providers/adapters/bytedance";
+import { handle as alibabaHandler } from "@/providers/adapters/alibaba";
+import { handle as moonshotHandler } from "@/providers/adapters/moonshot";
+import { handle as stabilityHandler } from "@/providers/adapters/stability";
+import { handle as iflytekHandler } from "@/providers/adapters/iflytek";
+import { handle as deepseekHandler } from "@/providers/adapters/deepseek";
+import { handle as siliconflowHandler } from "@/providers/adapters/siliconflow";
+import { handle as xaiHandler } from "@/providers/adapters/xai";
+import { handle as chatglmHandler } from "@/providers/adapters/glm";
+import { handle as proxyHandler } from "@/providers/adapters/proxy";
+import { handle as ai302Handler } from "@/providers/adapters/302ai";
 
 async function handle(
   req: NextRequest,

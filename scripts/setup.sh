@@ -10,7 +10,8 @@ case "$(uname -s)" in
         exit 1
       fi
     else
-      if [[ !"$(cat /etc/*-release | grep '^ID=')" =~ ^(ID=\"ubuntu\")|(ID=\"centos\")|(ID=\"arch\")|(ID=\"debian\")$ ]]; then
+      . /etc/os-release
+      if [[ ! "$ID" =~ ^(ubuntu|centos|arch|debian)$ ]]; then
         echo "Unsupported Linux distribution."
         exit 1
       fi
@@ -29,19 +30,20 @@ esac
 if ! command -v node >/dev/null || ! command -v git >/dev/null || ! command -v pnpm >/dev/null; then
   case "$(uname -s)" in
     Linux)
-      if [[ "$(cat /etc/*-release | grep '^ID=')" = "ID=ubuntu" ]]; then
+      . /etc/os-release
+      if [[ "$ID" = "ubuntu" ]]; then
         sudo apt-get update
         sudo apt-get -y install nodejs git
         sudo npm install -g pnpm
-      elif [[ "$(cat /etc/*-release | grep '^ID=')" = "ID=debian" ]]; then
+      elif [[ "$ID" = "debian" ]]; then
         sudo apt-get update
         sudo apt-get -y install nodejs git
         sudo npm install -g pnpm
-      elif [[ "$(cat /etc/*-release | grep '^ID=')" = "ID=centos" ]]; then
+      elif [[ "$ID" = "centos" ]]; then
         sudo yum -y install epel-release
         sudo yum -y install nodejs git
         sudo npm install -g pnpm
-      elif [[ "$(cat /etc/*-release | grep '^ID=')" = "ID=arch" ]]; then
+      elif [[ "$ID" = "arch" ]]; then
         sudo pacman -Syu -y
         sudo pacman -S -y nodejs git pnpm
       else

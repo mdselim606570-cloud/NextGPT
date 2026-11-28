@@ -11,7 +11,7 @@ import {
   MultimodalContent,
   SpeechOptions,
 } from "../api";
-import Locale from "../../locales";
+import Locale from "@/i18n/locales";
 import {
   EventStreamContentType,
   fetchEventSource,

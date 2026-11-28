@@ -3,12 +3,14 @@
   "private": false,
   "license": "mit",
   "scripts": {
-    "mask": "npx tsx src/app/masks/build.ts",
+    "mask": "npx tsx src/i18n/masks/build.ts",
     "mask:watch": "npx watch \"pnpm mask\" src/app/masks",
     "dev": "concurrently -r \"pnpm run mask:watch\" \"next dev\"",
     "build": "pnpm mask && cross-env BUILD_MODE=standalone next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "typecheck": "tsc --noEmit",
     "export": "pnpm mask && cross-env BUILD_MODE=export BUILD_APP=1 next build",
     "export:dev": "concurrently -r \"pnpm mask:watch\"  \"cross-env BUILD_MODE=export BUILD_APP=1 next dev\"",
     "app:dev": "concurrently -r \"pnpm mask:watch\" \"pnpm tauri dev\"",
@@ -93,9 +95,6 @@
     "watch": "^0.13.0",
     "webpack": "^5.88.1",
     "ws": "^8.23.0"
-  },
-  "overrides": {
-    "lint-staged/yaml": "^2.2.2"
   },
   "packageManager": "pnpm@12.16.1"
 }

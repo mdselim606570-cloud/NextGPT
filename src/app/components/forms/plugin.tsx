@@ -2,8 +2,8 @@ import { useDebouncedCallback } from "use-debounce";
 import OpenAPIClientAxios from "openapi-client-axios";
 import yaml from "js-yaml";
 import { PLUGINS_REPO_URL } from "@/constants";
-import { IconButton } from "@/shared/ui/button";
-import { ErrorBoundary } from "../chat/error";
+import { IconButton } from "@/components/ui/button";
+import { ErrorBoundary } from "@/features/chat/components/error";
 
 import styles from "./mask.module.scss";
 import pluginStyles from "./plugin.module.scss";
@@ -16,7 +16,7 @@ import ConfirmIcon from "../../icons/confirm.svg";
 import ReloadIcon from "../../icons/reload.svg";
 import GithubIcon from "../../icons/github.svg";
 
-import { Plugin, usePluginStore, FunctionToolService } from "../../store/plugin";
+import { Plugin, usePluginStore, FunctionToolService } from "@/features/plugins/store/plugin";
 import {
   PasswordInput,
   List,
@@ -24,8 +24,8 @@ import {
   Modal,
   showConfirm,
   showToast,
-} from "@/shared/ui/ui-lib";
-import Locale from "../../locales";
+} from "@/components/ui/ui-lib";
+import Locale from "@/i18n/locales";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import clsx from "clsx";

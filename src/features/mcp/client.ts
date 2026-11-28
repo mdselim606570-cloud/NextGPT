@@ -1,4 +1,5 @@
 import { MCPClientLogger } from "./logger";
+import type { Client as McpClient } from "@modelcontextprotocol/sdk/client/index.js";
 import { ListToolsResponse, McpRequestMessage, ServerConfig } from "./types";
 import { z } from "zod";
 
@@ -25,7 +26,7 @@ export function getMcpChildEnvironment(
 export async function createClient(
   id: string,
   config: ServerConfig,
-): Promise<Client> {
+): Promise<McpClient> {
   logger.info(`Creating client for ${id}...`);
 
   const { Client, StdioClientTransport } = loadClientModule();
@@ -49,17 +50,17 @@ export async function createClient(
   return client;
 }
 
-export async function removeClient(client: Client) {
+export async function removeClient(client: McpClient) {
   logger.info(`Removing client...`);
   await client.close();
 }
 
-export async function listTools(client: Client): Promise<ListToolsResponse> {
+export async function listTools(client: McpClient): Promise<ListToolsResponse> {
   return client.listTools();
 }
 
 export async function executeRequest(
-  client: Client,
+  client: McpClient,
   request: McpRequestMessage,
 ) {
   return client.request(request, z.any());

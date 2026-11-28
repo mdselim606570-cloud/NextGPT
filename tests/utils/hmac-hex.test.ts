@@ -16,7 +16,7 @@ if (typeof (global as any).TextDecoder === "undefined") {
 let hex: (bin: Uint8Array) => string;
 
 beforeAll(async () => {
-  ({ hex } = await import("../../src/app/utils/hmac"));
+  ({ hex } = await import("@/lib/crypto/hmac"));
 });
 
 describe("hex", () => {

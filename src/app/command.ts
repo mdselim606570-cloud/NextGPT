@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import Locale from "./locales";
+import Locale from "@/i18n/locales";
 
 type Command = (param: string) => void;
 interface Commands {

@@ -112,74 +112,28 @@ export abstract class LLMApi {
   abstract models(): Promise<LLMModel[]>;
 }
 
-type ProviderName = "openai" | "azure" | "claude" | "palm";
-
-interface Model {
-  name: string;
-  provider: ProviderName;
-  ctxlen: number;
-}
-
-interface ChatProvider {
-  name: ProviderName;
-  apiConfig: {
-    baseUrl: string;
-    apiKey: string;
-    summaryModel: Model;
-  };
-  models: Model[];
-
-  chat: () => void;
-  usage: () => void;
-}
+const PROVIDER_FACTORIES: Partial<Record<ModelProvider, () => LLMApi>> = {
+  [ModelProvider.GeminiPro]: () => new GeminiProApi(),
+  [ModelProvider.Claude]: () => new ClaudeApi(),
+  [ModelProvider.Ernie]: () => new ErnieApi(),
+  [ModelProvider.Doubao]: () => new DoubaoApi(),
+  [ModelProvider.Qwen]: () => new QwenApi(),
+  [ModelProvider.Hunyuan]: () => new HunyuanApi(),
+  [ModelProvider.Moonshot]: () => new MoonshotApi(),
+  [ModelProvider.Iflytek]: () => new SparkApi(),
+  [ModelProvider.DeepSeek]: () => new DeepSeekApi(),
+  [ModelProvider.XAI]: () => new XAIApi(),
+  [ModelProvider.ChatGLM]: () => new ChatGLMApi(),
+  [ModelProvider.SiliconFlow]: () => new SiliconflowApi(),
+  [ModelProvider.Ai302]: () => new Ai302Api(),
+};
 
 export class ClientApi {
   public llm: LLMApi;
 
   constructor(provider: ModelProvider = ModelProvider.GPT) {
-    switch (provider) {
-      case ModelProvider.GeminiPro:
-        this.llm = new GeminiProApi();
-        break;
-      case ModelProvider.Claude:
-        this.llm = new ClaudeApi();
-        break;
-      case ModelProvider.Ernie:
-        this.llm = new ErnieApi();
-        break;
-      case ModelProvider.Doubao:
-        this.llm = new DoubaoApi();
-        break;
-      case ModelProvider.Qwen:
-        this.llm = new QwenApi();
-        break;
-      case ModelProvider.Hunyuan:
-        this.llm = new HunyuanApi();
-        break;
-      case ModelProvider.Moonshot:
-        this.llm = new MoonshotApi();
-        break;
-      case ModelProvider.Iflytek:
-        this.llm = new SparkApi();
-        break;
-      case ModelProvider.DeepSeek:
-        this.llm = new DeepSeekApi();
-        break;
-      case ModelProvider.XAI:
-        this.llm = new XAIApi();
-        break;
-      case ModelProvider.ChatGLM:
-        this.llm = new ChatGLMApi();
-        break;
-      case ModelProvider.SiliconFlow:
-        this.llm = new SiliconflowApi();
-        break;
-      case ModelProvider.Ai302:
-        this.llm = new Ai302Api();
-        break;
-      default:
-        this.llm = new ChatGPTApi();
-    }
+    const factory = PROVIDER_FACTORIES[provider];
+    this.llm = factory ? factory() : new ChatGPTApi();
   }
 
   config() {}
@@ -241,6 +195,39 @@ export function validString(x: string): boolean {
   return x?.length > 0;
 }
 
+type AccessStoreState = ReturnType<typeof useAccessStore.getState>;
+
+const PROVIDER_API_KEY_GETTERS: Partial<
+  Record<ServiceProvider, (s: AccessStoreState) => string>
+> = {
+  [ServiceProvider.Google]: (s) => s.googleApiKey,
+  [ServiceProvider.Azure]: (s) => s.azureApiKey,
+  [ServiceProvider.Anthropic]: (s) => s.anthropicApiKey,
+  [ServiceProvider.ByteDance]: (s) => s.bytedanceApiKey,
+  [ServiceProvider.Alibaba]: (s) => s.alibabaApiKey,
+  [ServiceProvider.Moonshot]: (s) => s.moonshotApiKey,
+  [ServiceProvider.XAI]: (s) => s.xaiApiKey,
+  [ServiceProvider.DeepSeek]: (s) => s.deepseekApiKey,
+  [ServiceProvider.ChatGLM]: (s) => s.chatglmApiKey,
+  [ServiceProvider.SiliconFlow]: (s) => s.siliconflowApiKey,
+  [ServiceProvider.Iflytek]: (s) =>
+    s.iflytekApiKey && s.iflytekApiSecret
+      ? s.iflytekApiKey + ":" + s.iflytekApiSecret
+      : "",
+  [ServiceProvider.Ai302]: (s) => s.ai302ApiKey,
+};
+
+function getProviderApiKey(
+  providerName: string | undefined,
+  accessStore: AccessStoreState,
+): string {
+  const getter =
+    providerName != null
+      ? PROVIDER_API_KEY_GETTERS[providerName as ServiceProvider]
+      : undefined;
+  return getter ? getter(accessStore) : accessStore.openaiApiKey;
+}
+
 export function getHeaders(ignoreHeaders: boolean = false) {
   const accessStore = useAccessStore.getState();
   const chatStore = useChatStore.getState();
@@ -260,71 +247,23 @@ export function getHeaders(ignoreHeaders: boolean = false) {
     const isAzure = modelConfig.providerName === ServiceProvider.Azure;
     const isAnthropic = modelConfig.providerName === ServiceProvider.Anthropic;
     const isBaidu = modelConfig.providerName == ServiceProvider.Baidu;
-    const isByteDance = modelConfig.providerName === ServiceProvider.ByteDance;
-    const isAlibaba = modelConfig.providerName === ServiceProvider.Alibaba;
-    const isMoonshot = modelConfig.providerName === ServiceProvider.Moonshot;
-    const isIflytek = modelConfig.providerName === ServiceProvider.Iflytek;
-    const isDeepSeek = modelConfig.providerName === ServiceProvider.DeepSeek;
-    const isXAI = modelConfig.providerName === ServiceProvider.XAI;
-    const isChatGLM = modelConfig.providerName === ServiceProvider.ChatGLM;
-    const isSiliconFlow =
-      modelConfig.providerName === ServiceProvider.SiliconFlow;
-    const isAI302 = modelConfig.providerName === ServiceProvider.Ai302;
     const isEnabledAccessControl = accessStore.enabledAccessControl();
-    const apiKey = isGoogle
-      ? accessStore.googleApiKey
-      : isAzure
-      ? accessStore.azureApiKey
-      : isAnthropic
-      ? accessStore.anthropicApiKey
-      : isByteDance
-      ? accessStore.bytedanceApiKey
-      : isAlibaba
-      ? accessStore.alibabaApiKey
-      : isMoonshot
-      ? accessStore.moonshotApiKey
-      : isXAI
-      ? accessStore.xaiApiKey
-      : isDeepSeek
-      ? accessStore.deepseekApiKey
-      : isChatGLM
-      ? accessStore.chatglmApiKey
-      : isSiliconFlow
-      ? accessStore.siliconflowApiKey
-      : isIflytek
-      ? accessStore.iflytekApiKey && accessStore.iflytekApiSecret
-        ? accessStore.iflytekApiKey + ":" + accessStore.iflytekApiSecret
-        : ""
-      : isAI302
-      ? accessStore.ai302ApiKey
-      : accessStore.openaiApiKey;
+    const apiKey = getProviderApiKey(modelConfig.providerName, accessStore);
     return {
       isGoogle,
       isAzure,
       isAnthropic,
       isBaidu,
-      isByteDance,
-      isAlibaba,
-      isMoonshot,
-      isIflytek,
-      isDeepSeek,
-      isXAI,
-      isChatGLM,
-      isSiliconFlow,
-      isAI302,
       apiKey,
       isEnabledAccessControl,
     };
   }
 
   function getAuthHeader(): string {
-    return isAzure
-      ? "api-key"
-      : isAnthropic
-      ? "x-api-key"
-      : isGoogle
-      ? "x-goog-api-key"
-      : "Authorization";
+    if (isAzure) return "api-key";
+    if (isAnthropic) return "x-api-key";
+    if (isGoogle) return "x-goog-api-key";
+    return "Authorization";
   }
 
   const {
@@ -332,15 +271,6 @@ export function getHeaders(ignoreHeaders: boolean = false) {
     isAzure,
     isAnthropic,
     isBaidu,
-    isByteDance,
-    isAlibaba,
-    isMoonshot,
-    isIflytek,
-    isDeepSeek,
-    isXAI,
-    isChatGLM,
-    isSiliconFlow,
-    isAI302,
     apiKey,
     isEnabledAccessControl,
   } = getConfig();
@@ -365,35 +295,23 @@ export function getHeaders(ignoreHeaders: boolean = false) {
   return headers;
 }
 
+const SERVICE_TO_MODEL: Partial<Record<ServiceProvider, ModelProvider>> = {
+  [ServiceProvider.Google]: ModelProvider.GeminiPro,
+  [ServiceProvider.Anthropic]: ModelProvider.Claude,
+  [ServiceProvider.Baidu]: ModelProvider.Ernie,
+  [ServiceProvider.ByteDance]: ModelProvider.Doubao,
+  [ServiceProvider.Alibaba]: ModelProvider.Qwen,
+  [ServiceProvider.Tencent]: ModelProvider.Hunyuan,
+  [ServiceProvider.Moonshot]: ModelProvider.Moonshot,
+  [ServiceProvider.Iflytek]: ModelProvider.Iflytek,
+  [ServiceProvider.DeepSeek]: ModelProvider.DeepSeek,
+  [ServiceProvider.XAI]: ModelProvider.XAI,
+  [ServiceProvider.ChatGLM]: ModelProvider.ChatGLM,
+  [ServiceProvider.SiliconFlow]: ModelProvider.SiliconFlow,
+  [ServiceProvider.Ai302]: ModelProvider.Ai302,
+};
+
 export function getClientApi(provider: ServiceProvider): ClientApi {
-  switch (provider) {
-    case ServiceProvider.Google:
-      return new ClientApi(ModelProvider.GeminiPro);
-    case ServiceProvider.Anthropic:
-      return new ClientApi(ModelProvider.Claude);
-    case ServiceProvider.Baidu:
-      return new ClientApi(ModelProvider.Ernie);
-    case ServiceProvider.ByteDance:
-      return new ClientApi(ModelProvider.Doubao);
-    case ServiceProvider.Alibaba:
-      return new ClientApi(ModelProvider.Qwen);
-    case ServiceProvider.Tencent:
-      return new ClientApi(ModelProvider.Hunyuan);
-    case ServiceProvider.Moonshot:
-      return new ClientApi(ModelProvider.Moonshot);
-    case ServiceProvider.Iflytek:
-      return new ClientApi(ModelProvider.Iflytek);
-    case ServiceProvider.DeepSeek:
-      return new ClientApi(ModelProvider.DeepSeek);
-    case ServiceProvider.XAI:
-      return new ClientApi(ModelProvider.XAI);
-    case ServiceProvider.ChatGLM:
-      return new ClientApi(ModelProvider.ChatGLM);
-    case ServiceProvider.SiliconFlow:
-      return new ClientApi(ModelProvider.SiliconFlow);
-    case ServiceProvider.Ai302:
-      return new ClientApi(ModelProvider.Ai302);
-    default:
-      return new ClientApi(ModelProvider.GPT);
-  }
+  const modelProvider = SERVICE_TO_MODEL[provider] ?? ModelProvider.GPT;
+  return new ClientApi(modelProvider);
 }

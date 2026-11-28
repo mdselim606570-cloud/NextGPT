@@ -10,7 +10,7 @@ let TTSConfigValidator: {
 beforeAll(async () => {
   // Warm up the import cycle in a working order before loading the target.
   await import("../../src/app/client/api");
-  ({ TTSConfigValidator } = await import("../../src/app/store/config"));
+  ({ TTSConfigValidator } = await import("../../src/features/settings/store/config"));
 });
 
 describe("TTSConfigValidator", () => {

@@ -1,5 +1,5 @@
-import { IconButton } from "@/shared/ui/button";
-import { ErrorBoundary } from "../chat/error";
+import { IconButton } from "@/components/ui/button";
+import { ErrorBoundary } from "@/features/chat/components/error";
 
 import styles from "./mask.module.scss";
 
@@ -13,7 +13,7 @@ import EyeIcon from "../../icons/eye.svg";
 import CopyIcon from "../../icons/copy.svg";
 import DragIcon from "../../icons/drag.svg";
 
-import { DEFAULT_MASK_AVATAR, Mask, useMaskStore } from "../../store/mask";
+import { DEFAULT_MASK_AVATAR, Mask, useMaskStore } from "@/features/prompts/store/mask";
 import {
   ChatMessage,
   createMessage,
@@ -31,12 +31,12 @@ import {
   Popover,
   Select,
   showConfirm,
-} from "@/shared/ui/ui-lib";
-import { Avatar, AvatarPicker } from "@/shared/ui/emoji";
-import Locale, { AllLangs, ALL_LANG_OPTIONS, Lang } from "../../locales";
+} from "@/components/ui/ui-lib";
+import { Avatar, AvatarPicker } from "@/components/ui/emoji";
+import Locale, { AllLangs, ALL_LANG_OPTIONS, Lang } from "@/i18n/locales";
 import { useNavigate } from "react-router-dom";
 
-import chatStyle from "../chat/chat.module.scss";
+import chatStyle from "@/features/chat/components/chat.module.scss";
 import { useState } from "react";
 import {
   copyToClipboard,
@@ -45,9 +45,9 @@ import {
   readFromFile,
 } from "../../utils";
 import { Updater } from "../../typing";
-import { ModelConfigList } from "../settings/model-config";
+import { ModelConfigList } from "@/features/settings/components/model-config";
 import { FileName, Path } from "@/constants";
-import { BUILTIN_MASK_STORE } from "../../masks";
+import { BUILTIN_MASK_STORE } from "@/i18n/masks";
 import {
   DragDropContext,
   Droppable,

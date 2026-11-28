@@ -1,10 +1,10 @@
-import chatStyles from "@/app/components/chat/chat.module.scss";
+import chatStyles from "@/features/chat/components/chat.module.scss";
 import styles from "@/app/components/sd/sd.module.scss";
 import homeStyles from "@/app/components/layout/home.module.scss";
 
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 import ReturnIcon from "@/app/icons/return.svg";
-import Locale from "@/app/locales";
+import Locale from "@/i18n/locales";
 import { Path } from "@/constants";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -17,21 +17,20 @@ import { useAppConfig } from "@/app/store";
 import MinIcon from "@/app/icons/min.svg";
 import MaxIcon from "@/app/icons/max.svg";
 import { getClientConfig } from "@/config/client";
-import { ChatAction } from "@/app/components/chat/chat";
+import { ChatAction } from "@/features/chat/components/chat";
 import DeleteIcon from "@/app/icons/clear.svg";
 import CopyIcon from "@/app/icons/copy.svg";
 import PromptIcon from "@/app/icons/prompt.svg";
 import ResetIcon from "@/app/icons/reload.svg";
-import { useSdStore } from "@/app/store/sd";
+import { useSdStore } from "@/features/image-generation/store/sd";
 import LoadingIcon from "@/app/icons/three-dots.svg";
 import ErrorIcon from "@/app/icons/delete.svg";
 import SDIcon from "@/app/icons/sd.svg";
-import { Property } from "csstype";
 import {
   showConfirm,
   showImageModal,
   showModal,
-} from "@/shared/ui/ui-lib";
+} from "@/components/ui/ui-lib";
 import { removeImage } from "@/app/utils/chat";
 import { SideBar } from "./sd-sidebar";
 import { WindowContent } from "@/app/components/layout/home";
@@ -40,7 +39,7 @@ import clsx from "clsx";
 
 function getSdTaskStatus(item: any) {
   let s: string;
-  let color: Property.Color | undefined = undefined;
+  let color: string | undefined = undefined;
   switch (item.status) {
     case "success":
       s = Locale.Sd.Status.Success;

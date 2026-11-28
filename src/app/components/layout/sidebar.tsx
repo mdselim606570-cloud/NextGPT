@@ -2,10 +2,10 @@ import React, { Fragment, useEffect, useMemo, useRef, useState } from "react";
 
 import styles from "./home.module.scss";
 
-import { IconButton } from "@/shared/ui/button";
+import { IconButton } from "@/components/ui/button";
 import SettingsIcon from "../../icons/settings.svg";
 import GithubIcon from "../../icons/github.svg";
-import nextgptIcon from "../../icons/logo.svg";
+import NextgptIcon from "../../icons/logo.svg";
 import AddIcon from "../../icons/add.svg";
 import DeleteIcon from "../../icons/delete.svg";
 import MaskIcon from "../../icons/mask.svg";
@@ -13,7 +13,7 @@ import McpIcon from "../../icons/mcp.svg";
 import DragIcon from "../../icons/drag.svg";
 import DiscoveryIcon from "../../icons/discovery.svg";
 
-import Locale from "../../locales";
+import Locale from "@/i18n/locales";
 
 import { useAppConfig, useChatStore } from "../../store";
 
@@ -29,7 +29,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { isIOS, useMobileScreen } from "../../utils";
 import dynamic from "next/dynamic";
-import { Selector, showConfirm } from "@/shared/ui/ui-lib";
+import { Selector, showConfirm } from "@/components/ui/ui-lib";
 import clsx from "clsx";
 import { isMcpEnabled } from "@/features/mcp/actions";
 
@@ -39,7 +39,7 @@ const DISCOVERY = [
   { name: Locale.SearchChat.Page.Title, path: Path.SearchChat },
 ];
 
-const ChatList = dynamic(async () => (await import("../chat/chat-list")).ChatList, {
+const ChatList = dynamic(async () => (await import("@/features/chat/components/chat-list")).ChatList, {
   loading: () => null,
 });
 
@@ -252,7 +252,7 @@ export function SideBar(props: { className?: string }) {
       <SideBarHeader
         title="nextgpt"
         subTitle="Build your own AI assistant."
-        logo={<nextgptIcon />}
+        logo={<NextgptIcon />}
         shouldNarrow={shouldNarrow}
       >
         <div className={styles["sidebar-header-bar"]}>
