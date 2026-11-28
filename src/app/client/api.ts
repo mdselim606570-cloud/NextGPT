@@ -133,53 +133,28 @@ interface ChatProvider {
   usage: () => void;
 }
 
+const PROVIDER_FACTORIES: Partial<Record<ModelProvider, () => LLMApi>> = {
+  [ModelProvider.GeminiPro]: () => new GeminiProApi(),
+  [ModelProvider.Claude]: () => new ClaudeApi(),
+  [ModelProvider.Ernie]: () => new ErnieApi(),
+  [ModelProvider.Doubao]: () => new DoubaoApi(),
+  [ModelProvider.Qwen]: () => new QwenApi(),
+  [ModelProvider.Hunyuan]: () => new HunyuanApi(),
+  [ModelProvider.Moonshot]: () => new MoonshotApi(),
+  [ModelProvider.Iflytek]: () => new SparkApi(),
+  [ModelProvider.DeepSeek]: () => new DeepSeekApi(),
+  [ModelProvider.XAI]: () => new XAIApi(),
+  [ModelProvider.ChatGLM]: () => new ChatGLMApi(),
+  [ModelProvider.SiliconFlow]: () => new SiliconflowApi(),
+  [ModelProvider.Ai302]: () => new Ai302Api(),
+};
+
 export class ClientApi {
   public llm: LLMApi;
 
   constructor(provider: ModelProvider = ModelProvider.GPT) {
-    switch (provider) {
-      case ModelProvider.GeminiPro:
-        this.llm = new GeminiProApi();
-        break;
-      case ModelProvider.Claude:
-        this.llm = new ClaudeApi();
-        break;
-      case ModelProvider.Ernie:
-        this.llm = new ErnieApi();
-        break;
-      case ModelProvider.Doubao:
-        this.llm = new DoubaoApi();
-        break;
-      case ModelProvider.Qwen:
-        this.llm = new QwenApi();
-        break;
-      case ModelProvider.Hunyuan:
-        this.llm = new HunyuanApi();
-        break;
-      case ModelProvider.Moonshot:
-        this.llm = new MoonshotApi();
-        break;
-      case ModelProvider.Iflytek:
-        this.llm = new SparkApi();
-        break;
-      case ModelProvider.DeepSeek:
-        this.llm = new DeepSeekApi();
-        break;
-      case ModelProvider.XAI:
-        this.llm = new XAIApi();
-        break;
-      case ModelProvider.ChatGLM:
-        this.llm = new ChatGLMApi();
-        break;
-      case ModelProvider.SiliconFlow:
-        this.llm = new SiliconflowApi();
-        break;
-      case ModelProvider.Ai302:
-        this.llm = new Ai302Api();
-        break;
-      default:
-        this.llm = new ChatGPTApi();
-    }
+    const factory = PROVIDER_FACTORIES[provider];
+    this.llm = factory ? factory() : new ChatGPTApi();
   }
 
   config() {}
@@ -365,35 +340,23 @@ export function getHeaders(ignoreHeaders: boolean = false) {
   return headers;
 }
 
+const SERVICE_TO_MODEL: Partial<Record<ServiceProvider, ModelProvider>> = {
+  [ServiceProvider.Google]: ModelProvider.GeminiPro,
+  [ServiceProvider.Anthropic]: ModelProvider.Claude,
+  [ServiceProvider.Baidu]: ModelProvider.Ernie,
+  [ServiceProvider.ByteDance]: ModelProvider.Doubao,
+  [ServiceProvider.Alibaba]: ModelProvider.Qwen,
+  [ServiceProvider.Tencent]: ModelProvider.Hunyuan,
+  [ServiceProvider.Moonshot]: ModelProvider.Moonshot,
+  [ServiceProvider.Iflytek]: ModelProvider.Iflytek,
+  [ServiceProvider.DeepSeek]: ModelProvider.DeepSeek,
+  [ServiceProvider.XAI]: ModelProvider.XAI,
+  [ServiceProvider.ChatGLM]: ModelProvider.ChatGLM,
+  [ServiceProvider.SiliconFlow]: ModelProvider.SiliconFlow,
+  [ServiceProvider.Ai302]: ModelProvider.Ai302,
+};
+
 export function getClientApi(provider: ServiceProvider): ClientApi {
-  switch (provider) {
-    case ServiceProvider.Google:
-      return new ClientApi(ModelProvider.GeminiPro);
-    case ServiceProvider.Anthropic:
-      return new ClientApi(ModelProvider.Claude);
-    case ServiceProvider.Baidu:
-      return new ClientApi(ModelProvider.Ernie);
-    case ServiceProvider.ByteDance:
-      return new ClientApi(ModelProvider.Doubao);
-    case ServiceProvider.Alibaba:
-      return new ClientApi(ModelProvider.Qwen);
-    case ServiceProvider.Tencent:
-      return new ClientApi(ModelProvider.Hunyuan);
-    case ServiceProvider.Moonshot:
-      return new ClientApi(ModelProvider.Moonshot);
-    case ServiceProvider.Iflytek:
-      return new ClientApi(ModelProvider.Iflytek);
-    case ServiceProvider.DeepSeek:
-      return new ClientApi(ModelProvider.DeepSeek);
-    case ServiceProvider.XAI:
-      return new ClientApi(ModelProvider.XAI);
-    case ServiceProvider.ChatGLM:
-      return new ClientApi(ModelProvider.ChatGLM);
-    case ServiceProvider.SiliconFlow:
-      return new ClientApi(ModelProvider.SiliconFlow);
-    case ServiceProvider.Ai302:
-      return new ClientApi(ModelProvider.Ai302);
-    default:
-      return new ClientApi(ModelProvider.GPT);
-  }
+  const modelProvider = SERVICE_TO_MODEL[provider] ?? ModelProvider.GPT;
+  return new ClientApi(modelProvider);
 }
