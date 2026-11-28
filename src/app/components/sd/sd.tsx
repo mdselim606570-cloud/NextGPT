@@ -18,7 +18,6 @@ import MinIcon from "@/app/icons/min.svg";
 import MaxIcon from "@/app/icons/max.svg";
 import { getClientConfig } from "@/config/client";
 import { ChatAction } from "@/features/chat/components/chat";
-import chatStyle from "@/features/chat/components/chat.module.scss";
 import DeleteIcon from "@/app/icons/clear.svg";
 import CopyIcon from "@/app/icons/copy.svg";
 import PromptIcon from "@/app/icons/prompt.svg";
