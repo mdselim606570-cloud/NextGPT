@@ -437,7 +437,9 @@ export async function getMcpConfigFromFile(
     const configStr = await fs.readFile(resolveMcpConfigPath(), "utf-8");
     return JSON.parse(configStr);
   } catch (error) {
-    logger.error(`Failed to load MCP config, using default config: ${error}`);
+    if ((error as { code?: string } | null)?.code !== "ENOENT") {
+      logger.error(`Failed to load MCP config, using default config: ${error}`);
+    }
     return DEFAULT_MCP_CONFIG;
   }
 }

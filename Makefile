@@ -56,7 +56,7 @@ prompts: ## Fetch prompt translations
 	pnpm prompts
 
 .PHONY: proxy-dev
-proxy-dev: ## Start dev behind proxy (init-proxy + proxychains)
+proxy-dev: ## Start dev behind proxy (PROXY_URL or proxychains)
 	pnpm proxy-dev
 
 .PHONY: clean
