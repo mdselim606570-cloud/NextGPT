@@ -29,4 +29,4 @@ export { fetch as tauriStreamFetch } from "./stream";
 export * from "./sync";
 export * from "./tencent";
 export * from "./token";
-export * from "./cloud";
+export * from "@/lib/cloud";

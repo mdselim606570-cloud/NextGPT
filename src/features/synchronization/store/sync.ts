@@ -11,7 +11,7 @@ import {
 import { downloadAs, readFromFile } from "@/app/utils/dom";
 import { showToast } from "@/components/ui/ui-lib";
 import Locale from "@/i18n/locales";
-import { createSyncClient, ProviderType } from "@/app/utils/cloud";
+import { createSyncClient, ProviderType } from "@/lib/cloud";
 
 export interface WebDavConfig {
   server: string;

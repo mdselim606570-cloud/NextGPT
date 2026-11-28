@@ -1,6 +1,6 @@
 import { STORAGE_KEY } from "@/constants";
 import { SyncStore } from "@/features/synchronization/store/sync";
-import { chunks } from "../format";
+import { chunks } from "@/app/utils/format";
 
 export type UpstashConfig = SyncStore["upstash"];
 export type UpStashClient = ReturnType<typeof createUpstashClient>;

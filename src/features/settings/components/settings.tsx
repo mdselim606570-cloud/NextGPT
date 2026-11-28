@@ -86,7 +86,7 @@ import { getClientConfig } from "@/config/client";
 import { useSyncStore } from "@/features/synchronization/store/sync";
 import { nanoid } from "nanoid";
 import { useMaskStore } from "@/features/prompts/store/mask";
-import { ProviderType } from "@/app/utils/cloud";
+import { ProviderType } from "@/lib/cloud";
 import { TTSConfigList } from "./tts-config";
 import { RealtimeConfigList } from "@/features/realtime/components/realtime-config";
 
