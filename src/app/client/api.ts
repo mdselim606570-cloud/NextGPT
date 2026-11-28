@@ -268,16 +268,6 @@ export function getHeaders(ignoreHeaders: boolean = false) {
     const isAzure = modelConfig.providerName === ServiceProvider.Azure;
     const isAnthropic = modelConfig.providerName === ServiceProvider.Anthropic;
     const isBaidu = modelConfig.providerName == ServiceProvider.Baidu;
-    const isByteDance = modelConfig.providerName === ServiceProvider.ByteDance;
-    const isAlibaba = modelConfig.providerName === ServiceProvider.Alibaba;
-    const isMoonshot = modelConfig.providerName === ServiceProvider.Moonshot;
-    const isIflytek = modelConfig.providerName === ServiceProvider.Iflytek;
-    const isDeepSeek = modelConfig.providerName === ServiceProvider.DeepSeek;
-    const isXAI = modelConfig.providerName === ServiceProvider.XAI;
-    const isChatGLM = modelConfig.providerName === ServiceProvider.ChatGLM;
-    const isSiliconFlow =
-      modelConfig.providerName === ServiceProvider.SiliconFlow;
-    const isAI302 = modelConfig.providerName === ServiceProvider.Ai302;
     const isEnabledAccessControl = accessStore.enabledAccessControl();
     const apiKey = getProviderApiKey(modelConfig.providerName, accessStore);
     return {
@@ -285,28 +275,16 @@ export function getHeaders(ignoreHeaders: boolean = false) {
       isAzure,
       isAnthropic,
       isBaidu,
-      isByteDance,
-      isAlibaba,
-      isMoonshot,
-      isIflytek,
-      isDeepSeek,
-      isXAI,
-      isChatGLM,
-      isSiliconFlow,
-      isAI302,
       apiKey,
       isEnabledAccessControl,
     };
   }
 
   function getAuthHeader(): string {
-    return isAzure
-      ? "api-key"
-      : isAnthropic
-      ? "x-api-key"
-      : isGoogle
-      ? "x-goog-api-key"
-      : "Authorization";
+    if (isAzure) return "api-key";
+    if (isAnthropic) return "x-api-key";
+    if (isGoogle) return "x-goog-api-key";
+    return "Authorization";
   }
 
   const {
@@ -314,15 +292,6 @@ export function getHeaders(ignoreHeaders: boolean = false) {
     isAzure,
     isAnthropic,
     isBaidu,
-    isByteDance,
-    isAlibaba,
-    isMoonshot,
-    isIflytek,
-    isDeepSeek,
-    isXAI,
-    isChatGLM,
-    isSiliconFlow,
-    isAI302,
     apiKey,
     isEnabledAccessControl,
   } = getConfig();
