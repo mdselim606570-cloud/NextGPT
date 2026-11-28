@@ -112,27 +112,6 @@ export abstract class LLMApi {
   abstract models(): Promise<LLMModel[]>;
 }
 
-type ProviderName = "openai" | "azure" | "claude" | "palm";
-
-interface Model {
-  name: string;
-  provider: ProviderName;
-  ctxlen: number;
-}
-
-interface ChatProvider {
-  name: ProviderName;
-  apiConfig: {
-    baseUrl: string;
-    apiKey: string;
-    summaryModel: Model;
-  };
-  models: Model[];
-
-  chat: () => void;
-  usage: () => void;
-}
-
 const PROVIDER_FACTORIES: Partial<Record<ModelProvider, () => LLMApi>> = {
   [ModelProvider.GeminiPro]: () => new GeminiProApi(),
   [ModelProvider.Claude]: () => new ClaudeApi(),
