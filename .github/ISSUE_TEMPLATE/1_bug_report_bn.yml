@@ -1,80 +1,80 @@
-name: "🐛 বাগ রিপোর্ট"
-description: "একটি সমস্যা/ত্রুটি রিপোর্ট করুন"
-title: "[Bug] "
-labels: ["bug"]
+name: '🐛 বাগ রিপোর্ট'
+description: 'একটি বাগ রিপোর্ট করুন'
+title: '[Bug] '
+labels: ['bug']
 body:
   - type: dropdown
     attributes:
-      label: "📦 ডেপ্লয়মেন্ট পদ্ধতি"
+      label: '📦 ডিপ্লয়মেন্ট পদ্ধতি'
       multiple: true
       options:
-        - "অফিসিয়াল ইনস্টল প্যাকেজ"
-        - "Vercel"
-        - "Zeabur"
-        - "Sealos"
-        - "Netlify"
-        - "Docker"
-        - "অন্যান্য"
+        - 'অফিশিয়াল ইনস্টলেশন প্যাকেজ'
+        - 'Vercel'
+        - 'Zeabur'
+        - 'Sealos'
+        - 'Netlify'
+        - 'Docker'
+        - 'অন্যান্য'
     validations:
       required: true
   - type: input
     attributes:
-      label: "📌 সফটওয়্যার সংস্করণ"
+      label: '📌 সংস্করণ'
     validations:
       required: true
-
+  
   - type: dropdown
     attributes:
-      label: "💻 অপারেটিং সিস্টেম"
+      label: '💻 অপারেটিং সিস্টেম'
       multiple: true
       options:
-        - "Windows"
-        - "macOS"
-        - "Ubuntu"
-        - "অন্যান্য লিনাক্স"
-        - "iOS"
-        - "iPad OS"
-        - "Android"
-        - "অন্যান্য"
+        - 'Windows'
+        - 'macOS'
+        - 'Ubuntu'
+        - 'অন্যান্য লিনাক্স'
+        - 'iOS'
+        - 'iPad OS'
+        - 'Android'
+        - 'অন্যান্য'
     validations:
       required: true
   - type: input
     attributes:
-      label: "📌 সিস্টেম সংস্করণ"
+      label: '📌 সিস্টেম সংস্করণ'
     validations:
       required: true
   - type: dropdown
     attributes:
-      label: "🌐 ব্রাউজার"
+      label: '🌐 ব্রাউজার'
       multiple: true
       options:
-        - "Chrome"
-        - "Edge"
-        - "Safari"
-        - "Firefox"
-        - "অন্যান্য"
+        - 'Chrome'
+        - 'Edge'
+        - 'Safari'
+        - 'Firefox'
+        - 'অন্যান্য'
     validations:
       required: true
   - type: input
     attributes:
-      label: "📌 ব্রাউজার সংস্করণ"
+      label: '📌 ব্রাউজার সংস্করণ'
     validations:
       required: true
   - type: textarea
     attributes:
-      label: "🐛 সমস্যা বর্ণনা"
-      description: একটি স্পষ্ট এবং সংক্ষিপ্ত সমস্যা বর্ণনা প্রদান করুন, যদি উপরের বিকল্পটি `অন্যান্য` হয়, তবে বিস্তারিতভাবে ব্যাখ্যা করুন।
+      label: '🐛 বাগ বിവরণ'
+      description: বাগের একটি স্বच्छ এবং সুনির্ধারিত বিবরণ, যদি উপরের অপশনটি `অন্যান্য` হয়, তাহলে দয়া করে বিস্তারিত ব্যাখ্যা করুন।
     validations:
       required: true
   - type: textarea
     attributes:
-      label: "📷 পুনরুত্পাদন পদক্ষেপ"
-      description: একটি স্পষ্ট এবং সংক্ষিপ্ত বর্ণনা প্রদান করুন, কিভাবে সমস্যাটি পুনরুত্পাদন করবেন তা ব্যাখ্যা করুন।
+      label: '📷 পুনরাবৃত্তি ধাপসমূহ'
+      description: কীভাবে বাগটি পুনরাবৃত্তি করবেন তার একটি স্বচ্ছ এবং সুনির্ধারিত বিবরণ।
   - type: textarea
     attributes:
-      label: "🚦 প্রত্যাশিত ফলাফল"
-      description: একটি স্পষ্ট এবং সংক্ষিপ্ত বর্ণনা প্রদান করুন, আপনি কি আশা করেছিলেন তা ব্যাখ্যা করুন।
+      label: '🚦 প্রত্যাশিত আচরণ'
+      description: আপনি কী ঘটার প্রত্যাশা করছেন তার একটি স্বচ্ছ এবং সুনির্ধারিত বিবরণ।
   - type: textarea
     attributes:
-      label: "📝 অতিরিক্ত তথ্য"
-      description: যদি আপনার সমস্যার জন্য আরও ব্যাখ্যার প্রয়োজন হয় বা আপনার সমস্যাটি একটি সাধারণ উদাহরণে পুনরুত্পাদন করা না যায়, তবে এখানে আরও তথ্য যোগ করুন।
+      label: '📝 অতিরিক্ত তথ্য'
+      description: আপনার সমস্যাকে আরও ব্যাখ্যার প্রয়োজন হলে, অথবা আপনি যে সমস্যাটি দেখছেন সেটি একটি গিস্টে পুনরাবৃত্তি করা যায় না, তাহলে এখানে আরও তথ্য যোগ করুন।

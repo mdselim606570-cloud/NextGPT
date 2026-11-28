@@ -1,8 +1,16 @@
 <div align="center">
 
-<h1 align="center">NextGpt (ChatGPT Next Web)</h1>
+<a href='https://nextgpt.khulnasoft.com'>
+  <img src="https://github.com/user-attachments/assets/83bdcc07-ae5e-4954-a53a-ac151ba6ccf3" width="1000" alt="icon"/>
+</a>
 
-One-Click to get a well-designed cross-platform ChatGPT web UI, with GPT3, GPT4 & Gemini Pro support.
+<h1 align="center">nextgpt</h1>
+
+English / [বাংলা](./docs/translations/README_BN.md) / [简体中文](./docs/translations/README_CN.md)
+
+<a href="https://trendshift.io/repositories/5973" target="_blank"><img src="https://trendshift.io/api/badge/repositories/5973" alt="khulnasoft%2FNextGPT | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+
+✨ Light and Fast AI Assistant,with Claude, DeepSeek, GPT4 & Gemini Pro support.
 
 [![Saas][Saas-image]][saas-url]
 [![Web][Web-image]][web-url]
@@ -10,10 +18,10 @@ One-Click to get a well-designed cross-platform ChatGPT web UI, with GPT3, GPT4 
 [![MacOS][MacOS-image]][download-url]
 [![Linux][Linux-image]][download-url]
 
-[NextGptAI](https://nextgpt.khulnasoft.com/chat?utm_source=readme) / [Web App](https://app.nextgpt.khulnasoft.com) / [Desktop App](https://github.com/KhulnaSoft/NextGPT/releases) / [Discord](https://discord.gg/YCkeafCafC) / [Enterprise Edition](#enterprise-edition) / [Twitter](https://twitter.com/NextGptDev)
+[nextgptAI](https://nextgpt.khulnasoft.com?utm_source=readme) / [iOS APP](https://apps.apple.com/us/app/nextgpt-ai/id6743085599) / [Web App Demo](https://app.nextgpt.khulnasoft.com) / [Desktop App](https://github.com/KhulnaSoft/NextGPT/releases) / [Enterprise Edition](#enterprise-edition)
 
-[saas-url]: https://nextgpt.khulnasoft.com/chat?utm_source=readme
-[saas-image]: https://img.shields.io/badge/NextGpt-Saas-green?logo=microsoftedge
+[saas-url]: https://nextgpt.khulnasoft.com?utm_source=readme
+[saas-image]: https://img.shields.io/badge/nextgpt-Saas-green?logo=microsoftedge
 [web-url]: https://app.nextgpt.khulnasoft.com/
 [download-url]: https://github.com/KhulnaSoft/NextGPT/releases
 [Web-image]: https://img.shields.io/badge/Web-PWA-orange?logo=microsoftedge
@@ -21,11 +29,33 @@ One-Click to get a well-designed cross-platform ChatGPT web UI, with GPT3, GPT4 
 [MacOS-image]: https://img.shields.io/badge/-MacOS-black?logo=apple
 [Linux-image]: https://img.shields.io/badge/-Linux-333?logo=ubuntu
 
-[<img src="https://vercel.com/button" alt="Deploy on Zeabur" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKhulnaSoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextgpt&repository-name=NextGpt) [<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/ZBUEFA) [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/#https://github.com/KhulnaSoft/NextGPT)
+[<img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30">](https://zeabur.com/templates/ZBUEFA) [<img src="https://vercel.com/button" alt="Deploy on Vercel" height="30">](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkhulnasoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextgpt&repository-name=nextgpt) [<img src="https://gitpod.io/button/open-in-gitpod.svg" alt="Open in Gitpod" height="30">](https://gitpod.io/#https://github.com/khulnasoft/nextgpt) [<img src="https://oss.opendeploy.dev/static/deploy-with-your-agent.svg" alt="Deploy with your agent" height="30">](https://opendeploy.dev/github/khulnasoft/nextgpt)
 
-[<img src="https://github.com/user-attachments/assets/903482d4-3e87-4134-9af1-f2588fa90659" height="60" width="288" >](https://monica.im/?utm=nxcrp)
+[<img src="https://github.com/user-attachments/assets/903482d4-3e87-4134-9af1-f2588fa90659" height="50" width="" >](https://monica.im/?utm=nxcrp)
 
 </div>
+
+## ❤️ Sponsor AI API
+
+<a href='https://302.ai/'>
+  <img src="https://github.com/user-attachments/assets/a03edf82-2031-4f23-bdb8-bfc0bfd168a4" width="100%" alt="icon"/>
+</a>
+
+[302.AI](https://302.ai/) is a pay-as-you-go AI application platform that offers the most comprehensive AI APIs and online applications available.
+
+## 🥳 Cheer for nextgpt iOS Version Online!
+
+> [👉 Click Here to Install Now](https://apps.apple.com/us/app/nextgpt-ai/id6743085599)
+
+> [❤️ Source Code Coming Soon](https://github.com/khulnasoft/nextgpt-iOS)
+
+![Github iOS Image](https://github.com/user-attachments/assets/e0aa334f-4c13-4dc9-8310-e3b09fa4b9f3)
+
+## 🫣 nextgpt Support MCP !
+
+> Before build, please set env ENABLE_MCP=true
+
+<img src="./docs/assets/mcp-market.png" alt="nextgpt MCP Market" />
 
 ## Enterprise Edition
 
@@ -39,9 +69,13 @@ Meeting Your Company's Privatization and Customization Deployment Requirements:
 - **Private Deployment**: Enterprise-level private deployment supporting various mainstream private cloud solutions, ensuring data security and privacy protection.
 - **Continuous Updates**: Ongoing updates and upgrades in cutting-edge capabilities like multimodal AI, ensuring consistent innovation and advancement.
 
-For enterprise inquiries, please contact: **business@khulnasoft.com**
+For enterprise inquiries, please contact: **business@nextgpt.khulnasoft.com**
 
-<img width="300" src="https://github.com/user-attachments/assets/3daeb7b6-ab63-4542-9141-2e4a12c80601">
+## Screenshots
+
+![Settings](./docs/assets/settings.png)
+
+![More](./docs/assets/more.png)
 
 ## Features
 
@@ -55,9 +89,11 @@ For enterprise inquiries, please contact: **business@khulnasoft.com**
 - New in v2: create, share and debug your chat tools with prompt templates (mask)
 - Awesome prompts powered by [awesome-chatgpt-prompts-zh](https://github.com/PlexPt/awesome-chatgpt-prompts-zh) and [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts)
 - Automatically compresses chat history to support long conversations while also saving your tokens
-- I18n: English, 简体中文, 繁体中文, 日本語, Français, Español, Italiano, Türkçe, Deutsch, Tiếng Việt, Русский, Čeština, 한국어, Indonesia
+- I18n: English, বাংলা, 简体中文, 繁体中文, 日本語, Français, Español, Italiano, Türkçe, Deutsch, Tiếng Việt, Русский, Čeština, 한국어, Indonesia
 
 <div align="center">
+   
+![主界面](./docs/assets/cover.png)
 
 </div>
 
@@ -69,14 +105,17 @@ For enterprise inquiries, please contact: **business@khulnasoft.com**
 - [x] Share as image, share to ShareGPT [#1741](https://github.com/KhulnaSoft/NextGPT/pull/1741)
 - [x] Desktop App with tauri
 - [x] Self-host Model: Fully compatible with [RWKV-Runner](https://github.com/josStorer/RWKV-Runner), as well as server deployment of [LocalAI](https://github.com/go-skynet/LocalAI): llama/gpt4all/rwkv/vicuna/koala/gpt4all-j/cerebras/falcon/dolly etc.
-- [x] Artifacts: Easily preview, copy and share generated content/webpages through a separate window [#5092](https://github.com/KhulnaSoft/NextGPT/pull/5092)
-- [x] Plugins: support network search, calculator, any other apis etc. [#165](https://github.com/KhulnaSoft/NextGPT/issues/165) [#5353](https://github.com/KhulnaSoft/NextGPT/issues/5353)
-  - [x] network search, calculator, any other apis etc. [#165](https://github.com/KhulnaSoft/NextGPT/issues/165) [#5353](https://github.com/KhulnaSoft/NextGPT/issues/5353)
+- [x] Artifacts: Easily preview, copy and share generated content/webpages through a separate window [#5092](https://github.com/khulnasoft/NextGPT/pull/5092)
+- [x] Plugins: support network search, calculator, any other apis etc. [#165](https://github.com/KhulnaSoft/NextGPT/issues/165) [#5353](https://github.com/khulnasoft/NextGPT/issues/5353)
+  - [x] network search, calculator, any other apis etc. [#165](https://github.com/KhulnaSoft/NextGPT/issues/165) [#5353](https://github.com/khulnasoft/NextGPT/issues/5353)
+- [x] Supports Realtime Chat [#5672](https://github.com/khulnasoft/NextGPT/issues/5672)
 - [ ] local knowledge base
 
 ## What's New
 
-- 🚀 v2.15.0 Now supports Plugins! Read this: [NextGPT-Plugin](https://github.com/khulnasoft-lab/NextGPT-Plugin)
+- 🚀 v2.15.8 Now supports Realtime Chat [#5672](https://github.com/khulnasoft/NextGPT/issues/5672)
+- 🚀 v2.15.4 The Application supports using Tauri fetch LLM API, MORE SECURITY! [#5379](https://github.com/khulnasoft/NextGPT/issues/5379)
+- 🚀 v2.15.0 Now supports Plugins! Read this: [nextgpt-Awesome-Plugins](https://github.com/khulnasoft/NextGPT-Plugin)
 - 🚀 v2.14.0 Now supports Artifacts & SD
 - 🚀 v2.10.1 support Google Gemini Pro model.
 - 🚀 v2.9.11 you can use azure endpoint now.
@@ -88,12 +127,12 @@ For enterprise inquiries, please contact: **business@khulnasoft.com**
 
 1. Get [OpenAI API Key](https://platform.openai.com/account/api-keys);
 2. Click
-   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKhulnaSoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=nextgpt&repository-name=NextGPT), remember that `CODE` is your page password;
+   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKhulnaSoft%2FNextGPT&env=OPENAI_API_KEY&env=CODE&project-name=chatgpt-next-web&repository-name=NextGPT), remember that `CODE` is your page password;
 3. Enjoy :)
 
 ## FAQ
 
-[English > FAQ](./docs/faq-en.md)
+[English > FAQ](./docs/faq/faq-en.md)
 
 ## Keep Updated
 
@@ -103,7 +142,7 @@ We recommend that you follow the steps below to re-deploy:
 
 - Delete the original repository;
 - Use the fork button in the upper right corner of the page to fork this project;
-- Choose and deploy in Vercel again, [please see the detailed tutorial](./docs/vercel-bn.md).
+- Choose and deploy in Vercel again, [please see the detailed tutorial](./docs/deployment/vercel-cn.md).
 
 ### Enable Automatic Updates
 
@@ -111,9 +150,9 @@ We recommend that you follow the steps below to re-deploy:
 
 After forking the project, due to the limitations imposed by GitHub, you need to manually enable Workflows and Upstream Sync Action on the Actions page of the forked project. Once enabled, automatic updates will be scheduled every hour:
 
-![Automatic Updates](./docs/images/enable-actions.jpg)
+![Automatic Updates](./docs/assets/enable-actions.jpg)
 
-![Enable Automatic Updates](./docs/images/enable-actions-sync.jpg)
+![Enable Automatic Updates](./docs/assets/enable-actions-sync.jpg)
 
 ### Manually Updating Code
 
@@ -132,8 +171,6 @@ code1,code2,code3
 After adding or modifying this environment variable, please redeploy the project for the changes to take effect.
 
 ## Environment Variables
-
-> [বাংলা > কিভাবে API key, অ্যাক্সেস পাসওয়ার্ড এবং API প্রক্সি কনফিগার করবেন](./README_BN.md#পরিবেশ-ভেরিয়েবলস)
 
 ### `CODE` (optional)
 
@@ -229,6 +266,22 @@ iflytek Api Key.
 
 iflytek Api Secret.
 
+### `CHATGLM_API_KEY` (optional)
+
+ChatGLM Api Key.
+
+### `CHATGLM_URL` (optional)
+
+ChatGLM Api Url.
+
+### `DEEPSEEK_API_KEY` (optional)
+
+DeepSeek Api Key.
+
+### `DEEPSEEK_URL` (optional)
+
+DeepSeek Api Url.
+
 ### `HIDE_USER_API_KEY` (optional)
 
 > Default: Empty
@@ -262,10 +315,10 @@ To control custom models, use `+` to add a custom model, use `-` to hide a model
 
 User `-all` to disable all default models, `+all` to enable all default models.
 
-For Azure: use `modelName@azure=deploymentName` to customize model name and deployment name.
+For Azure: use `modelName@Azure=deploymentName` to customize model name and deployment name.
 
-> Example: `+gpt-3.5-turbo@azure=gpt35` will show option `gpt35(Azure)` in model list.
-> If you only can use Azure model, `-all,+gpt-3.5-turbo@azure=gpt35` will `gpt35(Azure)` the only option in model list.
+> Example: `+gpt-3.5-turbo@Azure=gpt35` will show option `gpt35(Azure)` in model list.
+> If you only can use Azure model, `-all,+gpt-3.5-turbo@Azure=gpt35` will `gpt35(Azure)` the only option in model list.
 
 For ByteDance: use `modelName@bytedance=deploymentName` to customize model name and deployment name.
 
@@ -274,6 +327,13 @@ For ByteDance: use `modelName@bytedance=deploymentName` to customize model name 
 ### `DEFAULT_MODEL` （optional）
 
 Change default model
+
+### `VISION_MODELS` (optional)
+
+> Default: Empty
+> Example: `gpt-4-vision,claude-3-opus,my-custom-model` means add vision capabilities to these models in addition to the default pattern matches (which detect models containing keywords like "vision", "claude-3", "gemini-1.5", etc).
+
+Add additional models to have vision capabilities, beyond the default pattern matching. Multiple models should be separated by commas.
 
 ### `WHITE_WEBDAV_ENDPOINTS` (optional)
 
@@ -295,6 +355,27 @@ Stability API key.
 
 Customize Stability API url.
 
+### `ENABLE_MCP` (optional)
+
+Enable MCP（Model Context Protocol）Feature. For security, MCP also requires
+`CODE` to be configured; all MCP server actions verify that access code.
+
+### `SILICONFLOW_API_KEY` (optional)
+
+SiliconFlow API Key.
+
+### `SILICONFLOW_URL` (optional)
+
+SiliconFlow API URL.
+
+### `AI302_API_KEY` (optional)
+
+302.AI API Key.
+
+### `AI302_URL` (optional)
+
+302.AI API URL.
+
 ## Requirements
 
 NodeJS >= 18, Docker >= 20
@@ -315,22 +396,24 @@ BASE_URL=https://chatgpt1.nextweb.fun/api/proxy
 ### Local Development
 
 ```shell
-# 1. install nodejs and yarn first
+# 1. install nodejs and pnpm first
 # 2. config local env vars in `.env.local`
 # 3. run
-yarn install
-yarn dev
+pnpm install
+pnpm dev
 ```
+
+## Deployment
 
 ### Docker (Recommended)
 
 ```shell
-docker pull khulnasoft/nextgpt
+docker pull yidadaa/chatgpt-next-web
 
 docker run -d -p 3000:3000 \
    -e OPENAI_API_KEY=sk-xxxx \
    -e CODE=your-password \
-   khulnasoft/nextgpt
+   yidadaa/chatgpt-next-web
 ```
 
 You can start service behind a proxy:
@@ -340,7 +423,7 @@ docker run -d -p 3000:3000 \
    -e OPENAI_API_KEY=sk-xxxx \
    -e CODE=your-password \
    -e PROXY_URL=http://localhost:7890 \
-   khulnasoft/nextgpt
+   yidadaa/chatgpt-next-web
 ```
 
 If your proxy needs password, use:
@@ -349,36 +432,50 @@ If your proxy needs password, use:
 -e PROXY_URL="http://127.0.0.1:7890 user pass"
 ```
 
+If enable MCP, use：
+
+```
+docker run -d -p 3000:3000 \
+   -e OPENAI_API_KEY=sk-xxxx \
+   -e CODE=your-password \
+   -e ENABLE_MCP=true \
+   yidadaa/chatgpt-next-web
+```
+
 ### Shell
 
 ```shell
 bash <(curl -s https://raw.githubusercontent.com/KhulnaSoft/NextGPT/main/scripts/setup.sh)
 ```
 
+## Synchronizing Chat Records (UpStash)
+
+| [简体中文](./docs/deployment/synchronise-chat-logs-cn.md) | [English](./docs/deployment/synchronise-chat-logs-en.md) | [Italiano](./docs/deployment/synchronise-chat-logs-es.md) | [日本語](./docs/deployment/synchronise-chat-logs-ja.md) | [한국어](./docs/deployment/synchronise-chat-logs-ko.md)
+
 ## Documentation
 
 > Please go to the [docs][./docs] directory for more documentation instructions.
 
-- [Deploy with cloudflare (Deprecated)](./docs/cloudflare-pages-en.md)
-- [Frequent Ask Questions](./docs/faq-en.md)
-- [How to add a new translation](./docs/translation.md)
-- [How to use Vercel (Bengali)](./docs/vercel-bn.md)
-- [User Manual (Bengali)](./docs/user-manual-bn.md)
-
-## Screenshots
-
-![Settings](./docs/images/settings.png)
-
-![More](./docs/images/more.png)
+- [Deploy with cloudflare (Deprecated)](./docs/deployment/cloudflare-pages-en.md)
+- [Frequent Ask Questions](./docs/faq/faq-en.md)
+- [How to add a new translation](./docs/guides/translation.md)
+- [How to use Vercel (No English)](./docs/deployment/vercel-cn.md)
+- [User Manual (Only Chinese, WIP)](./docs/guides/user-manual-cn.md)
 
 ## Translation
 
-If you want to add a new translation, read this [document](./docs/translation.md).
+If you want to add a new translation, read this [document](./docs/guides/translation.md).
+
+## Donation
+
+[Buy Me a Coffee](https://www.buymeacoffee.com/yidadaa)
+
+## Special Thanks
 
 ### Contributors
 
-<a href="https://github.com/KhulnaSoft/NextGPT/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=KhulnaSoft/NextGPT" />
+<a href="https://github.com/khulnasoft/NextGPT/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=khulnasoft/NextGPT" />
 </a>
 
 ## LICENSE

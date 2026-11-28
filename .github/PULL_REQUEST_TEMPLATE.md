@@ -1,28 +1,28 @@
-#### 💻 পরিবর্তন প্রকার | Change Type
+#### 💻 变更类型 | Change Type
 
-<!-- পরিবর্তন প্রকারের জন্য, [ ] থেকে [x] পরিবর্তন করুন। -->
+<!-- For change type, change [ ] to [x]. -->
 
-- [ ] ফিট <!-- নতুন ফিচার পরিচয় করানো | Introduce new features -->
-- [ ] ফিক্স <!-- বাগ ঠিক করা | Fix a bug -->
-- [ ] রিফ্যাক্টর <!-- কোড রিফ্যাক্টরিং (যা বাগ ঠিক করে না বা নতুন ফিচার যোগ করে না) | Refactor code that neither fixes a bug nor adds a feature -->
-- [ ] পারফ <!-- পারফরম্যান্স উন্নত করার জন্য কোড পরিবর্তন | A code change that improves performance -->
-- [ ] স্টাইল <!-- কোডের মানে পরিবর্তন না করা স্টাইল ফাইল যুক্ত বা আপডেট করা | Add or update style files that do not affect the meaning of the code -->
-- [ ] টেস্ট <!-- হারানো টেস্ট যোগ করা বা বিদ্যমান টেস্ট সংশোধন করা | Adding missing tests or correcting existing tests -->
-- [ ] ডক্স <!-- শুধু ডকুমেন্টেশন আপডেট | Documentation only changes -->
-- [ ] সিআই <!-- আমাদের CI কনফিগারেশন ফাইল এবং স্ক্রিপ্টে পরিবর্তন | Changes to our CI configuration files and scripts -->
-- [ ] চোর <!-- অন্যান্য পরিবর্তন যা src বা টেস্ট ফাইল পরিবর্তন করে না | Other changes that don’t modify src or test files -->
-- [ ] বিল্ড <!-- আর্কিটেকচারাল পরিবর্তন | Make architectural changes -->
+- [ ] feat    <!-- 引入新功能 | Introduce new features -->
+- [ ] fix    <!-- 修复 Bug | Fix a bug -->
+- [ ] refactor    <!-- 重构代码（既不修复 Bug 也不添加新功能） | Refactor code that neither fixes a bug nor adds a feature -->
+- [ ] perf    <!-- 提升性能的代码变更 | A code change that improves performance -->
+- [ ] style    <!-- 添加或更新不影响代码含义的样式文件 | Add or update style files that do not affect the meaning of the code -->
+- [ ] test    <!-- 添加缺失的测试或纠正现有的测试 | Adding missing tests or correcting existing tests -->
+- [ ] docs    <!-- 仅文档更新 | Documentation only changes -->
+- [ ] ci    <!-- 修改持续集成配置文件和脚本 | Changes to our CI configuration files and scripts -->
+- [ ] chore    <!-- 其他不修改 src 或 test 文件的变更 | Other changes that don’t modify src or test files -->
+- [ ] build    <!-- 进行架构变更 | Make architectural changes -->
 
-#### 🔀 পরিবর্তন বিবরণ | Description of Change
+#### 🔀 变更说明 | Description of Change
 
-<!--
-আপনার পুল রিকোয়েস্টের জন্য, উপরে একটি বিবরণ প্রদান করুন।
+<!-- 
+感谢您的 Pull Request ，请提供此 Pull Request 的变更说明
 Thank you for your Pull Request. Please provide a description above.
 -->
 
-#### 📝 অতিরিক্ত তথ্য | Additional Information
+#### 📝 补充信息 | Additional Information
 
-<!--
-আপনার পুল রিকোয়েস্টের সাথে সম্পর্কিত অতিরিক্ত তথ্য এখানে যোগ করুন।
+<!-- 
+请添加与此 Pull Request 相关的补充信息
 Add any other context about the Pull Request here.
 -->
