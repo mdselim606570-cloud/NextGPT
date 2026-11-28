@@ -27,6 +27,10 @@ start: ## Start the Next.js production server
 lint: ## Run ESLint
 	pnpm lint
 
+.PHONY: typecheck
+typecheck: ## Run TypeScript type checking
+	pnpm typecheck
+
 .PHONY: test
 test: ## Run Jest tests in watch mode
 	pnpm test
