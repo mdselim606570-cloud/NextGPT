@@ -1,15 +1,14 @@
 import { getServerSideConfig } from "@/config/server";
 import {
-  BAIDU_BASE_URL,
+  ALIBABA_BASE_URL,
   ApiPath,
   ModelProvider,
   ServiceProvider,
 } from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/app/api/auth";
+import { auth } from "@/server/auth";
 import { isModelNotavailableInServer } from "@/app/utils/model";
-import { getAccessToken } from "@/app/utils/baidu";
 
 const serverConfig = getServerSideConfig();
 
@@ -17,36 +16,24 @@ export async function handle(
   req: NextRequest,
   { params }: { params: { path: string[] } },
 ) {
-  console.log("[Baidu Route] params ", params);
+  console.log("[Alibaba Route] params ", params);
 
   if (req.method === "OPTIONS") {
     return NextResponse.json({ body: "OK" }, { status: 200 });
   }
 
-  const authResult = auth(req, ModelProvider.Ernie);
+  const authResult = auth(req, ModelProvider.Qwen);
   if (authResult.error) {
     return NextResponse.json(authResult, {
       status: 401,
     });
   }
 
-  if (!serverConfig.baiduApiKey || !serverConfig.baiduSecretKey) {
-    return NextResponse.json(
-      {
-        error: true,
-        message: `missing BAIDU_API_KEY or BAIDU_SECRET_KEY in server env vars`,
-      },
-      {
-        status: 401,
-      },
-    );
-  }
-
   try {
     const response = await request(req);
     return response;
   } catch (e) {
-    console.error("[Baidu] ", e);
+    console.error("[Alibaba] ", e);
     return NextResponse.json(prettyObject(e));
   }
 }
@@ -54,9 +41,10 @@ export async function handle(
 async function request(req: NextRequest) {
   const controller = new AbortController();
 
-  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.Baidu, "");
+  // alibaba use base url or just remove the path
+  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.Alibaba, "");
 
-  let baseUrl = serverConfig.baiduUrl || BAIDU_BASE_URL;
+  let baseUrl = serverConfig.alibabaUrl || ALIBABA_BASE_URL;
 
   if (!baseUrl.startsWith("http")) {
     baseUrl = `https://${baseUrl}`;
@@ -76,15 +64,12 @@ async function request(req: NextRequest) {
     10 * 60 * 1000,
   );
 
-  const { access_token } = await getAccessToken(
-    serverConfig.baiduApiKey as string,
-    serverConfig.baiduSecretKey as string,
-  );
-  const fetchUrl = `${baseUrl}${path}?access_token=${access_token}`;
-
+  const fetchUrl = `${baseUrl}${path}`;
   const fetchOptions: RequestInit = {
     headers: {
       "Content-Type": "application/json",
+      Authorization: req.headers.get("Authorization") ?? "",
+      "X-DashScope-SSE": req.headers.get("X-DashScope-SSE") ?? "disable",
     },
     method: req.method,
     body: req.body,
@@ -107,7 +92,7 @@ async function request(req: NextRequest) {
         isModelNotavailableInServer(
           serverConfig.customModels,
           jsonBody?.model as string,
-          ServiceProvider.Baidu as string,
+          ServiceProvider.Alibaba as string,
         )
       ) {
         return NextResponse.json(
@@ -121,7 +106,7 @@ async function request(req: NextRequest) {
         );
       }
     } catch (e) {
-      console.error(`[Baidu] filter`, e);
+      console.error(`[Alibaba] filter`, e);
     }
   }
   try {

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "./auth";
+import { auth } from "@/server/auth";
 import { getServerSideConfig } from "@/config/server";
 import { ApiPath, GEMINI_BASE_URL, ModelProvider } from "@/constants";
 import { prettyObject } from "@/app/utils/format";

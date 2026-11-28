@@ -3,7 +3,7 @@ import { getServerSideConfig } from "@/config/server";
 import { ModelProvider, OpenaiPath } from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "./auth";
+import { auth } from "@/server/auth";
 import { requestOpenai } from "./common";
 
 const ALLOWED_PATH = new Set(Object.values(OpenaiPath));

@@ -1,15 +1,14 @@
 import { getServerSideConfig } from "@/config/server";
 import {
-  IFLYTEK_BASE_URL,
+  BYTEDANCE_BASE_URL,
   ApiPath,
   ModelProvider,
   ServiceProvider,
 } from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/app/api/auth";
+import { auth } from "@/server/auth";
 import { isModelNotavailableInServer } from "@/app/utils/model";
-// iflytek
 
 const serverConfig = getServerSideConfig();
 
@@ -17,13 +16,13 @@ export async function handle(
   req: NextRequest,
   { params }: { params: { path: string[] } },
 ) {
-  console.log("[Iflytek Route] params ", params);
+  console.log("[ByteDance Route] params ", params);
 
   if (req.method === "OPTIONS") {
     return NextResponse.json({ body: "OK" }, { status: 200 });
   }
 
-  const authResult = auth(req, ModelProvider.Iflytek);
+  const authResult = auth(req, ModelProvider.Doubao);
   if (authResult.error) {
     return NextResponse.json(authResult, {
       status: 401,
@@ -34,7 +33,7 @@ export async function handle(
     const response = await request(req);
     return response;
   } catch (e) {
-    console.error("[Iflytek] ", e);
+    console.error("[ByteDance] ", e);
     return NextResponse.json(prettyObject(e));
   }
 }
@@ -42,10 +41,9 @@ export async function handle(
 async function request(req: NextRequest) {
   const controller = new AbortController();
 
-  // iflytek use base url or just remove the path
-  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.Iflytek, "");
+  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.ByteDance, "");
 
-  let baseUrl = serverConfig.iflytekUrl || IFLYTEK_BASE_URL;
+  let baseUrl = serverConfig.bytedanceUrl || BYTEDANCE_BASE_URL;
 
   if (!baseUrl.startsWith("http")) {
     baseUrl = `https://${baseUrl}`;
@@ -66,6 +64,7 @@ async function request(req: NextRequest) {
   );
 
   const fetchUrl = `${baseUrl}${path}`;
+
   const fetchOptions: RequestInit = {
     headers: {
       "Content-Type": "application/json",
@@ -79,7 +78,7 @@ async function request(req: NextRequest) {
     signal: controller.signal,
   };
 
-  // try to refuse some request to some models
+  // #1815 try to refuse some request to some models
   if (serverConfig.customModels && req.body) {
     try {
       const clonedBody = await req.text();
@@ -92,7 +91,7 @@ async function request(req: NextRequest) {
         isModelNotavailableInServer(
           serverConfig.customModels,
           jsonBody?.model as string,
-          ServiceProvider.Iflytek as string,
+          ServiceProvider.ByteDance as string,
         )
       ) {
         return NextResponse.json(
@@ -106,9 +105,10 @@ async function request(req: NextRequest) {
         );
       }
     } catch (e) {
-      console.error(`[Iflytek] filter`, e);
+      console.error(`[ByteDance] filter`, e);
     }
   }
+
   try {
     const res = await fetch(fetchUrl, fetchOptions);
 

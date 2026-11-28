@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSideConfig } from "@/config/server";
 import { OPENAI_BASE_URL, ServiceProvider } from "@/constants";
-import { cloudflareAIGatewayUrl } from "../utils/cloudflare";
-import { getModelProvider, isModelNotavailableInServer } from "../utils/model";
+import { cloudflareAIGatewayUrl } from "@/app/utils/cloudflare";
+import { getModelProvider, isModelNotavailableInServer } from "@/app/utils/model";
 
 const serverConfig = getServerSideConfig();
 

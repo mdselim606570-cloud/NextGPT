@@ -1,13 +1,13 @@
 import { getServerSideConfig } from "@/config/server";
 import {
-  XAI_BASE_URL,
+  DEEPSEEK_BASE_URL,
   ApiPath,
   ModelProvider,
   ServiceProvider,
 } from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/app/api/auth";
+import { auth } from "@/server/auth";
 import { isModelNotavailableInServer } from "@/app/utils/model";
 
 const serverConfig = getServerSideConfig();
@@ -16,13 +16,13 @@ export async function handle(
   req: NextRequest,
   { params }: { params: { path: string[] } },
 ) {
-  console.log("[XAI Route] params ", params);
+  console.log("[DeepSeek Route] params ", params);
 
   if (req.method === "OPTIONS") {
     return NextResponse.json({ body: "OK" }, { status: 200 });
   }
 
-  const authResult = auth(req, ModelProvider.XAI);
+  const authResult = auth(req, ModelProvider.DeepSeek);
   if (authResult.error) {
     return NextResponse.json(authResult, {
       status: 401,
@@ -33,7 +33,7 @@ export async function handle(
     const response = await request(req);
     return response;
   } catch (e) {
-    console.error("[XAI] ", e);
+    console.error("[DeepSeek] ", e);
     return NextResponse.json(prettyObject(e));
   }
 }
@@ -42,9 +42,9 @@ async function request(req: NextRequest) {
   const controller = new AbortController();
 
   // alibaba use base url or just remove the path
-  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.XAI, "");
+  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.DeepSeek, "");
 
-  let baseUrl = serverConfig.xaiUrl || XAI_BASE_URL;
+  let baseUrl = serverConfig.deepseekUrl || DEEPSEEK_BASE_URL;
 
   if (!baseUrl.startsWith("http")) {
     baseUrl = `https://${baseUrl}`;
@@ -91,7 +91,7 @@ async function request(req: NextRequest) {
         isModelNotavailableInServer(
           serverConfig.customModels,
           jsonBody?.model as string,
-          ServiceProvider.XAI as string,
+          ServiceProvider.DeepSeek as string,
         )
       ) {
         return NextResponse.json(
@@ -105,7 +105,7 @@ async function request(req: NextRequest) {
         );
       }
     } catch (e) {
-      console.error(`[XAI] filter`, e);
+      console.error(`[DeepSeek] filter`, e);
     }
   }
   try {

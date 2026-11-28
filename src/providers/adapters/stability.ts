@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSideConfig } from "@/config/server";
 import { ModelProvider, STABILITY_BASE_URL } from "@/constants";
-import { auth } from "@/app/api/auth";
+import { auth } from "@/server/auth";
 
 export async function handle(
   req: NextRequest,

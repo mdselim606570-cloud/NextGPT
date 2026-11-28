@@ -1,14 +1,15 @@
 import { getServerSideConfig } from "@/config/server";
 import {
-  BYTEDANCE_BASE_URL,
+  BAIDU_BASE_URL,
   ApiPath,
   ModelProvider,
   ServiceProvider,
 } from "@/constants";
 import { prettyObject } from "@/app/utils/format";
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/app/api/auth";
+import { auth } from "@/server/auth";
 import { isModelNotavailableInServer } from "@/app/utils/model";
+import { getAccessToken } from "@/app/utils/baidu";
 
 const serverConfig = getServerSideConfig();
 
@@ -16,24 +17,36 @@ export async function handle(
   req: NextRequest,
   { params }: { params: { path: string[] } },
 ) {
-  console.log("[ByteDance Route] params ", params);
+  console.log("[Baidu Route] params ", params);
 
   if (req.method === "OPTIONS") {
     return NextResponse.json({ body: "OK" }, { status: 200 });
   }
 
-  const authResult = auth(req, ModelProvider.Doubao);
+  const authResult = auth(req, ModelProvider.Ernie);
   if (authResult.error) {
     return NextResponse.json(authResult, {
       status: 401,
     });
   }
 
+  if (!serverConfig.baiduApiKey || !serverConfig.baiduSecretKey) {
+    return NextResponse.json(
+      {
+        error: true,
+        message: `missing BAIDU_API_KEY or BAIDU_SECRET_KEY in server env vars`,
+      },
+      {
+        status: 401,
+      },
+    );
+  }
+
   try {
     const response = await request(req);
     return response;
   } catch (e) {
-    console.error("[ByteDance] ", e);
+    console.error("[Baidu] ", e);
     return NextResponse.json(prettyObject(e));
   }
 }
@@ -41,9 +54,9 @@ export async function handle(
 async function request(req: NextRequest) {
   const controller = new AbortController();
 
-  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.ByteDance, "");
+  let path = `${req.nextUrl.pathname}`.replaceAll(ApiPath.Baidu, "");
 
-  let baseUrl = serverConfig.bytedanceUrl || BYTEDANCE_BASE_URL;
+  let baseUrl = serverConfig.baiduUrl || BAIDU_BASE_URL;
 
   if (!baseUrl.startsWith("http")) {
     baseUrl = `https://${baseUrl}`;
@@ -63,12 +76,15 @@ async function request(req: NextRequest) {
     10 * 60 * 1000,
   );
 
-  const fetchUrl = `${baseUrl}${path}`;
+  const { access_token } = await getAccessToken(
+    serverConfig.baiduApiKey as string,
+    serverConfig.baiduSecretKey as string,
+  );
+  const fetchUrl = `${baseUrl}${path}?access_token=${access_token}`;
 
   const fetchOptions: RequestInit = {
     headers: {
       "Content-Type": "application/json",
-      Authorization: req.headers.get("Authorization") ?? "",
     },
     method: req.method,
     body: req.body,
@@ -91,7 +107,7 @@ async function request(req: NextRequest) {
         isModelNotavailableInServer(
           serverConfig.customModels,
           jsonBody?.model as string,
-          ServiceProvider.ByteDance as string,
+          ServiceProvider.Baidu as string,
         )
       ) {
         return NextResponse.json(
@@ -105,10 +121,9 @@ async function request(req: NextRequest) {
         );
       }
     } catch (e) {
-      console.error(`[ByteDance] filter`, e);
+      console.error(`[Baidu] filter`, e);
     }
   }
-
   try {
     const res = await fetch(fetchUrl, fetchOptions);
 
